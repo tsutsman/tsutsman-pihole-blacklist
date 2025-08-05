@@ -13,6 +13,14 @@
 ## Автоматизація
 - `python scripts/check_lists.py` — перевіряє списки, виявляє дублікати й помилки.
 - `python scripts/generate_lists.py` — створює формати для AdGuard та uBlock у каталозі `dist/`.
+- `python scripts/update_domains.py` — завантажує домени зі сторонніх перевірених списків і додає їх у `domains.txt`.
+
+## Джерела доменів
+Скрипт `update_domains.py` використовує публічні списки, що регулярно оновлюються:
+- [URLhaus](https://urlhaus.abuse.ch/)
+- [Phishing Army](https://phishing.army/)
+- [StevenBlack/hosts](https://github.com/StevenBlack/hosts)
+
 
 ## Внесок
 1. Форкніть репозиторій та створіть гілку для змін.
