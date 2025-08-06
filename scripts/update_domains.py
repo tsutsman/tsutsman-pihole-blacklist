@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from urllib.error import URLError
 from urllib.request import urlopen
 
 CHUNK_SIZE = 500
@@ -28,8 +29,12 @@ SOURCES = [
 
 
 def _fetch(url: str) -> list[str]:
-    with urlopen(url) as resp:  # type: ignore[arg-type]
-        text = resp.read().decode("utf-8", "replace")
+    """Завантажує домени з URL, повертаючи порожній список у разі помилки."""
+    try:
+        with urlopen(url, timeout=10) as resp:  # type: ignore[arg-type]
+            text = resp.read().decode("utf-8", "replace")
+    except URLError:
+        return []
     domains: list[str] = []
     for line in text.splitlines():
         line = line.strip()
@@ -42,6 +47,7 @@ def _fetch(url: str) -> list[str]:
 
 
 def update(chunk_size: int = CHUNK_SIZE) -> None:
+    """Оновлює файл доменів, додаючи нові записи з перевірених джерел."""
     existing = set()
     if DOMAINS_FILE.exists():
         existing = {

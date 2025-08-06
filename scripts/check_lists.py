@@ -10,7 +10,10 @@ import re
 import sys
 from pathlib import Path
 
+from .utils import load_entries
+
 DOMAINS_FILE = Path("domains.txt")
+
 REGEX_FILE = Path("regex.list")
 
 DOMAIN_RE = re.compile(
@@ -20,16 +23,8 @@ DOMAIN_RE = re.compile(
 )
 
 
-def _load_entries(path: Path) -> list[str]:
-    entries: list[str] = []
-    for line in path.read_text().splitlines():
-        line = line.strip()
-        if line and not line.startswith("#"):
-            entries.append(line)
-    return entries
-
-
 def _find_duplicates(items: list[str]) -> set[str]:
+    """Повертає множину дублікатів у списку."""
     seen: set[str] = set()
     duplicates: set[str] = set()
     for item in items:
@@ -41,11 +36,13 @@ def _find_duplicates(items: list[str]) -> set[str]:
 
 
 def _validate_domains(domains: list[str]) -> list[str]:
+    """Повертає список доменів, що не відповідають формату."""
     invalid = [d for d in domains if not DOMAIN_RE.fullmatch(d)]
     return invalid
 
 
 def _validate_regexes(regexes: list[str]) -> list[str]:
+    """Повертає список некоректних регулярних виразів."""
     invalid: list[str] = []
     for pattern in regexes:
         try:
@@ -55,9 +52,15 @@ def _validate_regexes(regexes: list[str]) -> list[str]:
     return invalid
 
 
+def _find_cross_duplicates(domains: list[str], regexes: list[str]) -> set[str]:
+    """Шукає однакові записи в domains.txt та regex.list."""
+    return set(domains) & set(regexes)
+
+
 def main() -> int:
-    domains = _load_entries(DOMAINS_FILE)
-    regexes = _load_entries(REGEX_FILE)
+    """Головна функція перевірки списків."""
+    domains = load_entries(DOMAINS_FILE)
+    regexes = load_entries(REGEX_FILE)
 
     issues: list[str] = []
 
@@ -80,6 +83,12 @@ def main() -> int:
     if invalid_regexes:
         invalid_regex_list = ", ".join(sorted(invalid_regexes))
         issues.append(f"Некоректні регулярні вирази: {invalid_regex_list}")
+
+    cross_duplicates = _find_cross_duplicates(domains, regexes)
+    if cross_duplicates:
+        cross_list = ", ".join(sorted(cross_duplicates))
+        message = f"Записи в обох списках: {cross_list}"
+        issues.append(message)
 
     if issues:
         print("\n".join(issues))
