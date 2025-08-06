@@ -20,6 +20,9 @@
 - [URLhaus](https://urlhaus.abuse.ch/)
 - [Phishing Army](https://phishing.army/)
 - [StevenBlack/hosts](https://github.com/StevenBlack/hosts)
+- [AnudeepND/blacklist](https://github.com/anudeepND/blacklist) — рекламні та трекінгові домени
+- [Phishing.Database](https://github.com/mitchellkrogza/Phishing.Database) — фішингові домени
+- [StevenBlack/hosts (gambling-only)](https://github.com/StevenBlack/hosts/tree/master/alternates/gambling-only) — азартні домени
 
 
 ## Внесок
