@@ -8,23 +8,17 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from .utils import load_entries
+
 DOMAINS_FILE = Path("domains.txt")
 REGEX_FILE = Path("regex.list")
 DIST_DIR = Path("dist")
 
 
-def _load_entries(path: Path) -> list[str]:
-    entries = []
-    for line in path.read_text().splitlines():
-        line = line.strip()
-        if line and not line.startswith("#"):
-            entries.append(line)
-    return entries
-
-
 def generate() -> None:
-    domains = _load_entries(DOMAINS_FILE)
-    regexes = _load_entries(REGEX_FILE)
+    """Створює файли зі списками для AdGuard та uBlock."""
+    domains = load_entries(DOMAINS_FILE)
+    regexes = load_entries(REGEX_FILE)
 
     DIST_DIR.mkdir(exist_ok=True)
 
