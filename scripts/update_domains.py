@@ -10,6 +10,18 @@ SOURCES = [
     "https://urlhaus.abuse.ch/downloads/hostfile/",
     "https://phishing.army/download/phishing_army_blocklist.txt",
     "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
+    (
+        "https://raw.githubusercontent.com/anudeepND/blacklist/"  # ad sources
+        "master/adservers.txt"
+    ),
+    (
+        "https://raw.githubusercontent.com/mitchellkrogza/Phishing.Database/"
+        "master/phishing-domains-ACTIVE.txt"
+    ),
+    (
+        "https://raw.githubusercontent.com/StevenBlack/hosts/master/"
+        "alternates/gambling-only/hosts"
+    ),
 ]
 
 
