@@ -24,6 +24,16 @@ shiro.senkuro.org
 static.okko.tv
 tse2.explicit.bing.net
 zakpos.mine.nu
+gosuslugi.ru
+sberbank.ru
+kremlin.ru
+mos.ru
+tass.ru
+ria.ru
+rbc.ru
+lenta.ru
+gazprombank.ru
+vtb.ru
 0-1-x.06215785.xyz
 0-1-x.15170956.xyz
 0-1-x.16215785.xyz
