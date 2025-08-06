@@ -66,5 +66,15 @@
 - `static.okko.tv`
 - `tse2.explicit.bing.net`
 - `zakpos.mine.nu`
+- `gosuslugi.ru`
+- `sberbank.ru`
+- `kremlin.ru`
+- `mos.ru`
+- `tass.ru`
+- `ria.ru`
+- `rbc.ru`
+- `lenta.ru`
+- `gazprombank.ru`
+- `vtb.ru`
 
 Перелік буде поповнюватися.

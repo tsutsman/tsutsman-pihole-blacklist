@@ -6,3 +6,4 @@
 - Налаштовано CI з GitHub Actions та pre-commit.
 - Додано ліцензію та зміни до документації.
 - Додано джерела рекламних, фішингових та азартних доменів.
+- Додано домени gosuslugi.ru, sberbank.ru, kremlin.ru, mos.ru, tass.ru, ria.ru, rbc.ru, lenta.ru, gazprombank.ru та vtb.ru.
