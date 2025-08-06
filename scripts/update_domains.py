@@ -5,6 +5,8 @@ from __future__ import annotations
 from pathlib import Path
 from urllib.request import urlopen
 
+CHUNK_SIZE = 500
+
 DOMAINS_FILE = Path("domains.txt")
 SOURCES = [
     "https://urlhaus.abuse.ch/downloads/hostfile/",
@@ -39,7 +41,7 @@ def _fetch(url: str) -> list[str]:
     return domains
 
 
-def update() -> None:
+def update(chunk_size: int = CHUNK_SIZE) -> None:
     existing = set()
     if DOMAINS_FILE.exists():
         existing = {
@@ -52,7 +54,11 @@ def update() -> None:
     for url in SOURCES:
         fetched.update(_fetch(url))
 
-    merged = sorted(existing | fetched)
+    new_domains = sorted(fetched - existing)[:chunk_size]
+    if not new_domains:
+        return
+
+    merged = sorted(existing | set(new_domains))
     DOMAINS_FILE.write_text("\n".join(merged) + "\n")
 
 
