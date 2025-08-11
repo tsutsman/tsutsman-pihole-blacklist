@@ -1,8 +1,10 @@
-#!/usr/bin/env python3
 """Завантажує домени з перевірених джерел і оновлює domains.txt."""
 from __future__ import annotations
 
+import argparse
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from typing import Iterable
 from urllib.error import URLError
 from urllib.request import urlopen
 
@@ -46,27 +48,42 @@ def _fetch(url: str) -> list[str]:
     return domains
 
 
-def update(chunk_size: int = CHUNK_SIZE) -> None:
+def update(
+    *,
+    dest: Path = DOMAINS_FILE,
+    chunk_size: int = CHUNK_SIZE,
+    sources: Iterable[str] = SOURCES,
+) -> None:
     """Оновлює файл доменів, додаючи нові записи з перевірених джерел."""
     existing = set()
-    if DOMAINS_FILE.exists():
+    if dest.exists():
         existing = {
             line.strip()
-            for line in DOMAINS_FILE.read_text().splitlines()
+            for line in dest.read_text().splitlines()
             if line.strip() and not line.startswith("#")
         }
 
     fetched: set[str] = set()
-    for url in SOURCES:
-        fetched.update(_fetch(url))
+    with ThreadPoolExecutor() as pool:
+        for domains in pool.map(_fetch, sources):
+            fetched.update(domains)
 
     new_domains = sorted(fetched - existing)[:chunk_size]
     if not new_domains:
         return
 
     merged = sorted(existing | set(new_domains))
-    DOMAINS_FILE.write_text("\n".join(merged) + "\n")
+    dest.write_text("\n".join(merged) + "\n")
+
+
+def main(argv: list[str] | None = None) -> None:
+    """CLI-обгортка для оновлення списку доменів."""
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--chunk-size", type=int, default=CHUNK_SIZE)
+    parser.add_argument("--dest", type=Path, default=DOMAINS_FILE)
+    args = parser.parse_args(argv)
+    update(dest=args.dest, chunk_size=args.chunk_size)
 
 
 if __name__ == "__main__":
-    update()
+    main()

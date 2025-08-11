@@ -10,5 +10,5 @@ def load_entries(path: Path) -> list[str]:
     for line in path.read_text().splitlines():
         line = line.strip()
         if line and not line.startswith("#"):
-            entries.append(line)
+            entries.append(line.lower())
     return entries

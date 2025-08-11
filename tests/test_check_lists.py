@@ -10,6 +10,10 @@ def test_find_duplicates():
     assert _find_duplicates(["a", "b", "a"]) == {"a"}
 
 
+def test_find_duplicates_case_insensitive():
+    assert _find_duplicates(["A.com", "a.com"]) == {"a.com"}
+
+
 def test_find_cross_duplicates():
     assert _find_cross_duplicates(["a", "b"], ["b", "c"]) == {"b"}
 

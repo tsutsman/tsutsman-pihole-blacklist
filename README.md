@@ -12,8 +12,8 @@
 
 ## Автоматизація
 - `python scripts/check_lists.py` — перевіряє списки, виявляє дублікати й помилки.
-- `python scripts/generate_lists.py` — створює формати для AdGuard та uBlock у каталозі `dist/`.
-- `python scripts/update_domains.py` — завантажує домени зі сторонніх перевірених списків і додає їх у `domains.txt` порціями по 500.
+- `python scripts/generate_lists.py [--dist-dir DIR] [--formats adguard ublock hosts]` — створює списки у вибраних форматах (за замовчуванням AdGuard та uBlock) у каталозі `dist/`.
+- `python scripts/update_domains.py [--chunk-size N] [--dest FILE]` — паралельно завантажує домени зі сторонніх списків і додає їх у вказаний файл порціями по `N` (за замовчуванням 500).
 
 ## Джерела доменів
 Скрипт `update_domains.py` використовує публічні списки, що регулярно оновлюються:
