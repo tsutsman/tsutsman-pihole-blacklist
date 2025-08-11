@@ -24,14 +24,15 @@ DOMAIN_RE = re.compile(
 
 
 def _find_duplicates(items: list[str]) -> set[str]:
-    """Повертає множину дублікатів у списку."""
+    """Повертає множину дублікатів у списку незалежно від регістру."""
     seen: set[str] = set()
     duplicates: set[str] = set()
     for item in items:
-        if item in seen:
+        key = item.lower()
+        if key in seen:
             duplicates.add(item)
         else:
-            seen.add(item)
+            seen.add(key)
     return duplicates
 
 
