@@ -53,3 +53,17 @@ def test_update_parallel_fetch(tmp_path, monkeypatch):
     dest = tmp_path / "domains.txt"
     update_domains.update(dest=dest, sources=["u1", "u2"])
     assert set(calls) == {"u1", "u2"}
+
+
+def test_main_passes_args(tmp_path, monkeypatch):
+    called: dict[str, object] = {}
+
+    def fake_update(*, dest, chunk_size, sources=update_domains.SOURCES):
+        called["dest"] = dest
+        called["chunk_size"] = chunk_size
+
+    monkeypatch.setattr(update_domains, "update", fake_update)
+    dest = tmp_path / "out.txt"
+    update_domains.main(["--chunk-size", "7", "--dest", str(dest)])
+    assert called["dest"] == dest
+    assert called["chunk_size"] == 7

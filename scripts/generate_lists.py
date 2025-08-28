@@ -33,8 +33,7 @@ def generate(
         (dist_dir / "adguard.txt").write_text("\n".join(base) + "\n")
 
     if "ublock" in formats:
-        ublock = list(base)
-        (dist_dir / "ublock.txt").write_text("\n".join(ublock) + "\n")
+        (dist_dir / "ublock.txt").write_text("\n".join(base) + "\n")
 
     if "hosts" in formats:
         hosts = [f"0.0.0.0 {d}" for d in domains]
