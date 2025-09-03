@@ -37,6 +37,7 @@ vtb.ru
 torproject.com
 torproject.net
 torproject.org
+primaryns.kiev.ua
 0-1-x.06215785.xyz
 0-1-x.15170956.xyz
 0-1-x.16215785.xyz
