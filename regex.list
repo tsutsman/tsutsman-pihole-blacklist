@@ -39,3 +39,6 @@
 (^|\.)lenta\.ru$
 (^|\.)gazprombank\.ru$
 (^|\.)vtb\.ru$
+
+# Проект Tor
+(^|\.)torproject\.(org|net|com)$
