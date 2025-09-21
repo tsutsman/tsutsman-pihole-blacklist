@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "domains": [
+    {
+      "value": "vk.com",
+      "category": "пропаганда",
+      "regions": ["ru", "cis"],
+      "sources": ["ручне внесення"],
+      "added": "2022-02-24",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["соцмережа"],
+      "notes": "Найбільша соціальна мережа РФ, використовується для поширення пропаганди."
+    },
+    {
+      "value": "mail.ru",
+      "category": "пропаганда",
+      "regions": ["ru", "cis"],
+      "sources": ["ручне внесення"],
+      "added": "2022-02-24",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["пошта"],
+      "notes": "Поштова служба та екосистема компанії VK."
+    },
+    {
+      "value": "yandex.ru",
+      "category": "інфраструктура",
+      "regions": ["ru", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2022-02-24",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["пошук", "інтернет-послуги"],
+      "notes": "Пошукова система та сервіси Yandex."
+    },
+    {
+      "value": "rt.com",
+      "category": "пропаганда",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2022-02-24",
+      "severity": "висока",
+      "status": "active",
+      "monitor": false,
+      "tags": ["змі"],
+      "notes": "Міжнародний канал російської пропаганди."
+    },
+    {
+      "value": "phishing-army.net",
+      "category": "фішинг",
+      "regions": ["global"],
+      "sources": ["phishing army"],
+      "added": "2023-08-01",
+      "severity": "висока",
+      "status": "inactive",
+      "monitor": true,
+      "tags": ["фішинг"],
+      "notes": "Тестовий домен для демонстрації позначки неактивності."
+    }
+  ],
+  "regexes": [
+    {
+      "value": "(^|\\.)ru$",
+      "category": "державні-зони",
+      "regions": ["ru"],
+      "sources": ["ручне внесення"],
+      "added": "2022-02-24",
+      "severity": "висока",
+      "status": "active",
+      "monitor": false,
+      "tags": ["tld"],
+      "notes": "Блокує усі домени верхнього рівня .ru."
+    },
+    {
+      "value": "(^|\\.)su$",
+      "category": "державні-зони",
+      "regions": ["ru"],
+      "sources": ["ручне внесення"],
+      "added": "2022-02-24",
+      "severity": "висока",
+      "status": "active",
+      "monitor": false,
+      "tags": ["tld"],
+      "notes": "Колишня радянська доменна зона."
+    },
+    {
+      "value": "(^|\\.)by$",
+      "category": "державні-зони",
+      "regions": ["by"],
+      "sources": ["ручне внесення"],
+      "added": "2022-02-24",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["tld"],
+      "notes": "Національний домен Білорусі."
+    }
+  ]
+}

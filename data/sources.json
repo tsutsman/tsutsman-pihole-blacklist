@@ -1,0 +1,154 @@
+{
+  "sources": [
+    {
+      "name": "URLhaus Hostfile",
+      "url": "https://urlhaus.abuse.ch/downloads/hostfile/",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "weight": 1.0,
+      "update_interval_days": 1,
+      "enabled": true,
+      "notes": "Офіційний список URLhaus."
+    },
+    {
+      "name": "Phishing Army",
+      "url": "https://phishing.army/download/phishing_army_blocklist.txt",
+      "category": "фішинг",
+      "regions": ["global"],
+      "weight": 1.0,
+      "update_interval_days": 1,
+      "enabled": true,
+      "notes": "Добре підтримуваний список фішингу."
+    },
+    {
+      "name": "StevenBlack base hosts",
+      "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
+      "category": "загальна",
+      "regions": ["global"],
+      "weight": 0.5,
+      "update_interval_days": 3,
+      "enabled": true,
+      "notes": "Великий агрегований список хостів."
+    },
+    {
+      "name": "AnudeepND adservers",
+      "url": "https://raw.githubusercontent.com/anudeepND/blacklist/master/adservers.txt",
+      "category": "реклама",
+      "regions": ["global"],
+      "weight": 0.3,
+      "update_interval_days": 7,
+      "enabled": true,
+      "notes": "Рекламні та трекінгові домени."
+    },
+    {
+      "name": "Phishing.Database active",
+      "url": "https://raw.githubusercontent.com/mitchellkrogza/Phishing.Database/master/phishing-domains-ACTIVE.txt",
+      "category": "фішинг",
+      "regions": ["global"],
+      "weight": 1.2,
+      "update_interval_days": 1,
+      "enabled": true,
+      "notes": "Активні фішингові домени."
+    },
+    {
+      "name": "StevenBlack gambling",
+      "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-only/hosts",
+      "category": "азартні ігри",
+      "regions": ["global"],
+      "weight": 0.2,
+      "update_interval_days": 7,
+      "enabled": true,
+      "notes": "Азартні домени з альтернативного списку."
+    },
+    {
+      "name": "Firebog Prigent Malware",
+      "url": "https://v.firebog.net/hosts/Prigent-Malware.txt",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "weight": 1.0,
+      "update_interval_days": 1,
+      "enabled": true,
+      "notes": "Оновлюваний список зловмисних хостів."
+    },
+    {
+      "name": "Firebog Prigent Crypto",
+      "url": "https://v.firebog.net/hosts/Prigent-Crypto.txt",
+      "category": "крипто-шахрайство",
+      "regions": ["global"],
+      "weight": 0.8,
+      "update_interval_days": 1,
+      "enabled": true,
+      "notes": "Криптовалютні шахрайські майданчики."
+    },
+    {
+      "name": "PolishFiltersTeam KADhosts",
+      "url": "https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt",
+      "category": "фішинг",
+      "regions": ["eu"],
+      "weight": 0.6,
+      "update_interval_days": 3,
+      "enabled": true,
+      "notes": "Польський список шахрайських доменів."
+    },
+    {
+      "name": "Spam404 main",
+      "url": "https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt",
+      "category": "фішинг",
+      "regions": ["global"],
+      "weight": 0.7,
+      "update_interval_days": 2,
+      "enabled": true,
+      "notes": "Домени, що активно використовуються у фішингових кампаніях."
+    },
+    {
+      "name": "Malware Filter hosts",
+      "url": "https://malware-filter.gitlab.io/malware-filter/malware-filter-hosts.txt",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "weight": 1.0,
+      "update_interval_days": 1,
+      "enabled": true,
+      "notes": "Агрегований перелік шкідливих доменів."
+    },
+    {
+      "name": "Malware Filter phishing",
+      "url": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-hosts.txt",
+      "category": "фішинг",
+      "regions": ["global"],
+      "weight": 1.1,
+      "update_interval_days": 1,
+      "enabled": true,
+      "notes": "Активні фішингові домени."
+    },
+    {
+      "name": "Hagezi malicious",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/malicious.txt",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "weight": 1.1,
+      "update_interval_days": 1,
+      "enabled": true,
+      "notes": "Добре модерований список зловмисних хостів."
+    },
+    {
+      "name": "Blocklist Project malware",
+      "url": "https://raw.githubusercontent.com/blocklistproject/Lists/master/malware.txt",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "weight": 0.9,
+      "update_interval_days": 1,
+      "enabled": true,
+      "notes": "Проєкт спільноти з відстеження шкідливих доменів."
+    },
+    {
+      "name": "Blocklist Project phishing",
+      "url": "https://raw.githubusercontent.com/blocklistproject/Lists/master/phishing.txt",
+      "category": "фішинг",
+      "regions": ["global"],
+      "weight": 0.9,
+      "update_interval_days": 1,
+      "enabled": true,
+      "notes": "Актуальні фішингові кампанії."
+    }
+  ]
+}

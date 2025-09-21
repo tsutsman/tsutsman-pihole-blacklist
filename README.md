@@ -11,9 +11,16 @@
    ```
 
 ## Автоматизація
-- `python scripts/check_lists.py` — перевіряє списки, виявляє дублікати й помилки.
-- `python scripts/generate_lists.py [--dist-dir DIR] [--formats adguard ublock hosts]` — створює списки у вибраних форматах (за замовчуванням AdGuard та uBlock) у каталозі `dist/`.
-- `python scripts/update_domains.py [--chunk-size N] [--dest FILE]` — паралельно завантажує домени зі сторонніх списків і додає їх у вказаний файл порціями по `N` (за замовчуванням 500).
+- `python scripts/check_lists.py [--catalog data/catalog.json] [--false-positives data/false_positives.json] [--check-dns]` — перевіряє синтаксис, дублікати, перетини, статуси записів у каталозі та за потреби виконує DNS-моніторинг для доменів із позначкою `monitor`.
+- `python scripts/generate_lists.py [--dist-dir DIR] [--formats adguard ublock hosts rpz dnsmasq unbound] [--group-by category|region|source] [--categories ...] [--regions ...]` — формує списки у вибраних форматах, підтримує сегментацію за категорією, регіоном або джерелом та створює додаткові файли з розбивкою у `dist/segments/`.
+- `python scripts/update_domains.py [--chunk-size N] [--dest FILE] [--config data/sources.json] [--report reports/latest_update.json] [--status data/domain_status.json]` — паралельно завантажує домени, враховуючи вагу джерел, генерує звіт про додані записи та оновлює історію спостережень.
+
+## Метадані та звітність
+- `data/catalog.json` описує категорії, регіони, джерела та статуси для ключових доменів і регулярних виразів. Записи без метаданих потрапляють у сегмент `без-метаданих`.
+- `data/sources.json` містить конфігурацію джерел із вагами та частотою оновлення. Файл дозволяє тимчасово вимикати або додавати джерела без зміни коду.
+- `data/domain_status.json` зберігає історію появи доменів у джерелах і відмічає записи як `active`, `stale` або `removed`.
+- `reports/latest_update.json` показує, які домени додано під час останнього запуску, та короткий список потенційно застарілих записів.
+- Згенеровані списки з розбивкою за категоріями й регіонами зберігаються у `dist/segments/` після виконання `generate_lists.py`.
 
 ## Джерела доменів
 Скрипт `update_domains.py` використовує публічні списки, що регулярно оновлюються:
@@ -32,6 +39,11 @@
 - [Hagezi DNS Blocklists (malicious)](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/malicious.txt) — ретельно перевірені шкідливі хости
 - [BlocklistProject/malware](https://raw.githubusercontent.com/blocklistproject/Lists/master/malware.txt) — загальна шкідлива активність
 - [BlocklistProject/phishing](https://raw.githubusercontent.com/blocklistproject/Lists/master/phishing.txt) — нові фішингові кампанії
+
+
+## CI
+- Конвеєр GitHub Actions `.github/workflows/ci.yml` щотижня виконує перевірку синтаксису, тести `pytest` та генерацію списків у форматах AdGuard, uBlock і hosts.
+- Перед злиттям Pull Request CI гарантує, що оновлені метадані й скрипти не ламають збірку.
 
 
 ## Внесок

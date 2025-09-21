@@ -2,23 +2,26 @@ name: CI
 
 on:
   push:
+    branches: [main]
   pull_request:
+  schedule:
+    - cron: '0 6 * * 1'
 
 jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Встановлення Python
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.11'
       - name: Встановлення залежностей
         run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Перевірка pre-commit
-        run: |
-          pre-commit run --all-files
+      - name: Перевірка списків
+        run: python scripts/check_lists.py
       - name: Запуск тестів
-        run: |
-          pytest
+        run: pytest -q
+      - name: Перевірка генерації списків
+        run: python scripts/generate_lists.py --dist-dir dist --formats adguard ublock hosts
