@@ -23,6 +23,15 @@
 - [AnudeepND/blacklist](https://github.com/anudeepND/blacklist) — рекламні та трекінгові домени
 - [Phishing.Database](https://github.com/mitchellkrogza/Phishing.Database) — фішингові домени
 - [StevenBlack/hosts (gambling-only)](https://github.com/StevenBlack/hosts/tree/master/alternates/gambling-only) — азартні домени
+- [Firebog/Prigent-Malware](https://v.firebog.net/hosts/Prigent-Malware.txt) — домени з відомими зловмисними програмами
+- [Firebog/Prigent-Crypto](https://v.firebog.net/hosts/Prigent-Crypto.txt) — криптовалютні шахрайські майданчики
+- [PolishFiltersTeam/KADhosts](https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt) — польський фішинговий та шахрайський список
+- [Spam404 Project](https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt) — домени, що використовуються у фішингових кампаніях
+- [malware-filter/malware-filter-hosts](https://malware-filter.gitlab.io/malware-filter/malware-filter-hosts.txt) — агрегований перелік шкідливих доменів
+- [malware-filter/phishing-filter-hosts](https://malware-filter.gitlab.io/malware-filter/phishing-filter-hosts.txt) — активні фішингові домени
+- [Hagezi DNS Blocklists (malicious)](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/malicious.txt) — ретельно перевірені шкідливі хости
+- [BlocklistProject/malware](https://raw.githubusercontent.com/blocklistproject/Lists/master/malware.txt) — загальна шкідлива активність
+- [BlocklistProject/phishing](https://raw.githubusercontent.com/blocklistproject/Lists/master/phishing.txt) — нові фішингові кампанії
 
 
 ## Внесок
