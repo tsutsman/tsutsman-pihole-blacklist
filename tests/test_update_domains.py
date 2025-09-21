@@ -33,6 +33,39 @@ def test_fetch_parses_domains(monkeypatch):
     ]
 
 
+def test_fetch_normalizes_hosts(monkeypatch):
+    class FakeResp:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+        def read(self):
+            return (
+                "0.0.0.0 example.com\n"
+                "127.0.0.1foo.com\n"
+                "0.0.0.0bar.com\n"
+                "%20mandrillapp.com\n"
+                "*.wildcard.com\n"
+                "192.168.1.1\n"
+            ).encode()
+
+    monkeypatch.setattr(
+        update_domains,
+        "urlopen",
+        lambda url, timeout=10: FakeResp(),
+    )
+
+    assert update_domains._fetch("http://example.com") == [
+        "example.com",
+        "foo.com",
+        "bar.com",
+        "mandrillapp.com",
+        "wildcard.com",
+    ]
+
+
 def test_update_chunk_size(tmp_path, monkeypatch):
     monkeypatch.setattr(update_domains, "_fetch", lambda url: [f"{url}.com"])
     dest = tmp_path / "domains.txt"
