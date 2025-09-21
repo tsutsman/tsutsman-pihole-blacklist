@@ -1,6 +1,12 @@
+import json
 import threading
 from urllib.error import URLError
+
 from scripts import update_domains
+
+
+def _source(url: str) -> update_domains.SourceConfig:
+    return update_domains.SourceConfig(name=url, url=url)
 
 
 def test_fetch_handles_error(monkeypatch):
@@ -8,7 +14,8 @@ def test_fetch_handles_error(monkeypatch):
         raise URLError("boom")
 
     monkeypatch.setattr(update_domains, "urlopen", fake_urlopen)
-    assert update_domains._fetch("http://example.com") == []
+    source = _source("http://example.com")
+    assert update_domains._fetch(source) == (source, [])
 
 
 def test_fetch_parses_domains(monkeypatch):
@@ -27,10 +34,11 @@ def test_fetch_parses_domains(monkeypatch):
         "urlopen",
         lambda url, timeout=10: FakeResp(),
     )
-    assert update_domains._fetch("http://example.com") == [
-        "example.com",
-        "example.org",
-    ]
+    source = _source("http://example.com")
+    assert update_domains._fetch(source) == (
+        source,
+        ["example.com", "example.org"],
+    )
 
 
 def test_fetch_normalizes_hosts(monkeypatch):
@@ -56,47 +64,96 @@ def test_fetch_normalizes_hosts(monkeypatch):
         "urlopen",
         lambda url, timeout=10: FakeResp(),
     )
+    source = _source("http://example.com")
 
-    assert update_domains._fetch("http://example.com") == [
-        "example.com",
-        "foo.com",
-        "bar.com",
-        "mandrillapp.com",
-        "wildcard.com",
-    ]
+    assert update_domains._fetch(source) == (
+        source,
+        [
+            "example.com",
+            "foo.com",
+            "bar.com",
+            "mandrillapp.com",
+            "wildcard.com",
+        ],
+    )
 
 
 def test_update_chunk_size(tmp_path, monkeypatch):
-    monkeypatch.setattr(update_domains, "_fetch", lambda url: [f"{url}.com"])
+    def fake_fetch(source):
+        return source, [f"{source.name}.com"]
+
+    monkeypatch.setattr(update_domains, "_fetch", fake_fetch)
     dest = tmp_path / "domains.txt"
-    update_domains.update(dest=dest, chunk_size=1, sources=["a", "b"])
+    report = tmp_path / "report.json"
+    status = tmp_path / "status.json"
+    sources = [_source("a"), _source("b")]
+    update_domains.update(
+        dest=dest,
+        chunk_size=1,
+        sources=sources,
+        report_path=report,
+        status_path=status,
+    )
     assert dest.read_text().splitlines() == ["a.com"]
+    data = json.loads(report.read_text())
+    assert data["added"] == ["a.com"]
+    status_data = json.loads(status.read_text())
+    assert status_data["a.com"]["status"] == "active"
 
 
 def test_update_parallel_fetch(tmp_path, monkeypatch):
     barrier = threading.Barrier(2)
     calls: list[str] = []
 
-    def fake_fetch(url):
-        calls.append(url)
+    def fake_fetch(source):
+        calls.append(source.name)
         barrier.wait(timeout=1)
-        return []
+        return source, []
 
     monkeypatch.setattr(update_domains, "_fetch", fake_fetch)
     dest = tmp_path / "domains.txt"
-    update_domains.update(dest=dest, sources=["u1", "u2"])
+    report = tmp_path / "report.json"
+    status = tmp_path / "status.json"
+    update_domains.update(
+        dest=dest,
+        sources=[_source("u1"), _source("u2")],
+        report_path=report,
+        status_path=status,
+    )
     assert set(calls) == {"u1", "u2"}
 
 
 def test_main_passes_args(tmp_path, monkeypatch):
     called: dict[str, object] = {}
 
-    def fake_update(*, dest, chunk_size, sources=update_domains.SOURCES):
+    def fake_update(*, dest, chunk_size, config_path, report_path, status_path, sources=None):
         called["dest"] = dest
         called["chunk_size"] = chunk_size
+        called["config_path"] = config_path
+        called["report_path"] = report_path
+        called["status_path"] = status_path
 
     monkeypatch.setattr(update_domains, "update", fake_update)
     dest = tmp_path / "out.txt"
-    update_domains.main(["--chunk-size", "7", "--dest", str(dest)])
+    config = tmp_path / "cfg.json"
+    report = tmp_path / "report.json"
+    status = tmp_path / "status.json"
+    update_domains.main(
+        [
+            "--chunk-size",
+            "7",
+            "--dest",
+            str(dest),
+            "--config",
+            str(config),
+            "--report",
+            str(report),
+            "--status",
+            str(status),
+        ]
+    )
     assert called["dest"] == dest
     assert called["chunk_size"] == 7
+    assert called["config_path"] == config
+    assert called["report_path"] == report
+    assert called["status_path"] == status
