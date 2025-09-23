@@ -14,7 +14,7 @@ from urllib.error import URLError
 from urllib.parse import unquote
 from urllib.request import urlopen
 
-CHUNK_SIZE = 500
+CHUNK_SIZE = 2000
 
 DOMAINS_FILE = Path("domains.txt")
 CONFIG_FILE = Path("data/sources.json")
