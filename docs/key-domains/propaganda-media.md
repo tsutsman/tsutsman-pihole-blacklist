@@ -7,8 +7,10 @@
 - `ria.ru`
 - `riafan.ru`
 - `rt.com`
+- `patriot.media`
 - `smotrim.ru`
 - `sputnikglobe.com`
 - `sputniknews.com`
 - `tass.ru`
+- `tvzvezda.ru`
 - `vgtrk.ru`
