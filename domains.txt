@@ -20608,6 +20608,7 @@ ipinfo.suinfra.com
 kms.03k.org
 kremlin.ru
 lenta.ru
+life.ru
 mail.ru
 mailgate.cryptonight.net
 mandrillapp.com
@@ -20621,6 +20622,7 @@ primaryns.kiev.ua
 rbc.ru
 ria.ru
 rt.com
+rutube.ru
 smotrim.ru
 sberbank.ru
 shiro.senkuro.org
