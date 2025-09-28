@@ -66,17 +66,20 @@
 - `.by` — Білорусь
 - `.xn--p1ai` — міжнародне кодування для `.рф`
 
-## Поточні домени у списку
-- `vk.com`
-- `mail.ru`
-- `yandex.ru`
-- `ok.ru`
-- `rt.com`
+## Ключові домени за категоріями
+Ручно підтримувані домени згруповано за тематичними категоріями. Детальні списки з описами зберігаються в окремих файлах:
+
+- [Пропагандистські та медійні ресурси](docs/key-domains/propaganda-media.md)
+- [Соціальні платформи та екосистеми РФ](docs/key-domains/ecosystems.md)
+- [Державні сервіси та інституції РФ](docs/key-domains/government.md)
+- [Банківські та фінансові структури](docs/key-domains/finance.md)
+- [Шкідливі, шпигунські та шахрайські ресурси](docs/key-domains/malware-tracking.md)
+
+### Зведений перелік ключових доменів
+Алфавітний список нижче формується як об'єднання категорій вище і може використовуватися для швидкої перевірки наявності запису:
+
 - `1tv.ru`
-- `smotrim.ru`
-- `sputniknews.com`
 - `a.tiktokmod.pro`
-- `hideservers.net`
 - `ams-new.bonuses.email`
 - `an.yandex.ru`
 - `api.mainnet.minepi.com`
@@ -85,27 +88,37 @@
 - `fcm-pc.period-calendar.com`
 - `fetside.com`
 - `free-de-ds.hideservers.net`
+- `gazprombank.ru`
+- `gosuslugi.ru`
+- `hideservers.net`
 - `ipinfo.suinfra.com`
 - `kms.03k.org`
-- `mirai.senkuro.org`
-- `pcudataproxy.period-calendar.com`
-- `peradjoka.t35.com`
-- `shiro.senkuro.org`
-- `static.okko.tv`
-- `tse2.explicit.bing.net`
-- `zakpos.mine.nu`
-- `gosuslugi.ru`
-- `sberbank.ru`
 - `kremlin.ru`
-- `mos.ru`
-- `tass.ru`
-- `ria.ru`
-- `rbc.ru`
 - `lenta.ru`
 - `life.ru`
-- `gazprombank.ru`
+- `mail.ru`
+- `mirai.senkuro.org`
+- `mos.ru`
+- `ok.ru`
+- `pcudataproxy.period-calendar.com`
+- `peradjoka.t35.com`
+- `rbc.ru`
+- `ria.ru`
+- `riafan.ru`
+- `rt.com`
 - `rutube.ru`
+- `sberbank.ru`
+- `shiro.senkuro.org`
+- `smotrim.ru`
+- `sputnikglobe.com`
+- `sputniknews.com`
+- `static.okko.tv`
+- `tass.ru`
+- `tse2.explicit.bing.net`
 - `vgtrk.ru`
+- `vk.com`
 - `vtb.ru`
+- `yandex.ru`
+- `zakpos.mine.nu`
 
 Перелік буде поповнюватися.
