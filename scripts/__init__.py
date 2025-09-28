@@ -6,6 +6,7 @@ from types import ModuleType
 from typing import TYPE_CHECKING
 
 __all__ = [
+    "audit_lists",
     "check_lists",
     "generate_lists",
     "update_domains",
@@ -13,7 +14,7 @@ __all__ = [
 ]
 
 if TYPE_CHECKING:  # pragma: no cover
-    from . import check_lists, generate_lists, update_domains, utils  # noqa: F401
+    from . import audit_lists, check_lists, generate_lists, update_domains, utils  # noqa: F401
 
 
 def _load_module(name: str) -> ModuleType:
