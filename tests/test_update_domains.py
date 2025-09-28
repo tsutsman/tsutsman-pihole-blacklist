@@ -1,5 +1,6 @@
 import json
 import threading
+from urllib.error import HTTPError
 from urllib.error import URLError
 
 from scripts import update_domains
@@ -76,6 +77,38 @@ def test_fetch_normalizes_hosts(monkeypatch):
             "wildcard.com",
         ],
     )
+
+
+def test_fetch_retries_rate_limit(monkeypatch):
+    class FakeResp:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+        def read(self):
+            return b"example.com\n"
+
+    attempts = {"count": 0}
+
+    def fake_urlopen(url, timeout=10):
+        if attempts["count"] == 0:
+            attempts["count"] += 1
+            raise HTTPError(url, 429, "Too Many Requests", {"Retry-After": "2"}, None)
+        attempts["count"] += 1
+        return FakeResp()
+
+    sleeps: list[float] = []
+
+    monkeypatch.setattr(update_domains, "urlopen", fake_urlopen)
+    monkeypatch.setattr(update_domains.time, "sleep", sleeps.append)
+
+    source = _source("http://example.com")
+
+    assert update_domains._fetch(source) == (source, ["example.com"])
+    assert attempts["count"] == 2
+    assert sleeps == [2.0]
 
 
 def test_update_chunk_size(tmp_path, monkeypatch):
