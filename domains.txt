@@ -20600,12 +20600,15 @@ fcm-pc.period-calendar.com
 fetside.com
 forum.cryptonight.net
 free-de-ds.hideservers.net
+gazeta.ru
 gazprombank.ru
 gosuslugi.ru
 hideservers.net
 hpyrdr.com
 ipinfo.suinfra.com
+iz.ru
 kms.03k.org
+kp.ru
 kremlin.ru
 lenta.ru
 life.ru
@@ -20620,6 +20623,7 @@ pcudataproxy.period-calendar.com
 peradjoka.t35.com
 primaryns.kiev.ua
 rbc.ru
+rg.ru
 ria.ru
 rt.com
 rutube.ru
@@ -20634,6 +20638,7 @@ torproject.com
 torproject.net
 torproject.org
 tse2.explicit.bing.net
+vesti.ru
 vk.com
 vtb.ru
 vgtrk.ru
