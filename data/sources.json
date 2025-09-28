@@ -171,6 +171,16 @@
       "notes": "Високодостовірний перелік зловмисних доменів від ThreatView."
     },
     {
+      "name": "ThreatFox hostfile",
+      "url": "https://threatfox.abuse.ch/downloads/hostfile/",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "weight": 1.2,
+      "update_interval_days": 1,
+      "enabled": true,
+      "notes": "Hostfile зі шкідливими доменами від проєкту ThreatFox abuse.ch."
+    },
+    {
       "name": "Zeus bad domains",
       "url": "https://raw.githubusercontent.com/CriticalPathSecurity/ZeusBadDomains/master/baddomains.txt",
       "category": "банківське шкідливе ПЗ",
