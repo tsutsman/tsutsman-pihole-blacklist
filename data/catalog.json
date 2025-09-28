@@ -170,6 +170,30 @@
       "notes": "Новинний портал Вести.ru медіахолдингу ВГТРК з постійною державною пропагандою."
     },
     {
+      "value": "sputnikglobe.com",
+      "category": "пропаганда",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-01-30",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["змі", "sputnik"],
+      "notes": "Міжнародна версія агенції Sputnik, що поширює кремлівські меседжі за кордоном."
+    },
+    {
+      "value": "riafan.ru",
+      "category": "пропаганда",
+      "regions": ["ru", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-01-30",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["змі", "агенція"],
+      "notes": "Федеральне агентство новин, пов'язане з інформаційними операціями РФ."
+    },
+    {
       "value": "phishing-army.net",
       "category": "фішинг",
       "regions": ["global"],
