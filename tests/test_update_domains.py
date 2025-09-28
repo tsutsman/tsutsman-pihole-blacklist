@@ -119,17 +119,22 @@ def test_update_chunk_size(tmp_path, monkeypatch):
     dest = tmp_path / "domains.txt"
     report = tmp_path / "report.json"
     status = tmp_path / "status.json"
+    markdown = tmp_path / "summary.md"
     sources = [_source("a"), _source("b")]
     update_domains.update(
         dest=dest,
         chunk_size=1,
         sources=sources,
         report_path=report,
+        markdown_path=markdown,
         status_path=status,
     )
     assert dest.read_text().splitlines() == ["a.com"]
     data = json.loads(report.read_text())
     assert data["added"] == ["a.com"]
+    summary = markdown.read_text()
+    assert "Нові домени" in summary
+    assert "a.com" in summary
     status_data = json.loads(status.read_text())
     assert status_data["a.com"]["status"] == "active"
 
@@ -147,29 +152,80 @@ def test_update_parallel_fetch(tmp_path, monkeypatch):
     dest = tmp_path / "domains.txt"
     report = tmp_path / "report.json"
     status = tmp_path / "status.json"
+    markdown = tmp_path / "summary.md"
     update_domains.update(
         dest=dest,
         sources=[_source("u1"), _source("u2")],
         report_path=report,
+        markdown_path=markdown,
         status_path=status,
     )
     assert set(calls) == {"u1", "u2"}
 
 
+def test_update_reports_diagnostics(tmp_path, monkeypatch):
+    dest = tmp_path / "domains.txt"
+    dest.write_text("0.0.0.0 old.com\nold.com\n192.168.0.1\n")
+    report = tmp_path / "report.json"
+    status = tmp_path / "status.json"
+    markdown = tmp_path / "summary.md"
+
+    def fake_fetch(source):
+        return source, ["new.com"]
+
+    monkeypatch.setattr(update_domains, "_fetch", fake_fetch)
+
+    update_domains.update(
+        dest=dest,
+        sources=[_source("src")],
+        report_path=report,
+        markdown_path=markdown,
+        status_path=status,
+    )
+
+    data = json.loads(report.read_text())
+    assert data["normalized"]["total"] == 1
+    assert data["duplicates_removed"]["total"] == 1
+    assert data["duplicates_removed"]["unique"] == 1
+    assert data["invalid_lines"]["total"] == 1
+    preview = data["normalized"]["preview"][0]
+    assert preview["normalized"] == "old.com"
+    assert preview["original"] == "0.0.0.0 old.com"
+    assert data["duplicates_removed"]["preview"] == ["old.com"]
+    assert data["invalid_lines"]["preview"] == ["192.168.0.1"]
+
+    summary = markdown.read_text()
+    assert "Нормалізовані записи" in summary
+    assert "old.com ← `0.0.0.0 old.com`" in summary
+    assert "Видалено дублікати: 1" in summary
+    assert "Пропущено некоректних рядків: 1" in summary
+
+
 def test_main_passes_args(tmp_path, monkeypatch):
     called: dict[str, object] = {}
 
-    def fake_update(*, dest, chunk_size, config_path, report_path, status_path, sources=None):
+    def fake_update(
+        *,
+        dest,
+        chunk_size,
+        config_path,
+        report_path,
+        markdown_path,
+        status_path,
+        sources=None,
+    ):
         called["dest"] = dest
         called["chunk_size"] = chunk_size
         called["config_path"] = config_path
         called["report_path"] = report_path
+        called["markdown_path"] = markdown_path
         called["status_path"] = status_path
 
     monkeypatch.setattr(update_domains, "update", fake_update)
     dest = tmp_path / "out.txt"
     config = tmp_path / "cfg.json"
     report = tmp_path / "report.json"
+    markdown = tmp_path / "report.md"
     status = tmp_path / "status.json"
     update_domains.main(
         [
@@ -181,6 +237,8 @@ def test_main_passes_args(tmp_path, monkeypatch):
             str(config),
             "--report",
             str(report),
+            "--markdown-report",
+            str(markdown),
             "--status",
             str(status),
         ]
@@ -189,4 +247,5 @@ def test_main_passes_args(tmp_path, monkeypatch):
     assert called["chunk_size"] == 7
     assert called["config_path"] == config
     assert called["report_path"] == report
+    assert called["markdown_path"] == markdown
     assert called["status_path"] == status
