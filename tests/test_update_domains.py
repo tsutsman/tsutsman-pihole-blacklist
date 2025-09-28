@@ -1,13 +1,14 @@
 import json
 import threading
+from datetime import datetime, timedelta, timezone
 from urllib.error import HTTPError
 from urllib.error import URLError
 
 from scripts import update_domains
 
 
-def _source(url: str) -> update_domains.SourceConfig:
-    return update_domains.SourceConfig(name=url, url=url)
+def _source(url: str, **kwargs) -> update_domains.SourceConfig:
+    return update_domains.SourceConfig(name=url, url=url, **kwargs)
 
 
 def test_fetch_handles_error(monkeypatch):
@@ -121,6 +122,7 @@ def test_update_chunk_size(tmp_path, monkeypatch):
     status = tmp_path / "status.json"
     markdown = tmp_path / "summary.md"
     sources = [_source("a"), _source("b")]
+    cache = tmp_path / "cache.json"
     update_domains.update(
         dest=dest,
         chunk_size=1,
@@ -128,6 +130,7 @@ def test_update_chunk_size(tmp_path, monkeypatch):
         report_path=report,
         markdown_path=markdown,
         status_path=status,
+        cache_path=cache,
     )
     assert dest.read_text().splitlines() == ["a.com"]
     data = json.loads(report.read_text())
@@ -153,12 +156,14 @@ def test_update_parallel_fetch(tmp_path, monkeypatch):
     report = tmp_path / "report.json"
     status = tmp_path / "status.json"
     markdown = tmp_path / "summary.md"
+    cache = tmp_path / "cache.json"
     update_domains.update(
         dest=dest,
         sources=[_source("u1"), _source("u2")],
         report_path=report,
         markdown_path=markdown,
         status_path=status,
+        cache_path=cache,
     )
     assert set(calls) == {"u1", "u2"}
 
@@ -175,12 +180,14 @@ def test_update_reports_diagnostics(tmp_path, monkeypatch):
 
     monkeypatch.setattr(update_domains, "_fetch", fake_fetch)
 
+    cache = tmp_path / "cache.json"
     update_domains.update(
         dest=dest,
         sources=[_source("src")],
         report_path=report,
         markdown_path=markdown,
         status_path=status,
+        cache_path=cache,
     )
 
     data = json.loads(report.read_text())
@@ -199,6 +206,82 @@ def test_update_reports_diagnostics(tmp_path, monkeypatch):
     assert "old.com ← `0.0.0.0 old.com`" in summary
     assert "Видалено дублікати: 1" in summary
     assert "Пропущено некоректних рядків: 1" in summary
+
+
+def test_update_uses_cached_sources(tmp_path, monkeypatch):
+    dest = tmp_path / "domains.txt"
+    report = tmp_path / "report.json"
+    status = tmp_path / "status.json"
+    markdown = tmp_path / "summary.md"
+    cache = tmp_path / "cache.json"
+    now = datetime.now(timezone.utc)
+    cache.write_text(
+        json.dumps(
+            {
+                "http://cached": {
+                    "domains": ["cached.com", "cached.com"],
+                    "fetched_at": now.isoformat(),
+                }
+            }
+        )
+    )
+
+    called = {"value": False}
+
+    def fake_fetch(source):
+        called["value"] = True
+        return source, ["new.com"]
+
+    monkeypatch.setattr(update_domains, "_fetch", fake_fetch)
+
+    update_domains.update(
+        dest=dest,
+        sources=[_source("http://cached")],
+        report_path=report,
+        markdown_path=markdown,
+        status_path=status,
+        cache_path=cache,
+    )
+
+    assert dest.read_text().splitlines() == ["cached.com"]
+    assert called["value"] is False
+
+
+def test_update_refreshes_stale_cache(tmp_path, monkeypatch):
+    dest = tmp_path / "domains.txt"
+    report = tmp_path / "report.json"
+    status = tmp_path / "status.json"
+    markdown = tmp_path / "summary.md"
+    cache = tmp_path / "cache.json"
+    old = datetime.now(timezone.utc) - timedelta(days=5)
+    cache.write_text(
+        json.dumps(
+            {
+                "http://stale": {
+                    "domains": ["cached.com"],
+                    "fetched_at": old.isoformat(),
+                }
+            }
+        )
+    )
+
+    def fake_fetch(source):
+        return source, ["fresh.com", "fresh.com"]
+
+    monkeypatch.setattr(update_domains, "_fetch", fake_fetch)
+
+    update_domains.update(
+        dest=dest,
+        sources=[_source("http://stale", update_interval_days=1)],
+        report_path=report,
+        markdown_path=markdown,
+        status_path=status,
+        cache_path=cache,
+    )
+
+    assert dest.read_text().splitlines() == ["fresh.com"]
+    data = json.loads(cache.read_text())
+    assert data["http://stale"]["domains"] == ["fresh.com"]
 
 
 def test_main_passes_args(tmp_path, monkeypatch):
