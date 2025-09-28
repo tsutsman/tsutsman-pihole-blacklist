@@ -23,7 +23,9 @@ RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 DOMAINS_FILE = Path("domains.txt")
 CONFIG_FILE = Path("data/sources.json")
 REPORT_FILE = Path("reports/latest_update.json")
+REPORT_MARKDOWN_FILE = Path("reports/latest_update.md")
 STATUS_FILE = Path("data/domain_status.json")
+PREVIEW_LIMIT = 20
 _HOST_PREFIXES: tuple[str, ...] = (
     "0.0.0.0",
     "127.0.0.1",
@@ -31,6 +33,15 @@ _HOST_PREFIXES: tuple[str, ...] = (
     "::",
     "::1",
 )
+
+
+def _record_example(collection: list, item, *, unique: bool = False) -> None:
+    """Додає приклад до списку з обмеженням кількості та унікальністю."""
+
+    if unique and item in collection:
+        return
+    if len(collection) < PREVIEW_LIMIT:
+        collection.append(item)
 
 
 @dataclass(frozen=True)
@@ -160,6 +171,7 @@ def update(
     sources: Iterable[str | SourceConfig] | None = None,
     config_path: Path = CONFIG_FILE,
     report_path: Path = REPORT_FILE,
+    markdown_path: Path = REPORT_MARKDOWN_FILE,
     status_path: Path = STATUS_FILE,
 ) -> None:
     """Оновлює файл доменів, додаючи нові записи з перевірених джерел."""
@@ -178,6 +190,13 @@ def update(
 
     existing: set[str] = set()
     needs_rewrite = False
+    normalized_total = 0
+    normalized_preview: list[tuple[str, str]] = []
+    duplicate_count = 0
+    duplicate_preview: list[str] = []
+    duplicate_domains: set[str] = set()
+    invalid_total = 0
+    invalid_preview: list[str] = []
     if dest.exists():
         for line in dest.read_text().splitlines():
             stripped = line.strip()
@@ -185,10 +204,20 @@ def update(
                 continue
             domain = _clean_domain(stripped)
             if domain:
-                if domain != stripped or domain in existing:
+                if domain != stripped:
+                    normalized_total += 1
+                    _record_example(normalized_preview, (stripped, domain), unique=True)
                     needs_rewrite = True
-                existing.add(domain)
+                if domain in existing:
+                    duplicate_count += 1
+                    duplicate_domains.add(domain)
+                    _record_example(duplicate_preview, domain, unique=True)
+                    needs_rewrite = True
+                else:
+                    existing.add(domain)
             else:
+                invalid_total += 1
+                _record_example(invalid_preview, stripped, unique=True)
                 needs_rewrite = True
 
     fetched: set[str] = set()
@@ -219,13 +248,34 @@ def update(
     merged = sorted(existing | set(new_domains))
     dest.write_text("\n".join(merged) + "\n")
 
-    _write_report(
+    normalized_info = {
+        "total": normalized_total,
+        "preview": [
+            {"original": original, "normalized": normalized}
+            for original, normalized in sorted(normalized_preview, key=lambda item: item[1])
+        ],
+    }
+    duplicates_info = {
+        "total": duplicate_count,
+        "unique": len(duplicate_domains),
+        "preview": sorted(duplicate_preview),
+    }
+    invalid_info = {
+        "total": invalid_total,
+        "preview": sorted(invalid_preview),
+    }
+
+    report_payload = _write_report(
         report_path,
         added=new_domains,
         total=len(merged),
         sources=[src.name for src in source_list],
         stale_candidates=sorted(existing - fetched)[:50],
+        normalized=normalized_info,
+        duplicates=duplicates_info,
+        invalid=invalid_info,
     )
+    _write_markdown_report(markdown_path, report_payload)
     _update_status(
         status_path,
         merged,
@@ -240,18 +290,108 @@ def _write_report(
     total: int,
     sources: Sequence[str],
     stale_candidates: Sequence[str],
-) -> None:
+    normalized: dict[str, object],
+    duplicates: dict[str, object],
+    invalid: dict[str, object],
+) -> dict[str, object]:
     report_path.parent.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now(timezone.utc).isoformat()
-    payload = {
+    payload: dict[str, object] = {
         "generated_at": timestamp,
         "added": list(added),
         "total_after_update": total,
         "sources": list(sources),
+        "normalized": normalized,
+        "duplicates_removed": duplicates,
+        "invalid_lines": invalid,
     }
     if stale_candidates:
         payload["stale_candidates"] = list(stale_candidates)
     report_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
+    return payload
+
+
+def _write_markdown_report(path: Path, data: dict[str, object]) -> None:
+    """Створює людиночитний Markdown-звіт за результатами оновлення."""
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    added = list(data.get("added", []))
+    normalized_info = data.get("normalized")
+    if not isinstance(normalized_info, dict):
+        normalized_info = {"total": 0, "preview": []}
+    duplicates_info = data.get("duplicates_removed")
+    if not isinstance(duplicates_info, dict):
+        duplicates_info = {"total": 0, "preview": [], "unique": 0}
+    invalid_info = data.get("invalid_lines")
+    if not isinstance(invalid_info, dict):
+        invalid_info = {"total": 0, "preview": []}
+    stale = list(data.get("stale_candidates", []))
+
+    def _calc_rest(total: int, preview: Sequence[object]) -> int:
+        return max(0, total - len(preview))
+
+    lines = [
+        "# Звіт про оновлення доменів",
+        "",
+        f"- Згенеровано: {data.get('generated_at', 'невідомо')}",
+        f"- Додано нових доменів: {len(added)}",
+        f"- Загальна кількість доменів: {data.get('total_after_update', 'невідомо')}",
+        f"- Нормалізовано записів: {normalized_info.get('total', 0)}",
+        f"- Видалено дублікати: {duplicates_info.get('total', 0)}",
+        f"- Унікальних дублікатів: {duplicates_info.get('unique', 0)}",
+        f"- Пропущено некоректних рядків: {invalid_info.get('total', 0)}",
+        f"- Потенційно застарілих кандидатів: {len(stale)}",
+    ]
+
+    if added:
+        lines.extend(["", "## Нові домени (перші приклади)", ""])
+        preview = added[:PREVIEW_LIMIT]
+        lines.extend(f"- {item}" for item in preview)
+        rest = _calc_rest(len(added), preview)
+        if rest:
+            lines.append(f"... ще {rest} доменів")
+
+    normalized_preview = normalized_info.get("preview", [])
+    if normalized_preview:
+        lines.extend(["", "## Нормалізовані записи", ""])
+        for entry in normalized_preview[:PREVIEW_LIMIT]:
+            original = entry.get("original") if isinstance(entry, dict) else None
+            normalized_value = entry.get("normalized") if isinstance(entry, dict) else None
+            if original is None or normalized_value is None:
+                continue
+            lines.append(f"- {normalized_value} ← `{original}`")
+        rest = _calc_rest(normalized_info.get("total", 0), normalized_preview)
+        if rest:
+            lines.append(f"... ще {rest} записів")
+
+    duplicate_preview = duplicates_info.get("preview", [])
+    if duplicate_preview:
+        lines.extend(["", "## Дублікати", ""])
+        preview_items = list(duplicate_preview)[:PREVIEW_LIMIT]
+        lines.extend(f"- {item}" for item in preview_items)
+        rest = _calc_rest(duplicates_info.get("unique", 0), preview_items)
+        if rest:
+            lines.append(f"... ще {rest} дублікатів")
+
+    invalid_preview = invalid_info.get("preview", [])
+    if invalid_preview:
+        lines.extend(["", "## Некоректні рядки", ""])
+        preview_items = list(invalid_preview)[:PREVIEW_LIMIT]
+        lines.extend(f"- `{item}`" for item in preview_items)
+        rest = _calc_rest(invalid_info.get("total", 0), preview_items)
+        if rest:
+            lines.append(f"... ще {rest} рядків")
+
+    if stale:
+        lines.extend(["", "## Потенційно застарілі домени", ""])
+        preview_items = stale[:PREVIEW_LIMIT]
+        lines.extend(f"- {item}" for item in preview_items)
+        rest = _calc_rest(len(stale), preview_items)
+        if rest:
+            lines.append(f"... ще {rest} доменів")
+
+    content = "\n".join(lines).rstrip() + "\n"
+    path.write_text(content)
 
 
 def _update_status(
@@ -297,6 +437,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--dest", type=Path, default=DOMAINS_FILE)
     parser.add_argument("--config", type=Path, default=CONFIG_FILE)
     parser.add_argument("--report", type=Path, default=REPORT_FILE)
+    parser.add_argument("--markdown-report", type=Path, default=REPORT_MARKDOWN_FILE)
     parser.add_argument("--status", type=Path, default=STATUS_FILE)
     args = parser.parse_args(argv)
     update(
@@ -304,6 +445,7 @@ def main(argv: list[str] | None = None) -> None:
         chunk_size=args.chunk_size,
         config_path=args.config,
         report_path=args.report,
+        markdown_path=args.markdown_report,
         status_path=args.status,
     )
 
