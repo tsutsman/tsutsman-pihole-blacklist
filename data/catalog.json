@@ -86,6 +86,30 @@
       "notes": "Державний медіахолдинг РФ, що керує телеканалами та радіо ВГТРК."
     },
     {
+      "value": "life.ru",
+      "category": "пропаганда",
+      "regions": ["ru", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["змі"],
+      "notes": "Пропагандистський медіахолдинг Life, що поширює кремлівські наративи."
+    },
+    {
+      "value": "rutube.ru",
+      "category": "пропаганда",
+      "regions": ["ru", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["відеоплатформа", "змі"],
+      "notes": "Відеоплатформа Rutube, що належить державним структурам РФ і використовується для пропаганди."
+    },
+    {
       "value": "phishing-army.net",
       "category": "фішинг",
       "regions": ["global"],

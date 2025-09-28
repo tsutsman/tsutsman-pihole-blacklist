@@ -101,7 +101,9 @@
 - `ria.ru`
 - `rbc.ru`
 - `lenta.ru`
+- `life.ru`
 - `gazprombank.ru`
+- `rutube.ru`
 - `vgtrk.ru`
 - `vtb.ru`
 
