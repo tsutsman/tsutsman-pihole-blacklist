@@ -204,6 +204,409 @@
       "monitor": true,
       "tags": ["фішинг"],
       "notes": "Тестовий домен для демонстрації позначки неактивності."
+    },
+
+    {
+      "value": "gazprombank.ru",
+      "category": "фінанси",
+      "regions": ["ru", "cis"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["банк"],
+      "notes": "Газпромбанк — ключова фінансова установа РФ, яка фінансує державні програми та оборонні контракти."
+    },
+
+    {
+      "value": "sberbank.ru",
+      "category": "фінанси",
+      "regions": ["ru", "cis"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["банк"],
+      "notes": "Сбербанк — найбільший державний банк РФ, задіяний у фінансуванні окупаційних адміністрацій."
+    },
+
+    {
+      "value": "vtb.ru",
+      "category": "фінанси",
+      "regions": ["ru", "cis"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["банк"],
+      "notes": "ВТБ — державний банк РФ, який обслуговує стратегічні підприємства та силові структури."
+    },
+
+    {
+      "value": "lenta.ru",
+      "category": "пропаганда",
+      "regions": ["ru", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["змі", "новини"],
+      "notes": "Lenta.ru — федеральний російський портал новин, що регулярно ретранслює кремлівські наративи."
+    },
+
+    {
+      "value": "rbc.ru",
+      "category": "пропаганда",
+      "regions": ["ru", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["змі", "економіка"],
+      "notes": "РБК — російський медіахолдинг, що використовується для легітимізації офіційної риторики."
+    },
+
+    {
+      "value": "ria.ru",
+      "category": "пропаганда",
+      "regions": ["ru", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["змі", "агенція"],
+      "notes": "РИА Новости — державне інформаційне агентство РФ, яке поширює пропаганду та дезінформацію."
+    },
+
+    {
+      "value": "sputniknews.com",
+      "category": "пропаганда",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["змі", "sputnik"],
+      "notes": "Sputniknews — міжнародна платформа державного агентства РФ для впливу на іноземну аудиторію."
+    },
+
+    {
+      "value": "tass.ru",
+      "category": "пропаганда",
+      "regions": ["ru", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["змі", "агенція"],
+      "notes": "ТАСС — офіційне державне агентство новин РФ, що координує інформаційні кампанії уряду."
+    },
+
+    {
+      "value": "gosuslugi.ru",
+      "category": "держсервіси",
+      "regions": ["ru", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": false,
+      "tags": ["портал", "держпослуги"],
+      "notes": "Госуслуги — централізований портал державних послуг РФ, що збирає критичні персональні дані громадян."
+    },
+
+    {
+      "value": "kremlin.ru",
+      "category": "держсервіси",
+      "regions": ["ru", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["уряд", "офіційний сайт"],
+      "notes": "Офіційний сайт адміністрації президента РФ з релізами указів та пропагандистських повідомлень."
+    },
+
+    {
+      "value": "mos.ru",
+      "category": "держсервіси",
+      "regions": ["ru"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["портал", "муніципалітет"],
+      "notes": "Портал уряду Москви, що інтегрує державні сервіси та систему спостереження за громадянами."
+    },
+
+    {
+      "value": "ok.ru",
+      "category": "екосистема",
+      "regions": ["ru", "cis"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["соцмережа"],
+      "notes": "Однокласники — соціальна мережа VK, яка використовується для збору даних та поширення пропаганди."
+    },
+
+    {
+      "value": "static.okko.tv",
+      "category": "екосистема",
+      "regions": ["ru", "cis"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["стрімінг", "медіа"],
+      "notes": "CDN-домен стрімінгового сервісу Okko, що належить до екосистеми VK та ретранслює державний контент."
+    },
+
+    {
+      "value": "a.tiktokmod.pro",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["apk", "модифікації"],
+      "notes": "Розповсюджує модифіковані APK-файли TikTok із вбудованими шкідливими модулями."
+    },
+
+    {
+      "value": "ams-new.bonuses.email",
+      "category": "шахрайство",
+      "regions": ["cis"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["email-кампанії"],
+      "notes": "Масові розсилки псевдо-лотерей, які збирають персональні дані під виглядом бонусів."
+    },
+
+    {
+      "value": "an.yandex.ru",
+      "category": "шпигунство",
+      "regions": ["ru", "cis", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["трекінг", "yandex"],
+      "notes": "Трекінговий домен Яндекса, який збирає телеметрію користувачів із рекламних SDK."
+    },
+
+    {
+      "value": "api.mainnet.minepi.com",
+      "category": "крипто-шахрайство",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["криптовалюта"],
+      "notes": "API мережі Pi Network, що збирає персональні дані під виглядом майнінгу."
+    },
+
+    {
+      "value": "checkip.deepstateplatypus.com",
+      "category": "шпигунство",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["c2", "spyware"],
+      "notes": "Індикатор інфраструктури шпигунського ПЗ, який використовується для комунікації зі шкідливими агентами."
+    },
+
+    {
+      "value": "dev.period-calendar.com",
+      "category": "шпигунство",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["здоровʼя", "телеметрія"],
+      "notes": "Сервер додатку Period Calendar, що збирає чутливі дані користувачів."
+    },
+
+    {
+      "value": "fcm-pc.period-calendar.com",
+      "category": "шпигунство",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["fcm", "телеметрія"],
+      "notes": "Firebase-ендпоінт додатку Period Calendar, що доставляє команди та відстежує пристрої."
+    },
+
+    {
+      "value": "fetside.com",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["експлойти"],
+      "notes": "Fetside використовується для поширення шкідливих завантажувачів і експлойтів."
+    },
+
+    {
+      "value": "free-de-ds.hideservers.net",
+      "category": "ботнет",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["vpn", "проксі"],
+      "notes": "Вузол мережі HideServers, що маскує командні сервери ботнетів."
+    },
+
+    {
+      "value": "hideservers.net",
+      "category": "ботнет",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["vpn", "проксі"],
+      "notes": "Основний домен мережі HideServers, який забезпечує приховування C2-трафіку шкідливих кампаній."
+    },
+
+    {
+      "value": "ipinfo.suinfra.com",
+      "category": "шпигунство",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["ip-tracking"],
+      "notes": "Сервіс збору IP-даних інфраструктури SUIN, який інтегрують у шкідливі інструменти."
+    },
+
+    {
+      "value": "kms.03k.org",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["активація", "піратство"],
+      "notes": "KMS-сервер, що розповсюджує нелегальні активатори Windows з додатковими шкідливими компонентами."
+    },
+
+    {
+      "value": "mirai.senkuro.org",
+      "category": "ботнет",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["iot", "c2"],
+      "notes": "Інфраструктура ботнету Mirai, яка використовується для DDoS-атак проти українських ресурсів."
+    },
+
+    {
+      "value": "pcudataproxy.period-calendar.com",
+      "category": "шпигунство",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["проксі", "телеметрія"],
+      "notes": "Проксі-збірник телеметрії додатку Period Calendar."
+    },
+
+    {
+      "value": "peradjoka.t35.com",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["троян"],
+      "notes": "Архіви з троянськими завантажувачами, які використовують у фішингових атаках проти українців."
+    },
+
+    {
+      "value": "shiro.senkuro.org",
+      "category": "ботнет",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["iot", "c2"],
+      "notes": "Похідна інфраструктура мережі Senkuro, що керує ботнетами Mirai-похідних."
+    },
+
+    {
+      "value": "tse2.explicit.bing.net",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["cdn", "дорослий контент"],
+      "notes": "CDN-ендпоінт Bing для розповсюдження явного контенту, який блокується для фільтрації небажаних матеріалів."
+    },
+
+    {
+      "value": "zakpos.mine.nu",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["pos", "c2"],
+      "notes": "C2-інфраструктура шкідливого ПЗ ZakPOS, що викрадає дані платіжних карток."
     }
   ],
   "regexes": [
