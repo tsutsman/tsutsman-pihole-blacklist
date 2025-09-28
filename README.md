@@ -102,6 +102,7 @@
 - `ok.ru`
 - `pcudataproxy.period-calendar.com`
 - `peradjoka.t35.com`
+- `patriot.media`
 - `rbc.ru`
 - `ria.ru`
 - `riafan.ru`
@@ -114,6 +115,7 @@
 - `sputniknews.com`
 - `static.okko.tv`
 - `tass.ru`
+- `tvzvezda.ru`
 - `tse2.explicit.bing.net`
 - `vgtrk.ru`
 - `vk.com`

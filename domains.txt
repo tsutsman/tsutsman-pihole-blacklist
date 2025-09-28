@@ -20619,6 +20619,7 @@ mirai.senkuro.org
 mos.ru
 ns10.cryptonight.net
 ok.ru
+patriot.media
 pcudataproxy.period-calendar.com
 peradjoka.t35.com
 primaryns.kiev.ua
@@ -20640,6 +20641,7 @@ torproject.com
 torproject.net
 torproject.org
 tse2.explicit.bing.net
+tvzvezda.ru
 vesti.ru
 vk.com
 vtb.ru
