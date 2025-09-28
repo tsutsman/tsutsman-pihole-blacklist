@@ -5,7 +5,7 @@ import argparse
 import json
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from ipaddress import ip_address
 from http.client import IncompleteRead
 import time
@@ -25,6 +25,7 @@ CONFIG_FILE = Path("data/sources.json")
 REPORT_FILE = Path("reports/latest_update.json")
 REPORT_MARKDOWN_FILE = Path("reports/latest_update.md")
 STATUS_FILE = Path("data/domain_status.json")
+SOURCE_CACHE_FILE = Path("data/source_cache.json")
 PREVIEW_LIMIT = 20
 _HOST_PREFIXES: tuple[str, ...] = (
     "0.0.0.0",
@@ -42,6 +43,18 @@ def _record_example(collection: list, item, *, unique: bool = False) -> None:
         return
     if len(collection) < PREVIEW_LIMIT:
         collection.append(item)
+
+
+def _unique_preserve_order(values: Iterable[str]) -> list[str]:
+    """Повертає список без дублікатів, зберігаючи початковий порядок."""
+
+    seen: set[str] = set()
+    result: list[str] = []
+    for value in values:
+        if value not in seen:
+            seen.add(value)
+            result.append(value)
+    return result
 
 
 @dataclass(frozen=True)
@@ -164,6 +177,62 @@ def _fetch(source: SourceConfig) -> tuple[SourceConfig, list[str]]:
     return source, domains
 
 
+def _load_source_cache(path: Path) -> dict[str, dict[str, object]]:
+    """Завантажує локальний кеш джерел із відновленням після пошкодження."""
+
+    if not path.exists():
+        return {}
+    try:
+        raw = json.loads(path.read_text() or "{}")
+    except json.JSONDecodeError:
+        return {}
+    cache: dict[str, dict[str, object]] = {}
+    for key, value in raw.items():
+        if not isinstance(key, str) or not isinstance(value, dict):
+            continue
+        domains = value.get("domains")
+        if not isinstance(domains, list):
+            continue
+        cache[key] = {
+            "domains": [str(item) for item in domains if isinstance(item, str)],
+            "fetched_at": value.get("fetched_at"),
+        }
+    return cache
+
+
+def _store_source_cache(path: Path, data: dict[str, dict[str, object]]) -> None:
+    """Зберігає кеш джерел у JSON із безпечним створенням директорій."""
+
+    payload: dict[str, dict[str, object]] = {}
+    for key, value in data.items():
+        if not isinstance(key, str):
+            continue
+        domains = value.get("domains")
+        if not isinstance(domains, list):
+            continue
+        fetched_at = value.get("fetched_at")
+        payload[key] = {
+            "domains": _unique_preserve_order(domains),
+            "fetched_at": fetched_at,
+        }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
+
+
+def _cache_is_fresh(source: SourceConfig, fetched_at: object, *, now: datetime) -> bool:
+    """Перевіряє, чи ще актуальний кеш для джерела."""
+
+    if not isinstance(fetched_at, str):
+        return False
+    try:
+        timestamp = datetime.fromisoformat(fetched_at)
+    except ValueError:
+        return False
+    interval_days = max(1, int(source.update_interval_days))
+    ttl = timedelta(days=interval_days)
+    return timestamp + ttl > now
+
+
 def update(
     *,
     dest: Path = DOMAINS_FILE,
@@ -173,8 +242,14 @@ def update(
     report_path: Path = REPORT_FILE,
     markdown_path: Path = REPORT_MARKDOWN_FILE,
     status_path: Path = STATUS_FILE,
+    cache_path: Path = SOURCE_CACHE_FILE,
 ) -> None:
-    """Оновлює файл доменів, додаючи нові записи з перевірених джерел."""
+    """Оновлює файл доменів, додаючи нові записи з перевірених джерел.
+
+    Кешування вмісту джерел дозволяє уникати повторного завантаження
+    списків, якщо з моменту попереднього звернення не минув інтервал,
+    заданий у конфігурації.
+    """
     if sources is None:
         source_list = [src for src in _load_sources(config_path) if src.enabled]
     else:
@@ -222,14 +297,46 @@ def update(
 
     fetched: set[str] = set()
     domain_sources: dict[str, list[SourceConfig]] = {}
-    max_workers = max(1, min(MAX_PARALLEL_FETCHES, len(source_list)))
-    with ThreadPoolExecutor(max_workers=max_workers) as pool:
-        for source, domains in pool.map(_fetch, source_list):
-            for domain in domains:
-                fetched.add(domain)
-                holders = domain_sources.setdefault(domain, [])
-                if source not in holders:
-                    holders.append(source)
+    cache = _load_source_cache(cache_path)
+    now = datetime.now(timezone.utc)
+    pending_fetch: list[SourceConfig] = []
+    cached_results: dict[SourceConfig, list[str]] = {}
+
+    for source in source_list:
+        cached = cache.get(source.url)
+        if cached and _cache_is_fresh(source, cached.get("fetched_at"), now=now):
+            domains = _unique_preserve_order(
+                d for d in cached.get("domains", []) if isinstance(d, str)
+            )
+            cached_results[source] = domains
+            continue
+        pending_fetch.append(source)
+
+    if pending_fetch:
+        max_workers = max(1, min(MAX_PARALLEL_FETCHES, len(pending_fetch)))
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            for source, domains in pool.map(_fetch, pending_fetch):
+                deduplicated = _unique_preserve_order(domains)
+                if deduplicated:
+                    cached_results[source] = deduplicated
+                    cache[source.url] = {
+                        "domains": deduplicated,
+                        "fetched_at": now.isoformat(),
+                    }
+                else:
+                    cache[source.url] = {
+                        "domains": [],
+                        "fetched_at": now.isoformat(),
+                    }
+
+    for source, domains in cached_results.items():
+        for domain in domains:
+            fetched.add(domain)
+            holders = domain_sources.setdefault(domain, [])
+            if source not in holders:
+                holders.append(source)
+
+    _store_source_cache(cache_path, cache)
 
     new_candidates = fetched - existing
     scored = sorted(
