@@ -20594,6 +20594,7 @@ beardpool.rocks
 beastminingpool.com
 checkip.deepstateplatypus.com
 creative.hpyrdr.com
+1tv.ru
 dev.period-calendar.com
 fcm-pc.period-calendar.com
 fetside.com
@@ -20620,6 +20621,7 @@ primaryns.kiev.ua
 rbc.ru
 ria.ru
 rt.com
+smotrim.ru
 sberbank.ru
 shiro.senkuro.org
 sputniknews.com
@@ -20632,5 +20634,6 @@ torproject.org
 tse2.explicit.bing.net
 vk.com
 vtb.ru
+vgtrk.ru
 yandex.ru
 zakpos.mine.nu

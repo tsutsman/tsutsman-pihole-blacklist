@@ -70,6 +70,8 @@
 - `yandex.ru`
 - `ok.ru`
 - `rt.com`
+- `1tv.ru`
+- `smotrim.ru`
 - `sputniknews.com`
 - `a.tiktokmod.pro`
 - `hideservers.net`
@@ -99,6 +101,7 @@
 - `rbc.ru`
 - `lenta.ru`
 - `gazprombank.ru`
+- `vgtrk.ru`
 - `vtb.ru`
 
 Перелік буде поповнюватися.

@@ -50,6 +50,42 @@
       "notes": "Міжнародний канал російської пропаганди."
     },
     {
+      "value": "1tv.ru",
+      "category": "пропаганда",
+      "regions": ["ru", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["телеканал", "змі"],
+      "notes": "Перший канал РФ, один з головних державних пропагандистських ресурсів."
+    },
+    {
+      "value": "smotrim.ru",
+      "category": "пропаганда",
+      "regions": ["ru", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["стрімінг", "змі"],
+      "notes": "Стрімінгова платформа ВГТРК з трансляціями державних телеканалів."
+    },
+    {
+      "value": "vgtrk.ru",
+      "category": "пропаганда",
+      "regions": ["ru", "cis"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-28",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["медіахолдинг"],
+      "notes": "Державний медіахолдинг РФ, що керує телеканалами та радіо ВГТРК."
+    },
+    {
       "value": "phishing-army.net",
       "category": "фішинг",
       "regions": ["global"],
