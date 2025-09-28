@@ -8,13 +8,17 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from ipaddress import ip_address
 from http.client import IncompleteRead
+import time
 from pathlib import Path
 from typing import Iterable, Sequence
-from urllib.error import URLError
+from urllib.error import HTTPError, URLError
 from urllib.parse import unquote
 from urllib.request import urlopen
 
 CHUNK_SIZE = 2000
+MAX_PARALLEL_FETCHES = 4
+MAX_RETRIES = 3
+RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 
 DOMAINS_FILE = Path("domains.txt")
 CONFIG_FILE = Path("data/sources.json")
@@ -92,12 +96,49 @@ def _clean_domain(raw: str) -> str | None:
     return None
 
 
+def _retry_delay(base_delay: float, error: HTTPError) -> float:
+    """Обчислює затримку перед повтором запиту."""
+
+    header = getattr(error, "headers", None)
+    if header:
+        retry_after = header.get("Retry-After")
+        if retry_after:
+            try:
+                parsed = float(retry_after)
+            except ValueError:
+                pass
+            else:
+                return max(parsed, base_delay)
+    return base_delay
+
+
+def _read_source(url: str) -> str | None:
+    """Завантажує вміст джерела з повторними спробами при тимчасових помилках."""
+
+    delay = 1.0
+    for attempt in range(MAX_RETRIES):
+        try:
+            with urlopen(url, timeout=10) as resp:  # type: ignore[arg-type]
+                return resp.read().decode("utf-8", "replace")
+        except HTTPError as error:
+            if error.code not in RETRYABLE_STATUS or attempt + 1 >= MAX_RETRIES:
+                return None
+            delay = _retry_delay(delay, error)
+            time.sleep(delay)
+            delay *= 2
+        except (URLError, IncompleteRead):
+            if attempt + 1 >= MAX_RETRIES:
+                return None
+            time.sleep(delay)
+            delay *= 2
+    return None
+
+
 def _fetch(source: SourceConfig) -> tuple[SourceConfig, list[str]]:
     """Завантажує домени з URL, повертаючи порожній список у разі помилки."""
-    try:
-        with urlopen(source.url, timeout=10) as resp:  # type: ignore[arg-type]
-            text = resp.read().decode("utf-8", "replace")
-    except (URLError, IncompleteRead):
+
+    text = _read_source(source.url)
+    if text is None:
         return source, []
     domains: list[str] = []
     for line in text.splitlines():
@@ -152,7 +193,8 @@ def update(
 
     fetched: set[str] = set()
     domain_sources: dict[str, list[SourceConfig]] = {}
-    with ThreadPoolExecutor() as pool:
+    max_workers = max(1, min(MAX_PARALLEL_FETCHES, len(source_list)))
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
         for source, domains in pool.map(_fetch, source_list):
             for domain in domains:
                 fetched.add(domain)
