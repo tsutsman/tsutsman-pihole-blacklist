@@ -10,11 +10,19 @@ __all__ = [
     "check_lists",
     "generate_lists",
     "update_domains",
+    "validate_catalog",
     "utils",
 ]
 
 if TYPE_CHECKING:  # pragma: no cover
-    from . import audit_lists, check_lists, generate_lists, update_domains, utils  # noqa: F401
+    from . import (  # noqa: F401
+        audit_lists,
+        check_lists,
+        generate_lists,
+        update_domains,
+        utils,
+        validate_catalog,
+    )
 
 
 def _load_module(name: str) -> ModuleType:
