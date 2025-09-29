@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "domains": {
+    "required_fields": ["value", "category", "regions", "sources", "severity", "status", "added"],
+    "allowed_categories": [
+      "ботнет",
+      "держсервіси",
+      "екосистема",
+      "контент 18+",
+      "крипто-шахрайство",
+      "пропаганда",
+      "фінанси",
+      "фішинг",
+      "шахрайство",
+      "шкідливе ПЗ",
+      "шпигунство",
+      "інфраструктура"
+    ],
+    "allowed_regions": ["global", "ru", "cis"],
+    "allowed_statuses": ["active", "inactive"],
+    "allowed_severities": ["середня", "висока"],
+    "min_sources": 1,
+    "require_notes_for": {
+      "status": ["inactive"]
+    }
+  },
+  "regexes": {
+    "required_fields": ["value", "category", "regions", "sources", "severity", "status", "added"],
+    "allowed_categories": ["державні-зони"],
+    "allowed_regions": ["ru", "by"],
+    "allowed_statuses": ["active"],
+    "allowed_severities": ["середня", "висока"],
+    "min_sources": 1
+  }
+}
