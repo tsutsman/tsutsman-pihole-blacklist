@@ -15,7 +15,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import unquote
 from urllib.request import urlopen
 
-CHUNK_SIZE = 2000
+CHUNK_SIZE = 500
 MAX_PARALLEL_FETCHES = 4
 MAX_RETRIES = 3
 RETRYABLE_STATUS = {429, 500, 502, 503, 504}
