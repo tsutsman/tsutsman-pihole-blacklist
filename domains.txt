@@ -20596,6 +20596,7 @@ checkip.deepstateplatypus.com
 creative.hpyrdr.com
 1tv.ru
 dev.period-calendar.com
+eadaily.com
 fcm-pc.period-calendar.com
 fetside.com
 forum.cryptonight.net
@@ -20640,11 +20641,13 @@ tass.ru
 torproject.com
 torproject.net
 torproject.org
+tsargrad.tv
 tse2.explicit.bing.net
 tvzvezda.ru
 vesti.ru
 vk.com
 vtb.ru
 vgtrk.ru
+vz.ru
 yandex.ru
 zakpos.mine.nu

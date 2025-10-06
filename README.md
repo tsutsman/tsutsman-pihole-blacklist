@@ -86,6 +86,7 @@
 - `api.mainnet.minepi.com`
 - `checkip.deepstateplatypus.com`
 - `dev.period-calendar.com`
+- `eadaily.com`
 - `fcm-pc.period-calendar.com`
 - `fetside.com`
 - `free-de-ds.hideservers.net`
@@ -116,11 +117,13 @@
 - `sputniknews.com`
 - `static.okko.tv`
 - `tass.ru`
+- `tsargrad.tv`
 - `tvzvezda.ru`
 - `tse2.explicit.bing.net`
 - `vgtrk.ru`
 - `vk.com`
 - `vtb.ru`
+- `vz.ru`
 - `yandex.ru`
 - `zakpos.mine.nu`
 
