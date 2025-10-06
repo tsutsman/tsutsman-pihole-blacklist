@@ -7,6 +7,7 @@
 - `rbc.ru`
 - `ria.ru`
 - `riafan.ru`
+- `readovka.news`
 - `rt.com`
 - `patriot.media`
 - `smotrim.ru`

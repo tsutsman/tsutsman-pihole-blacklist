@@ -20629,6 +20629,7 @@ patriot.media
 pcudataproxy.period-calendar.com
 peradjoka.t35.com
 primaryns.kiev.ua
+readovka.news
 rbc.ru
 rg.ru
 ria.ru
