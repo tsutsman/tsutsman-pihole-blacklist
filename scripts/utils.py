@@ -39,6 +39,8 @@ class EntryMetadata:
         regions: Sequence[str] | None = None,
         sources: Sequence[str] | None = None,
         statuses: Sequence[str] | None = None,
+        severities: Sequence[str] | None = None,
+        tags: Sequence[str] | None = None,
     ) -> bool:
         """Перевіряє, чи відповідає запис заданим фільтрам."""
 
@@ -46,9 +48,14 @@ class EntryMetadata:
             return False
         if statuses and self.status not in statuses:
             return False
+        if severities:
+            if not self.severity or self.severity not in severities:
+                return False
         if regions and not set(self.regions) & set(regions):
             return False
         if sources and not set(self.sources) & set(sources):
+            return False
+        if tags and not set(self.tags) & set(tags):
             return False
         return True
 
@@ -76,6 +83,8 @@ class Catalog:
         regions: Sequence[str] | None = None,
         sources: Sequence[str] | None = None,
         statuses: Sequence[str] | None = None,
+        severities: Sequence[str] | None = None,
+        tags: Sequence[str] | None = None,
         include_missing: bool = True,
     ) -> Iterator[tuple[str, EntryMetadata | None]]:
         """Ітерує передані значення з урахуванням фільтрів."""
@@ -88,10 +97,18 @@ class Catalog:
                     regions=regions,
                     sources=sources,
                     statuses=statuses,
+                    severities=severities,
+                    tags=tags,
                 ):
                     yield value, metadata
-            elif include_missing and not categories and not regions and not sources and (
-                not statuses or "active" in statuses
+            elif (
+                include_missing
+                and not categories
+                and not regions
+                and not sources
+                and not severities
+                and not tags
+                and (not statuses or "active" in statuses)
             ):
                 yield value, None
 
