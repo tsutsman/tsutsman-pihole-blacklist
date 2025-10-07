@@ -440,6 +440,19 @@
     },
 
     {
+      "value": "scheduler.himalayanapps.com",
+      "category": "криптомайнінг",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-07",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["майнінг", "android"],
+      "notes": "Диспетчер завдань застосунку Himalayan Apps, який нав'язує майнінг на пристроях користувачів."
+    },
+
+    {
       "value": "checkip.deepstateplatypus.com",
       "category": "шпигунство",
       "regions": ["global"],
@@ -518,6 +531,32 @@
     },
 
     {
+      "value": "a703.l461.r761.fastcloudcdn.net",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-07",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["vpn", "browsec"],
+      "notes": "Browsec використовує FastCloudCDN для маскування VPN-трафіку та обходу фільтрації."
+    },
+
+    {
+      "value": "files.staticstream.org",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-07",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["vpn", "browsec"],
+      "notes": "Статичний CDN Browsec, що розповсюджує конфігурації та оновлення VPN-клієнтів."
+    },
+
+    {
       "value": "ipinfo.suinfra.com",
       "category": "шпигунство",
       "regions": ["global"],
@@ -580,6 +619,19 @@
       "monitor": true,
       "tags": ["троян"],
       "notes": "Архіви з троянськими завантажувачами, які використовують у фішингових атаках проти українців."
+    },
+
+    {
+      "value": "avcdn.net.dob.sibl.support-intelligence.net",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-07",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["cdn", "malware"],
+      "notes": "Дзеркало SIBL, яке розповсюджує шкідливі завантажувачі та було зафіксоване мережевими журналами KMR."
     },
 
     {
