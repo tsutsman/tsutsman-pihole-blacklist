@@ -78,6 +78,35 @@ def test_main_detects_inactive_metadata(tmp_path, monkeypatch, capsys):
     assert "Домени зі статусом" in out
 
 
+def test_main_requires_metadata_for_domains(tmp_path, monkeypatch, capsys):
+    _prepare(
+        tmp_path,
+        monkeypatch,
+        catalog={"domains": [], "regexes": []},
+    )
+    assert check_lists.main(["--require-metadata", "domains"]) == 1
+    out = capsys.readouterr().out
+    assert "Домени без метаданих" in out
+
+
+def test_main_requires_metadata_all_success(tmp_path, monkeypatch, capsys):
+    catalog = {
+        "domains": [
+            {
+                "value": "example.com",
+            }
+        ],
+        "regexes": [
+            {
+                "value": "good.*",
+            }
+        ],
+    }
+    _prepare(tmp_path, monkeypatch, catalog=catalog)
+    assert check_lists.main(["--require-metadata", "all"]) == 0
+    assert capsys.readouterr().out.strip() == "Списки коректні"
+
+
 def test_main_reports_false_positive(tmp_path, monkeypatch, capsys):
     fp = {"domains": ["example.com"], "regexes": []}
     _prepare(tmp_path, monkeypatch, false_positives=fp)

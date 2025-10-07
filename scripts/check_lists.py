@@ -74,6 +74,21 @@ def _find_cross_duplicates(domains: list[str], regexes: list[str]) -> set[str]:
     return set(domains) & set(regexes)
 
 
+def _find_missing_metadata(
+    entries: Iterable[str],
+    *,
+    kind: str,
+    catalog: Catalog,
+) -> list[str]:
+    """Повертає відсортований список записів без метаданих у каталозі."""
+
+    missing: set[str] = set()
+    for item in entries:
+        if not catalog.metadata_for(item, kind):
+            missing.add(item)
+    return sorted(missing)
+
+
 def _validate_status(
     entries: Iterable[str],
     *,
@@ -143,6 +158,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--false-positives", type=Path, default=FALSE_POSITIVES_FILE)
     parser.add_argument("--check-dns", action="store_true")
     parser.add_argument("--dns-sample", type=int, default=20)
+    parser.add_argument(
+        "--require-metadata",
+        action="append",
+        choices=("domains", "regexes", "all"),
+        help=(
+            "Вимагати наявність метаданих для доменів, регулярних виразів або обох списків. "
+            "Параметр можна повторювати."
+        ),
+    )
     args = parser.parse_args(argv)
 
     domains = load_entries(DOMAINS_FILE)
@@ -150,6 +174,14 @@ def main(argv: list[str] | None = None) -> int:
     catalog = load_catalog(args.catalog)
 
     issues: list[str] = []
+
+    required_metadata: set[str] = set()
+    if args.require_metadata:
+        for requirement in args.require_metadata:
+            if requirement == "all":
+                required_metadata.update({"domains", "regexes"})
+            else:
+                required_metadata.add(str(requirement))
 
     duplicates = _find_duplicates(domains)
     if duplicates:
@@ -190,6 +222,21 @@ def main(argv: list[str] | None = None) -> int:
             "Регулярні вирази зі статусом, відмінним від active у каталозі: "
             + ", ".join(sorted(inactive_regexes))
         )
+
+    if "domains" in required_metadata:
+        missing_domains = _find_missing_metadata(domains, kind="domain", catalog=catalog)
+        if missing_domains:
+            issues.append(
+                "Домени без метаданих у каталозі: " + ", ".join(missing_domains)
+            )
+
+    if "regexes" in required_metadata:
+        missing_regexes = _find_missing_metadata(regexes, kind="regex", catalog=catalog)
+        if missing_regexes:
+            issues.append(
+                "Регулярні вирази без метаданих у каталозі: "
+                + ", ".join(missing_regexes)
+            )
 
     issues.extend(_check_false_positives(domains, regexes, args.false_positives))
 

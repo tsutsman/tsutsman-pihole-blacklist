@@ -11,7 +11,7 @@
    ```
 
 ## Автоматизація
-- `python scripts/check_lists.py [--catalog data/catalog.json] [--false-positives data/false_positives.json] [--check-dns]` — перевіряє синтаксис, дублікати, перетини, статуси записів у каталозі та за потреби виконує DNS-моніторинг для доменів із позначкою `monitor`.
+- `python scripts/check_lists.py [--catalog data/catalog.json] [--false-positives data/false_positives.json] [--check-dns] [--require-metadata {domains,regexes,all}]` — перевіряє синтаксис, дублікати, перетини, статуси записів у каталозі, може вимагати наявність метаданих для вибраних списків і за потреби виконує DNS-моніторинг для доменів із позначкою `monitor`.
 - `python scripts/validate_catalog.py [--catalog data/catalog.json] [--policy data/inclusion_policy.json]` — гарантує, що метадані відповідають критеріям включення (див. [docs/criteria.md](docs/criteria.md)).
 - `python scripts/audit_lists.py [--output reports/audit.json]` — формує JSON-звіт з аудитом списків, охопленням метаданими та виявленням записів каталогу без відповідників.
 - `python scripts/generate_lists.py [--dist-dir DIR] [--formats adguard ublock hosts rpz dnsmasq unbound] [--group-by category|region|source] [--categories ...] [--regions ...]` — формує списки у вибраних форматах, підтримує сегментацію за категорією, регіоном або джерелом та створює додаткові файли з розбивкою у `dist/segments/`.
