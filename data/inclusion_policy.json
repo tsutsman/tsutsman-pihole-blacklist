@@ -3,11 +3,13 @@
   "domains": {
     "required_fields": ["value", "category", "regions", "sources", "severity", "status", "added"],
     "allowed_categories": [
+      "анонімайзери",
       "ботнет",
       "держсервіси",
       "екосистема",
       "контент 18+",
       "крипто-шахрайство",
+      "криптомайнінг",
       "пропаганда",
       "фінанси",
       "фішинг",
