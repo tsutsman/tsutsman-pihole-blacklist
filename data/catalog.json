@@ -687,6 +687,45 @@
     },
 
     {
+      "value": "eadaily.com",
+      "category": "пропаганда",
+      "regions": ["ru", "cis"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-29",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["змі", "енергетика"],
+      "notes": "Аналітичний портал EurAsia Daily, який просуває кремлівські наративи про геополітику та енергетику."
+    },
+
+    {
+      "value": "tsargrad.tv",
+      "category": "пропаганда",
+      "regions": ["ru", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-29",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["телеканал", "змі"],
+      "notes": "Праворадикальний телеканал Царьград, який системно поширює ультраконсервативну та антиукраїнську пропаганду."
+    },
+
+    {
+      "value": "vz.ru",
+      "category": "пропаганда",
+      "regions": ["ru", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-09-29",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["змі", "аналітика"],
+      "notes": "Щоденне онлайн-видання «Взгляд», яке просуває кремлівські аналітичні та політичні меседжі."
+    },
+
+    {
       "value": "tvzvezda.ru",
       "category": "пропаганда",
       "regions": ["ru", "global"],
