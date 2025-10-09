@@ -20610,6 +20610,7 @@ checkip.deepstateplatypus.com
 cloudflare-dns.com
 creative.hpyrdr.com
 dev.period-calendar.com
+dzen.ru
 eadaily.com
 fcm-pc.period-calendar.com
 fetside.com
@@ -20644,6 +20645,8 @@ patriot.media
 pcudataproxy.period-calendar.com
 peradjoka.t35.com
 primaryns.kiev.ua
+radiomayak.ru
+radiosputnik.ru
 rbc.ru
 readovka.news
 rg.ru
