@@ -8,9 +8,11 @@
 - `ria.ru`
 - `riafan.ru`
 - `readovka.news`
+- `rossiya1.ru`
 - `rt.com`
 - `patriot.media`
 - `smotrim.ru`
+- `solovyov.live`
 - `sputnikglobe.com`
 - `sputniknews.com`
 - `tass.ru`
