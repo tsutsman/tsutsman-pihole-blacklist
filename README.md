@@ -114,6 +114,8 @@
 - `ipinfo.suinfra.com`
 - `kms.03k.org`
 - `kremlin.ru`
+- `mid.ru`
+- `mil.ru`
 - `lenta.ru`
 - `life.ru`
 - `mail.ru`
