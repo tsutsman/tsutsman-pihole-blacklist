@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Канал безпеки
+    url: https://example.org/security
+    about: Повідомте про чутливі вразливості або витоки даних приватно.
