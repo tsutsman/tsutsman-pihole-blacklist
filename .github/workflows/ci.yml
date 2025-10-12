@@ -19,6 +19,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+      - name: Встановлення інструментів безпеки
+        run: pip install pip-audit bandit
+      - name: Аналіз залежностей (pip-audit)
+        run: pip-audit --strict
+      - name: Статичний аналіз безпеки (bandit)
+        run: bandit -r scripts -ll
       - name: Перевірка списків
         run: python scripts/check_lists.py
       - name: Запуск тестів із покриттям
