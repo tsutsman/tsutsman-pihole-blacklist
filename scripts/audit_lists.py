@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Створення аудиту списків доменів та регулярних виразів."""
+"""Створення аудиту списків доменів та регулярних виразів.
+
+Generate audit reports for domain and regex blocklists.
+"""
 
 from __future__ import annotations
 
@@ -25,7 +28,10 @@ CATALOG_FILE = Path("data/catalog.json")
 
 
 def _find_duplicates(entries: list[str]) -> list[str]:
-    """Повертає відсортований список дублікатів."""
+    """Повертає відсортований список дублікатів.
+
+    Return a sorted list of duplicate entries.
+    """
 
     counts = Counter(entries)
     duplicates = sorted(item for item, amount in counts.items() if amount > 1)
@@ -33,7 +39,10 @@ def _find_duplicates(entries: list[str]) -> list[str]:
 
 
 def _status_breakdown(entries: list[str], *, kind: str, catalog: Catalog) -> tuple[Counter, set[str]]:
-    """Підраховує кількість записів за статусами та повертає відсутні метадані."""
+    """Підраховує кількість записів за статусами та повертає відсутні метадані.
+
+    Count entries per status and collect values missing metadata.
+    """
 
     statuses: Counter = Counter()
     missing: set[str] = set()
@@ -47,7 +56,10 @@ def _status_breakdown(entries: list[str], *, kind: str, catalog: Catalog) -> tup
 
 
 def _summarize_collection(entries: list[str], *, kind: str, catalog: Catalog) -> dict[str, Any]:
-    """Формує статистику для доменів або регулярних виразів."""
+    """Формує статистику для доменів або регулярних виразів.
+
+    Build summary statistics for domains or regex lists.
+    """
 
     duplicates = _find_duplicates(entries)
     unique_entries = sorted(set(entries))
@@ -69,7 +81,10 @@ def _summarize_collection(entries: list[str], *, kind: str, catalog: Catalog) ->
 
 
 def _catalog_gaps(*, domains: list[str], regexes: list[str], catalog: Catalog, version: int | None) -> dict[str, Any]:
-    """Повертає інформацію про записи каталогу без відповідників у списках."""
+    """Повертає інформацію про записи каталогу без відповідників у списках.
+
+    Describe catalog entries missing from generated blocklists.
+    """
 
     domain_set = set(domains)
     regex_set = set(regexes)
@@ -86,7 +101,10 @@ def _catalog_gaps(*, domains: list[str], regexes: list[str], catalog: Catalog, v
 
 
 def build_audit(domains: list[str], regexes: list[str], catalog: Catalog, *, version: int | None) -> dict[str, Any]:
-    """Повертає повний аудит даних."""
+    """Повертає повний аудит даних.
+
+    Return a consolidated audit overview for domains, regexes, and catalog.
+    """
 
     return {
         "domains": _summarize_collection(domains, kind="domain", catalog=catalog),
@@ -96,7 +114,10 @@ def build_audit(domains: list[str], regexes: list[str], catalog: Catalog, *, ver
 
 
 def main(argv: list[str] | None = None) -> int:
-    """CLI для формування аудиту."""
+    """CLI для формування аудиту.
+
+    Command-line interface for generating the audit report.
+    """
 
     parser = argparse.ArgumentParser(description="Аудит списків Pi-hole")
     parser.add_argument("--catalog", type=Path, default=CATALOG_FILE)

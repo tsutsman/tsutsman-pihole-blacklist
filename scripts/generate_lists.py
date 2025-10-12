@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Генерує списки блокування у кількох форматах із підтримкою сегментації."""
+"""Генерує списки блокування у кількох форматах із підтримкою сегментації.
+
+Generate blocklists in multiple formats with optional segmentation.
+"""
 
 from __future__ import annotations
 
@@ -136,7 +139,10 @@ def generate(
     include_inactive: bool = False,
     group_by: str | None = None,
 ) -> None:
-    """Створює файли зі списками у вибраних форматах із фільтрами."""
+    """Створює файли зі списками у вибраних форматах із фільтрами.
+
+    Produce blocklists for selected formats while applying metadata filters.
+    """
 
     catalog = load_catalog(catalog_path)
     domains_raw = load_entries(DOMAINS_FILE)
@@ -232,7 +238,10 @@ def generate(
 
 
 def main(argv: list[str] | None = None) -> None:
-    """CLI-обгортка для генерації списків."""
+    """CLI-обгортка для генерації списків.
+
+    Command-line wrapper orchestrating blocklist generation.
+    """
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--dist-dir", type=Path, default=DIST_DIR)

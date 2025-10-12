@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Автоматизація відкату для підтверджених хибнопозитивів."""
+"""Автоматизація відкату для підтверджених хибнопозитивів.
+
+Automate the rollback process for confirmed false-positive entries.
+"""
 from __future__ import annotations
 
 import argparse
@@ -17,7 +20,10 @@ EXCLUDE_ACTIONS = {"exclude", "remove"}
 
 
 def _write_list(path: Path, entries: Iterable[str]) -> None:
-    """Записує перелік у файл із кінцевим перенесенням рядка."""
+    """Записує перелік у файл із кінцевим перенесенням рядка.
+
+    Write a list of entries to disk and ensure a trailing newline.
+    """
 
     lines = list(entries)
     content = "\n".join(lines)
@@ -30,7 +36,10 @@ def _split_records(
     records: list[FalsePositiveRecord],
     present_values: set[str],
 ) -> tuple[list[FalsePositiveRecord], list[FalsePositiveRecord], list[FalsePositiveRecord]]:
-    """Розділяє записи на вилучені, відсутні та ті, що залишаються."""
+    """Розділяє записи на вилучені, відсутні та ті, що залишаються.
+
+    Split records into excluded, missing, and retained subsets.
+    """
 
     excluded: list[FalsePositiveRecord] = []
     missing: list[FalsePositiveRecord] = []
@@ -63,7 +72,10 @@ def _build_summary(
     false_positive_file: Path,
     output_dir: Path,
 ) -> dict[str, object]:
-    """Формує JSON-звіт про виконаний відкат."""
+    """Формує JSON-звіт про виконаний відкат.
+
+    Assemble a JSON summary describing the rollback results.
+    """
 
     summary = {
         "source": str(false_positive_file),
@@ -94,7 +106,10 @@ def _build_summary(
 
 
 def main(argv: list[str] | None = None) -> int:
-    """Точка входу для CLI."""
+    """Точка входу для CLI.
+
+    Command-line entry point coordinating the rollback workflow.
+    """
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--domains", type=Path, default=DOMAINS_FILE)

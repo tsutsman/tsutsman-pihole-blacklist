@@ -2,9 +2,15 @@
 """
 Розширена перевірка списків доменів та регулярних виразів.
 
+Extended validation of domain and regular-expression blocklists.
+
 Скрипт перевіряє синтаксис, дублікати, перетини між файлами,
 використовує метадані для виявлення неактивних записів і
 може виконувати DNS-перевірки для моніторингових доменів.
+
+The script validates syntax, detects duplicates and overlaps, leverages
+metadata to highlight inactive entries, and can run DNS checks for entries
+marked for monitoring.
 """
 
 from __future__ import annotations
@@ -40,7 +46,10 @@ DOMAIN_RE = re.compile(
 
 
 def _find_duplicates(items: list[str]) -> set[str]:
-    """Повертає множину дублікатів у списку незалежно від регістру."""
+    """Повертає множину дублікатів у списку незалежно від регістру.
+
+    Return the set of duplicated entries ignoring case sensitivity.
+    """
     seen: set[str] = set()
     duplicates: set[str] = set()
     for item in items:
@@ -53,13 +62,19 @@ def _find_duplicates(items: list[str]) -> set[str]:
 
 
 def _validate_domains(domains: list[str]) -> list[str]:
-    """Повертає список доменів, що не відповідають формату."""
+    """Повертає список доменів, що не відповідають формату.
+
+    Return a list of domains that fail the validation pattern.
+    """
     invalid = [d for d in domains if not DOMAIN_RE.fullmatch(d)]
     return invalid
 
 
 def _validate_regexes(regexes: list[str]) -> list[str]:
-    """Повертає список некоректних регулярних виразів."""
+    """Повертає список некоректних регулярних виразів.
+
+    Return the list of malformed regular-expression patterns.
+    """
     invalid: list[str] = []
     for pattern in regexes:
         try:
@@ -70,7 +85,10 @@ def _validate_regexes(regexes: list[str]) -> list[str]:
 
 
 def _find_cross_duplicates(domains: list[str], regexes: list[str]) -> set[str]:
-    """Шукає однакові записи в domains.txt та regex.list."""
+    """Шукає однакові записи в domains.txt та regex.list.
+
+    Identify entries that appear in both domains.txt and regex.list.
+    """
     return set(domains) & set(regexes)
 
 
@@ -80,7 +98,10 @@ def _find_missing_metadata(
     kind: str,
     catalog: Catalog,
 ) -> list[str]:
-    """Повертає відсортований список записів без метаданих у каталозі."""
+    """Повертає відсортований список записів без метаданих у каталозі.
+
+    Return a sorted list of entries that lack catalog metadata.
+    """
 
     missing: set[str] = set()
     for item in entries:
@@ -95,7 +116,10 @@ def _validate_status(
     kind: str,
     catalog: Catalog,
 ) -> list[str]:
-    """Перевіряє, чи є у каталозі записи зі статусом, відмінним від active."""
+    """Перевіряє, чи є у каталозі записи зі статусом, відмінним від active.
+
+    Check whether catalog metadata marks any entry as non-active.
+    """
 
     mismatched: list[str] = []
     for item in entries:
@@ -106,7 +130,10 @@ def _validate_status(
 
 
 def _check_false_positives(domains: list[str], regexes: list[str], path: Path) -> list[str]:
-    """Повертає повідомлення про присутність відомих хибнопозитивів."""
+    """Повертає повідомлення про присутність відомих хибнопозитивів.
+
+    Return messages describing entries flagged as known false positives.
+    """
 
     fp_domains, fp_regexes = load_false_positive_lists(path)
     issues: list[str] = []
@@ -124,7 +151,10 @@ def _check_false_positives(domains: list[str], regexes: list[str], path: Path) -
 
 
 def _check_dns(domains: list[str], *, catalog: Catalog, limit: int) -> list[str]:
-    """Перевіряє доступність доменів через DNS-запити."""
+    """Перевіряє доступність доменів через DNS-запити.
+
+    Probe domain availability using DNS lookups for a limited sample.
+    """
 
     monitored = [d for d in domains if (catalog.metadata_for(d, "domain") or EntryMetadata(value=d)).monitor]
     if monitored:
@@ -151,7 +181,10 @@ def _check_dns(domains: list[str], *, catalog: Catalog, limit: int) -> list[str]
 
 
 def main(argv: list[str] | None = None) -> int:
-    """Головна функція перевірки списків."""
+    """Головна функція перевірки списків.
+
+    Primary entry point coordinating blocklist validation tasks.
+    """
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--catalog", type=Path, default=CATALOG_FILE)
