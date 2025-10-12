@@ -1,4 +1,29 @@
 {
-  "domains": ["good.example"],
-  "regexes": []
+  "domains": [
+    {
+      "value": "good.example",
+      "reason": "Легітимний сервіс платежів, доданий у список помилково",
+      "reported_by": "feedback@trust.example",
+      "reported_at": "2025-01-12",
+      "review_status": "confirmed",
+      "action": "exclude",
+      "notes": "Перевірено вручну: домен використовується банком-партнером",
+      "evidence": [
+        "https://status.example.com/incident/2025-01-10",
+        "https://whois.domainsdb.info/good.example"
+      ]
+    }
+  ],
+  "regexes": [
+    {
+      "value": "^secure\\.trusted\\.ru$",
+      "reason": "Піддомен платформи, який збігається з корпоративним порталом",
+      "reported_by": "partner@corp.example",
+      "reported_at": "2025-01-15",
+      "review_status": "under-review",
+      "action": "monitor",
+      "notes": "Очікуємо підтвердження від контактної особи",
+      "evidence": ["https://corp.example/status"]
+    }
+  ]
 }
