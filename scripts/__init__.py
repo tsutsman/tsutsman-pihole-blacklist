@@ -1,4 +1,7 @@
-"""Загальний простір імен для CLI-скриптів із ледачим імпортом."""
+"""Загальний простір імен для CLI-скриптів із ледачим імпортом.
+
+Shared namespace for CLI scripts with lazy imports.
+"""
 from __future__ import annotations
 
 from importlib import import_module

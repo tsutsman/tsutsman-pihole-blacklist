@@ -1,4 +1,7 @@
-"""Допоміжні функції для роботи зі списками та метаданими."""
+"""Допоміжні функції для роботи зі списками та метаданими.
+
+Utility helpers for managing blocklists and their metadata.
+"""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -8,7 +11,10 @@ from typing import Any, Iterable, Iterator, Mapping, Sequence
 
 
 def load_entries(path: Path) -> list[str]:
-    """Читає файл, повертаючи лише непорожні рядки без коментарів."""
+    """Читає файл, повертаючи лише непорожні рядки без коментарів.
+
+    Read a list file and return non-empty, comment-free entries.
+    """
     entries: list[str] = []
     for line in path.read_text().splitlines():
         line = line.strip()
@@ -19,7 +25,10 @@ def load_entries(path: Path) -> list[str]:
 
 @dataclass(frozen=True)
 class EntryMetadata:
-    """Метадані про домен або регулярний вираз."""
+    """Метадані про домен або регулярний вираз.
+
+    Metadata wrapper describing a domain or regular expression.
+    """
 
     value: str
     category: str = "інше"
@@ -42,7 +51,10 @@ class EntryMetadata:
         severities: Sequence[str] | None = None,
         tags: Sequence[str] | None = None,
     ) -> bool:
-        """Перевіряє, чи відповідає запис заданим фільтрам."""
+        """Перевіряє, чи відповідає запис заданим фільтрам.
+
+        Check whether the entry matches the supplied filters.
+        """
 
         if categories and self.category not in categories:
             return False
@@ -62,13 +74,19 @@ class EntryMetadata:
 
 @dataclass
 class Catalog:
-    """Каталог доменів та регулярних виразів із метаданими."""
+    """Каталог доменів та регулярних виразів із метаданими.
+
+    Combined metadata catalog for domains and regular expressions.
+    """
 
     domains: Mapping[str, EntryMetadata]
     regexes: Mapping[str, EntryMetadata]
 
     def metadata_for(self, value: str, kind: str) -> EntryMetadata | None:
-        """Повертає метадані для конкретного значення."""
+        """Повертає метадані для конкретного значення.
+
+        Return metadata for a value treating domains and regex separately.
+        """
 
         normalized = value.lower()
         lookup = self.domains if kind == "domain" else self.regexes
@@ -87,7 +105,10 @@ class Catalog:
         tags: Sequence[str] | None = None,
         include_missing: bool = True,
     ) -> Iterator[tuple[str, EntryMetadata | None]]:
-        """Ітерує передані значення з урахуванням фільтрів."""
+        """Ітерує передані значення з урахуванням фільтрів.
+
+        Iterate over provided values while honouring metadata filters.
+        """
 
         for value in values:
             metadata = self.metadata_for(value, "domain" if kind == "domain" else "regex")
@@ -114,7 +135,10 @@ class Catalog:
 
 
 def _load_metadata_collection(data: Iterable[Mapping[str, object]], *, lower: bool) -> dict[str, EntryMetadata]:
-    """Перетворює необроблені словники метаданих на об'єкти."""
+    """Перетворює необроблені словники метаданих на об'єкти.
+
+    Convert raw metadata dictionaries into structured objects.
+    """
 
     collection: dict[str, EntryMetadata] = {}
     for raw in data:
@@ -138,7 +162,10 @@ def _load_metadata_collection(data: Iterable[Mapping[str, object]], *, lower: bo
 
 
 def load_catalog(path: Path) -> Catalog:
-    """Завантажує каталог метаданих із JSON-файла."""
+    """Завантажує каталог метаданих із JSON-файла.
+
+    Load the metadata catalog from a JSON document.
+    """
 
     if not path.exists():
         return Catalog(domains={}, regexes={})
@@ -150,7 +177,10 @@ def load_catalog(path: Path) -> Catalog:
 
 @dataclass(frozen=True)
 class FalsePositiveRecord:
-    """Опис звернення щодо хибнопозитивного запису."""
+    """Опис звернення щодо хибнопозитивного запису.
+
+    Represent a reported false-positive record and its context.
+    """
 
     value: str
     original_value: str | None = None
@@ -163,7 +193,10 @@ class FalsePositiveRecord:
     evidence: tuple[str, ...] = ()
 
     def as_dict(self) -> dict[str, Any]:
-        """Перетворює запис на словник для звітів."""
+        """Перетворює запис на словник для звітів.
+
+        Convert the record into a dictionary suitable for reports.
+        """
 
         data: dict[str, Any] = {"value": self.display_value}
         if self.reason:
@@ -184,13 +217,19 @@ class FalsePositiveRecord:
 
     @property
     def display_value(self) -> str:
-        """Повертає людинозрозумілу форму значення."""
+        """Повертає людинозрозумілу форму значення.
+
+        Provide a human-friendly representation of the stored value.
+        """
 
         return self.original_value or self.value
 
 
 def _normalize_optional(value: Any) -> str | None:
-    """Повертає очищений рядок або None."""
+    """Повертає очищений рядок або None.
+
+    Return a stripped string or None if the value is empty.
+    """
 
     if value is None:
         return None
@@ -203,7 +242,10 @@ def _load_false_positive_records(
     *,
     lower_value: bool,
 ) -> list[FalsePositiveRecord]:
-    """Перетворює записи хибнопозитивів на об'єкти."""
+    """Перетворює записи хибнопозитивів на об'єкти.
+
+    Transform false-positive entries into structured records.
+    """
 
     records: list[FalsePositiveRecord] = []
     for raw in raw_entries:
@@ -244,7 +286,10 @@ def _load_false_positive_records(
 def load_false_positive_records(
     path: Path,
 ) -> tuple[list[FalsePositiveRecord], list[FalsePositiveRecord]]:
-    """Завантажує звернення щодо хибнопозитивів для доменів та regex."""
+    """Завантажує звернення щодо хибнопозитивів для доменів та regex.
+
+    Load false-positive reports for domains and regular expressions.
+    """
 
     if not path.exists():
         return [], []
@@ -261,7 +306,10 @@ def load_false_positive_records(
 
 
 def load_false_positive_lists(path: Path) -> tuple[set[str], set[str]]:
-    """Повертає множини значень, позначених як хибнопозитиви."""
+    """Повертає множини значень, позначених як хибнопозитиви.
+
+    Return sets of values marked as false positives for quick lookups.
+    """
 
     domain_records, regex_records = load_false_positive_records(path)
     domains = {record.value for record in domain_records}

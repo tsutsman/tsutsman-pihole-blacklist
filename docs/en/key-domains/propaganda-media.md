@@ -1,6 +1,4 @@
-# Пропагандистські та медійні ресурси
-
-[English version](../en/key-domains/propaganda-media.md)
+# Propaganda and media outlets
 
 - `1tv.ru`
 - `eadaily.com`

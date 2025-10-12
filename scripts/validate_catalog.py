@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Перевірка дотримання критеріїв включення для каталогу метаданих."""
+"""Перевірка дотримання критеріїв включення для каталогу метаданих.
+
+Validate that the metadata catalog follows the inclusion policy rules.
+"""
 from __future__ import annotations
 
 import argparse
@@ -14,11 +17,17 @@ POLICY_FILE = Path("data/inclusion_policy.json")
 
 
 class PolicyError(RuntimeError):
-    """Виняток для ситуацій, коли політика описана некоректно."""
+    """Виняток для ситуацій, коли політика описана некоректно.
+
+    Exception raised when the inclusion policy is malformed.
+    """
 
 
 def load_policy(path: Path) -> dict[str, Any]:
-    """Завантажує файл політик та повертає словник з правилами."""
+    """Завантажує файл політик та повертає словник з правилами.
+
+    Load the policy JSON file and return it as a dictionary.
+    """
 
     if not path.exists():
         raise FileNotFoundError(f"Файл політик не знайдено: {path}")
@@ -29,7 +38,10 @@ def load_policy(path: Path) -> dict[str, Any]:
 
 
 def _is_empty(value: Any) -> bool:
-    """Перевіряє, чи слід вважати значення порожнім."""
+    """Перевіряє, чи слід вважати значення порожнім.
+
+    Determine whether a value should be treated as empty.
+    """
 
     if value is None:
         return True
@@ -41,7 +53,10 @@ def _is_empty(value: Any) -> bool:
 
 
 def _validate_iso_date(value: str) -> bool:
-    """Повертає True, якщо значення є коректною датою ISO."""
+    """Повертає True, якщо значення є коректною датою ISO.
+
+    Return True when the provided value is a valid ISO-formatted date.
+    """
 
     try:
         datetime.fromisoformat(value)
@@ -51,7 +66,10 @@ def _validate_iso_date(value: str) -> bool:
 
 
 def _validate_entries(entries: list[dict[str, Any]], policy: dict[str, Any], *, kind: str) -> list[str]:
-    """Перевіряє перелік записів каталогу за заданими правилами."""
+    """Перевіряє перелік записів каталогу за заданими правилами.
+
+    Validate catalog entries against policy constraints for a given kind.
+    """
 
     errors: list[str] = []
     required_fields = list(policy.get("required_fields", []))
@@ -116,7 +134,10 @@ def _validate_entries(entries: list[dict[str, Any]], policy: dict[str, Any], *, 
 
 
 def main(argv: list[str] | None = None) -> int:
-    """CLI-інтерфейс перевірки каталогу за критеріями включення."""
+    """CLI-інтерфейс перевірки каталогу за критеріями включення.
+
+    Command-line interface for enforcing inclusion policy compliance.
+    """
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--catalog", type=Path, default=CATALOG_FILE)

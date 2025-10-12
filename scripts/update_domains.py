@@ -1,4 +1,7 @@
-"""Завантажує домени з перевірених джерел і оновлює domains.txt."""
+"""Завантажує домени з перевірених джерел і оновлює domains.txt.
+
+Fetch domains from trusted sources and refresh the primary domains.txt list.
+"""
 from __future__ import annotations
 
 import argparse
@@ -37,7 +40,10 @@ _HOST_PREFIXES: tuple[str, ...] = (
 
 
 def _record_example(collection: list, item, *, unique: bool = False) -> None:
-    """Додає приклад до списку з обмеженням кількості та унікальністю."""
+    """Додає приклад до списку з обмеженням кількості та унікальністю.
+
+    Record a sample entry while respecting the preview limit and uniqueness.
+    """
 
     if unique and item in collection:
         return
@@ -46,7 +52,10 @@ def _record_example(collection: list, item, *, unique: bool = False) -> None:
 
 
 def _unique_preserve_order(values: Iterable[str]) -> list[str]:
-    """Повертає список без дублікатів, зберігаючи початковий порядок."""
+    """Повертає список без дублікатів, зберігаючи початковий порядок.
+
+    Return unique values while preserving their original ordering.
+    """
 
     seen: set[str] = set()
     result: list[str] = []
@@ -59,7 +68,10 @@ def _unique_preserve_order(values: Iterable[str]) -> list[str]:
 
 @dataclass(frozen=True)
 class SourceConfig:
-    """Опис джерела доменів."""
+    """Опис джерела доменів.
+
+    Describe a domain source used for incremental updates.
+    """
 
     name: str
     url: str
@@ -72,7 +84,10 @@ class SourceConfig:
 
 
 def _load_sources(path: Path) -> list[SourceConfig]:
-    """Завантажує конфігурацію джерел з JSON-файла."""
+    """Завантажує конфігурацію джерел з JSON-файла.
+
+    Load source definitions from a JSON configuration file.
+    """
 
     if not path.exists():
         return []
@@ -99,7 +114,10 @@ def _load_sources(path: Path) -> list[SourceConfig]:
 
 
 def _clean_domain(raw: str) -> str | None:
-    """Нормалізує значення домену, відкидаючи службові IP та коментарі."""
+    """Нормалізує значення домену, відкидаючи службові IP та коментарі.
+
+    Normalize domain values and ignore helper IP prefixes or comments.
+    """
     domain = unquote(raw.split("#", 1)[0]).strip()
     if not domain:
         return None
@@ -121,7 +139,10 @@ def _clean_domain(raw: str) -> str | None:
 
 
 def _retry_delay(base_delay: float, error: HTTPError) -> float:
-    """Обчислює затримку перед повтором запиту."""
+    """Обчислює затримку перед повтором запиту.
+
+    Calculate the retry delay taking response headers into account.
+    """
 
     header = getattr(error, "headers", None)
     if header:
@@ -137,7 +158,10 @@ def _retry_delay(base_delay: float, error: HTTPError) -> float:
 
 
 def _read_source(url: str) -> str | None:
-    """Завантажує вміст джерела з повторними спробами при тимчасових помилках."""
+    """Завантажує вміст джерела з повторними спробами при тимчасових помилках.
+
+    Download source content with retries on temporary failures.
+    """
 
     delay = 1.0
     for attempt in range(MAX_RETRIES):
@@ -159,7 +183,10 @@ def _read_source(url: str) -> str | None:
 
 
 def _fetch(source: SourceConfig) -> tuple[SourceConfig, list[str]]:
-    """Завантажує домени з URL, повертаючи порожній список у разі помилки."""
+    """Завантажує домени з URL, повертаючи порожній список у разі помилки.
+
+    Retrieve domains from a remote source, falling back to an empty list on errors.
+    """
 
     text = _read_source(source.url)
     if text is None:
@@ -178,7 +205,10 @@ def _fetch(source: SourceConfig) -> tuple[SourceConfig, list[str]]:
 
 
 def _load_source_cache(path: Path) -> dict[str, dict[str, object]]:
-    """Завантажує локальний кеш джерел із відновленням після пошкодження."""
+    """Завантажує локальний кеш джерел із відновленням після пошкодження.
+
+    Load the local source cache and recover gracefully from corruption.
+    """
 
     if not path.exists():
         return {}
@@ -201,7 +231,10 @@ def _load_source_cache(path: Path) -> dict[str, dict[str, object]]:
 
 
 def _store_source_cache(path: Path, data: dict[str, dict[str, object]]) -> None:
-    """Зберігає кеш джерел у JSON із безпечним створенням директорій."""
+    """Зберігає кеш джерел у JSON із безпечним створенням директорій.
+
+    Persist the source cache as JSON while creating directories safely.
+    """
 
     payload: dict[str, dict[str, object]] = {}
     for key, value in data.items():
@@ -220,7 +253,10 @@ def _store_source_cache(path: Path, data: dict[str, dict[str, object]]) -> None:
 
 
 def _cache_is_fresh(source: SourceConfig, fetched_at: object, *, now: datetime) -> bool:
-    """Перевіряє, чи ще актуальний кеш для джерела."""
+    """Перевіряє, чи ще актуальний кеш для джерела.
+
+    Determine whether cached data remains fresh for the given source.
+    """
 
     if not isinstance(fetched_at, str):
         return False
@@ -246,9 +282,14 @@ def update(
 ) -> None:
     """Оновлює файл доменів, додаючи нові записи з перевірених джерел.
 
+    Update the domains file with new entries gathered from trusted feeds.
+
     Кешування вмісту джерел дозволяє уникати повторного завантаження
     списків, якщо з моменту попереднього звернення не минув інтервал,
     заданий у конфігурації.
+
+    Caching source data prevents unnecessary downloads when the configured
+    update interval has not yet expired.
     """
     if sources is None:
         source_list = [src for src in _load_sources(config_path) if src.enabled]
@@ -419,7 +460,10 @@ def _write_report(
 
 
 def _write_markdown_report(path: Path, data: dict[str, object]) -> None:
-    """Створює людиночитний Markdown-звіт за результатами оновлення."""
+    """Створює людиночитний Markdown-звіт за результатами оновлення.
+
+    Build a human-readable Markdown report summarising the update.
+    """
 
     path.parent.mkdir(parents=True, exist_ok=True)
     added = list(data.get("added", []))
@@ -538,7 +582,10 @@ def _update_status(
 
 
 def main(argv: list[str] | None = None) -> None:
-    """CLI-обгортка для оновлення списку доменів."""
+    """CLI-обгортка для оновлення списку доменів.
+
+    Command-line wrapper for the domain update workflow.
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("--chunk-size", type=int, default=CHUNK_SIZE)
     parser.add_argument("--dest", type=Path, default=DOMAINS_FILE)
