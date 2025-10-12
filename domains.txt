@@ -20687,6 +20687,8 @@ brics.media
 duma.gov.ru
 goszakupki.gov.ru
 government.ru
+mid.ru
+mil.ru
 minfin.gov.ru
 minstroyrf.gov.ru
 nalog.gov.ru
