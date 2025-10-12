@@ -4,7 +4,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import json
 from pathlib import Path
-from typing import Iterable, Iterator, Mapping, Sequence
+from typing import Any, Iterable, Iterator, Mapping, Sequence
 
 
 def load_entries(path: Path) -> list[str]:
@@ -148,12 +148,122 @@ def load_catalog(path: Path) -> Catalog:
     return Catalog(domains=domain_meta, regexes=regex_meta)
 
 
-def load_false_positive_lists(path: Path) -> tuple[set[str], set[str]]:
-    """Повертає списки потенційних хибнопозитивних записів."""
+@dataclass(frozen=True)
+class FalsePositiveRecord:
+    """Опис звернення щодо хибнопозитивного запису."""
+
+    value: str
+    original_value: str | None = None
+    reason: str | None = None
+    reported_by: str | None = None
+    reported_at: str | None = None
+    review_status: str | None = None
+    action: str | None = None
+    notes: str | None = None
+    evidence: tuple[str, ...] = ()
+
+    def as_dict(self) -> dict[str, Any]:
+        """Перетворює запис на словник для звітів."""
+
+        data: dict[str, Any] = {"value": self.display_value}
+        if self.reason:
+            data["reason"] = self.reason
+        if self.reported_by:
+            data["reported_by"] = self.reported_by
+        if self.reported_at:
+            data["reported_at"] = self.reported_at
+        if self.review_status:
+            data["review_status"] = self.review_status
+        if self.action:
+            data["action"] = self.action
+        if self.notes:
+            data["notes"] = self.notes
+        if self.evidence:
+            data["evidence"] = list(self.evidence)
+        return data
+
+    @property
+    def display_value(self) -> str:
+        """Повертає людинозрозумілу форму значення."""
+
+        return self.original_value or self.value
+
+
+def _normalize_optional(value: Any) -> str | None:
+    """Повертає очищений рядок або None."""
+
+    if value is None:
+        return None
+    string = str(value).strip()
+    return string or None
+
+
+def _load_false_positive_records(
+    raw_entries: Iterable[Any],
+    *,
+    lower_value: bool,
+) -> list[FalsePositiveRecord]:
+    """Перетворює записи хибнопозитивів на об'єкти."""
+
+    records: list[FalsePositiveRecord] = []
+    for raw in raw_entries:
+        if isinstance(raw, str):
+            value = raw.strip()
+            if not value:
+                continue
+            normalized = value.lower() if lower_value else value
+            records.append(FalsePositiveRecord(value=normalized, original_value=value))
+            continue
+
+        if isinstance(raw, Mapping):
+            original = _normalize_optional(raw.get("value"))
+            if not original:
+                continue
+            normalized = original.lower() if lower_value else original
+            evidence = tuple(
+                str(item).strip()
+                for item in raw.get("evidence", [])
+                if str(item).strip()
+            )
+            records.append(
+                FalsePositiveRecord(
+                    value=normalized,
+                    original_value=original,
+                    reason=_normalize_optional(raw.get("reason")),
+                    reported_by=_normalize_optional(raw.get("reported_by")),
+                    reported_at=_normalize_optional(raw.get("reported_at")),
+                    review_status=_normalize_optional(raw.get("review_status")),
+                    action=_normalize_optional(raw.get("action")),
+                    notes=_normalize_optional(raw.get("notes")),
+                    evidence=evidence,
+                )
+            )
+    return records
+
+
+def load_false_positive_records(
+    path: Path,
+) -> tuple[list[FalsePositiveRecord], list[FalsePositiveRecord]]:
+    """Завантажує звернення щодо хибнопозитивів для доменів та regex."""
 
     if not path.exists():
-        return set(), set()
+        return [], []
     data = json.loads(path.read_text() or "{}")
-    domains = {str(item).lower() for item in data.get("domains", [])}
-    regexes = {str(item) for item in data.get("regexes", [])}
+    domain_records = _load_false_positive_records(
+        data.get("domains", []),
+        lower_value=True,
+    )
+    regex_records = _load_false_positive_records(
+        data.get("regexes", []),
+        lower_value=False,
+    )
+    return domain_records, regex_records
+
+
+def load_false_positive_lists(path: Path) -> tuple[set[str], set[str]]:
+    """Повертає множини значень, позначених як хибнопозитиви."""
+
+    domain_records, regex_records = load_false_positive_records(path)
+    domains = {record.value for record in domain_records}
+    regexes = {record.value for record in regex_records}
     return domains, regexes
