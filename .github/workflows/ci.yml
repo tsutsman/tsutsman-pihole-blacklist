@@ -21,7 +21,9 @@ jobs:
           pip install -r requirements.txt
       - name: Перевірка списків
         run: python scripts/check_lists.py
-      - name: Запуск тестів
-        run: pytest -q
+      - name: Запуск тестів із покриттям
+        run: coverage run -m pytest -q
+      - name: Перевірка порогу покриття
+        run: coverage report --fail-under=85
       - name: Перевірка генерації списків
         run: python scripts/generate_lists.py --dist-dir dist --formats adguard ublock hosts
