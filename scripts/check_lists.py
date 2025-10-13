@@ -15,12 +15,13 @@ marked for monitoring.
 
 from __future__ import annotations
 
-import re
-import sys
 import argparse
+import json
+import re
 import socket
+import sys
 from pathlib import Path
-from typing import Iterable
+from typing import Any, Iterable, Mapping, Sequence
 
 try:  # pragma: no cover - шлях для запуску напряму
     from .utils import Catalog, EntryMetadata, load_catalog, load_entries, load_false_positive_lists
@@ -180,6 +181,41 @@ def _check_dns(domains: list[str], *, catalog: Catalog, limit: int) -> list[str]
     return failed
 
 
+def _find_incomplete_metadata(
+    raw_entries: Iterable[Mapping[str, Any]],
+    *,
+    required_fields: Sequence[str],
+) -> list[str]:
+    """Шукає активні записи каталогу без обов'язкових полів."""
+
+    issues: list[str] = []
+    for raw in raw_entries:
+        if not isinstance(raw, Mapping):
+            continue
+        raw_status = raw.get("status")
+        status_value = str(raw_status).strip().lower() if raw_status is not None else None
+        is_active = status_value in (None, "", "active")
+        if not is_active:
+            continue
+
+        missing: list[str] = []
+        for field in required_fields:
+            if field not in raw:
+                missing.append(field)
+                continue
+            value = raw[field]
+            if field in {"category", "status"}:
+                if not str(value).strip():
+                    missing.append(field)
+            elif field in {"regions", "sources"}:
+                if not isinstance(value, Sequence) or isinstance(value, (str, bytes)) or not list(value):
+                    missing.append(field)
+        if missing:
+            display_value = str(raw.get("value", "")).strip() or "<невідомий>"
+            issues.append(f"{display_value}: {', '.join(sorted(set(missing)))}")
+    return issues
+
+
 def main(argv: list[str] | None = None) -> int:
     """Головна функція перевірки списків.
 
@@ -205,6 +241,11 @@ def main(argv: list[str] | None = None) -> int:
     domains = load_entries(DOMAINS_FILE)
     regexes = load_entries(REGEX_FILE)
     catalog = load_catalog(args.catalog)
+
+    raw_catalog: dict[str, Any] = {}
+    if args.catalog.exists():
+        raw_catalog = json.loads(args.catalog.read_text() or "{}")
+
 
     issues: list[str] = []
 
@@ -270,6 +311,27 @@ def main(argv: list[str] | None = None) -> int:
                 "Регулярні вирази без метаданих у каталозі: "
                 + ", ".join(missing_regexes)
             )
+
+    required_fields = ("category", "regions", "sources", "status")
+    incomplete_domains = _find_incomplete_metadata(
+        raw_catalog.get("domains", []),
+        required_fields=required_fields,
+    )
+    if incomplete_domains:
+        issues.append(
+            "Домени з неповними метаданими (потрібні category, regions, sources, status): "
+            + "; ".join(sorted(incomplete_domains))
+        )
+
+    incomplete_regexes = _find_incomplete_metadata(
+        raw_catalog.get("regexes", []),
+        required_fields=required_fields,
+    )
+    if incomplete_regexes:
+        issues.append(
+            "Регулярні вирази з неповними метаданими (потрібні category, regions, sources, status): "
+            + "; ".join(sorted(incomplete_regexes))
+        )
 
     issues.extend(_check_false_positives(domains, regexes, args.false_positives))
 
