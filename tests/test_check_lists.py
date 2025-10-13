@@ -94,11 +94,19 @@ def test_main_requires_metadata_all_success(tmp_path, monkeypatch, capsys):
         "domains": [
             {
                 "value": "example.com",
+                "category": "пропаганда",
+                "regions": ["global"],
+                "sources": ["ручне"],
+                "status": "active",
             }
         ],
         "regexes": [
             {
                 "value": "good.*",
+                "category": "пропаганда",
+                "regions": ["global"],
+                "sources": ["ручне"],
+                "status": "active",
             }
         ],
     }
@@ -138,3 +146,42 @@ def test_main_dns_check(tmp_path, monkeypatch, capsys):
     out = capsys.readouterr().out
     assert "Домени без DNS-відповіді" in out
     assert calls == ["example.com"]
+
+
+def test_main_detects_incomplete_domain_metadata(tmp_path, monkeypatch, capsys):
+    catalog = {
+        "domains": [
+            {
+                "value": "example.com",
+                "category": "пропаганда",
+                "regions": [],
+                "sources": ["ручне"],
+                "status": "active",
+            }
+        ],
+        "regexes": [],
+    }
+    _prepare(tmp_path, monkeypatch, catalog=catalog)
+    assert check_lists.main([]) == 1
+    out = capsys.readouterr().out
+    assert "Домени з неповними метаданими" in out
+    assert "regions" in out
+
+
+def test_main_detects_incomplete_regex_metadata(tmp_path, monkeypatch, capsys):
+    catalog = {
+        "domains": [],
+        "regexes": [
+            {
+                "value": "bad.*",
+                "category": "фішинг",
+                "regions": ["global"],
+                "status": "active",
+            }
+        ],
+    }
+    _prepare(tmp_path, monkeypatch, catalog=catalog)
+    assert check_lists.main([]) == 1
+    out = capsys.readouterr().out
+    assert "Регулярні вирази з неповними метаданими" in out
+    assert "sources" in out
