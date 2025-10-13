@@ -17,6 +17,7 @@ that focus on infrastructure linked to aggressor states.
 - `python scripts/audit_lists.py [--output reports/audit.json]` — produces a JSON audit of the lists, metadata coverage, and catalog entries that have no matching list entry.
 - `python scripts/generate_lists.py [--dist-dir DIR] [--formats adguard ublock hosts rpz dnsmasq unbound] [--group-by category|region|source] [--categories ...] [--regions ...]` — builds lists in multiple formats, optionally segmented by category, region, or source, and stores grouped results under `dist/segments/`.
 - `python scripts/update_domains.py [--chunk-size N] [--dest FILE] [--config data/sources.json] [--report reports/latest_update.json] [--status data/domain_status.json]` — downloads domains in parallel according to source weights, generates update reports, and keeps an observation history.
+- `python scripts/diff_reports.py PREVIOUS CURRENT [--output FILE]` — compares two update JSON reports (e.g. `reports/latest_update.json`) and builds a diff for release notes and history tracking.
 
 ## Metadata and Reporting
 - `data/catalog.json` describes categories, regions, sources, statuses, and optional confidence levels for key domains and regexes. Entries missing metadata are grouped into the `no-metadata` segment.

@@ -12,6 +12,7 @@ __all__ = [
     "audit_lists",
     "check_lists",
     "generate_lists",
+    "diff_reports",
     "update_domains",
     "validate_catalog",
     "utils",
@@ -21,6 +22,7 @@ if TYPE_CHECKING:  # pragma: no cover
     from . import (  # noqa: F401
         audit_lists,
         check_lists,
+        diff_reports,
         generate_lists,
         update_domains,
         utils,
