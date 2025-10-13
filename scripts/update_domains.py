@@ -13,7 +13,7 @@ from ipaddress import ip_address
 from http.client import IncompleteRead
 import time
 from pathlib import Path
-from typing import Iterable, Sequence
+from typing import Any, Iterable, Sequence
 from urllib.error import HTTPError, URLError
 from urllib.parse import unquote
 from urllib.request import urlopen
@@ -66,6 +66,20 @@ def _unique_preserve_order(values: Iterable[str]) -> list[str]:
     return result
 
 
+def _parse_iso_timestamp(value: object) -> datetime | None:
+    """Повертає datetime з ISO-рядка або None, якщо формат некоректний.
+
+    Parse ISO formatted timestamps returning ``datetime`` when valid.
+    """
+
+    if isinstance(value, str):
+        try:
+            return datetime.fromisoformat(value)
+        except ValueError:
+            return None
+    return None
+
+
 @dataclass(frozen=True)
 class SourceConfig:
     """Опис джерела доменів.
@@ -78,7 +92,10 @@ class SourceConfig:
     category: str = "загальна"
     regions: tuple[str, ...] = ("global",)
     weight: float = 1.0
+    trust: float = 1.0
     update_interval_days: int = 1
+    sla_days: int | None = None
+    auto_disable_on_sla: bool = False
     enabled: bool = True
     notes: str | None = None
 
@@ -98,14 +115,36 @@ def _load_sources(path: Path) -> list[SourceConfig]:
         name = str(item.get("name", url or "невідоме джерело")).strip()
         if not url:
             continue
+        try:
+            weight = float(item.get("weight", 1.0))
+        except (TypeError, ValueError):
+            weight = 1.0
+        try:
+            trust = float(item.get("trust", 1.0))
+        except (TypeError, ValueError):
+            trust = 1.0
+        try:
+            interval = int(item.get("update_interval_days", 1))
+        except (TypeError, ValueError):
+            interval = 1
+        sla_raw = item.get("sla_days")
+        sla_days = None
+        if sla_raw is not None:
+            try:
+                sla_days = max(1, int(sla_raw))
+            except (TypeError, ValueError):
+                sla_days = None
         sources.append(
             SourceConfig(
                 name=name,
                 url=url,
                 category=str(item.get("category", "загальна")),
                 regions=tuple(str(region) for region in item.get("regions", ["global"])),
-                weight=float(item.get("weight", 1.0)),
-                update_interval_days=int(item.get("update_interval_days", 1)),
+                weight=weight,
+                trust=max(0.0, min(1.0, trust)),
+                update_interval_days=max(1, interval),
+                sla_days=sla_days,
+                auto_disable_on_sla=bool(item.get("auto_disable_on_sla", False)),
                 enabled=bool(item.get("enabled", True)),
                 notes=str(item.get("notes")) if item.get("notes") else None,
             )
@@ -182,15 +221,15 @@ def _read_source(url: str) -> str | None:
     return None
 
 
-def _fetch(source: SourceConfig) -> tuple[SourceConfig, list[str]]:
-    """Завантажує домени з URL, повертаючи порожній список у разі помилки.
+def _fetch(source: SourceConfig) -> tuple[SourceConfig, list[str], bool]:
+    """Завантажує домени та повертає ознаку успіху.
 
-    Retrieve domains from a remote source, falling back to an empty list on errors.
+    Download domains and report whether the fetch succeeded.
     """
 
     text = _read_source(source.url)
     if text is None:
-        return source, []
+        return source, [], False
     domains: list[str] = []
     for line in text.splitlines():
         line = line.strip()
@@ -201,7 +240,7 @@ def _fetch(source: SourceConfig) -> tuple[SourceConfig, list[str]]:
         domain = _clean_domain(raw)
         if domain:
             domains.append(domain)
-    return source, domains
+    return source, domains, True
 
 
 def _load_source_cache(path: Path) -> dict[str, dict[str, object]]:
@@ -220,13 +259,22 @@ def _load_source_cache(path: Path) -> dict[str, dict[str, object]]:
     for key, value in raw.items():
         if not isinstance(key, str) or not isinstance(value, dict):
             continue
-        domains = value.get("domains")
-        if not isinstance(domains, list):
-            continue
-        cache[key] = {
-            "domains": [str(item) for item in domains if isinstance(item, str)],
-            "fetched_at": value.get("fetched_at"),
-        }
+        domains_raw = value.get("domains")
+        if isinstance(domains_raw, list):
+            domains = [str(item) for item in domains_raw if isinstance(item, str)]
+        else:
+            domains = []
+        entry: dict[str, object] = {"domains": domains}
+        fetched_at = value.get("fetched_at")
+        if isinstance(fetched_at, str):
+            entry["fetched_at"] = fetched_at
+        last_success = value.get("last_success_at")
+        if isinstance(last_success, str):
+            entry["last_success_at"] = last_success
+        status = value.get("status")
+        if isinstance(status, str) and status in {"ok", "error"}:
+            entry["status"] = status
+        cache[key] = entry
     return cache
 
 
@@ -243,30 +291,91 @@ def _store_source_cache(path: Path, data: dict[str, dict[str, object]]) -> None:
         domains = value.get("domains")
         if not isinstance(domains, list):
             continue
-        fetched_at = value.get("fetched_at")
-        payload[key] = {
+        entry: dict[str, object] = {
             "domains": _unique_preserve_order(domains),
-            "fetched_at": fetched_at,
         }
+        fetched_at = value.get("fetched_at")
+        if isinstance(fetched_at, str):
+            entry["fetched_at"] = fetched_at
+        last_success = value.get("last_success_at")
+        if isinstance(last_success, str):
+            entry["last_success_at"] = last_success
+        status = value.get("status")
+        if isinstance(status, str) and status in {"ok", "error"}:
+            entry["status"] = status
+        payload[key] = entry
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
 
 
-def _cache_is_fresh(source: SourceConfig, fetched_at: object, *, now: datetime) -> bool:
+def _cache_is_fresh(
+    source: SourceConfig, cache_entry: dict[str, object], *, now: datetime
+) -> bool:
     """Перевіряє, чи ще актуальний кеш для джерела.
 
     Determine whether cached data remains fresh for the given source.
     """
 
-    if not isinstance(fetched_at, str):
+    if cache_entry.get("status") == "error":
         return False
-    try:
-        timestamp = datetime.fromisoformat(fetched_at)
-    except ValueError:
+    fetched_at = _parse_iso_timestamp(cache_entry.get("fetched_at"))
+    if fetched_at is None:
         return False
-    interval_days = max(1, int(source.update_interval_days))
-    ttl = timedelta(days=interval_days)
-    return timestamp + ttl > now
+    ttl = timedelta(days=max(1, source.update_interval_days))
+    return fetched_at + ttl > now
+
+
+def _sla_missed(
+    source: SourceConfig, cache_entry: dict[str, object] | None, *, now: datetime
+) -> bool:
+    """Повертає True, якщо джерело перевищило свій SLA.
+
+    Return ``True`` when the source has exceeded its freshness SLA window.
+    """
+
+    if source.sla_days is None:
+        return False
+    if not cache_entry:
+        return True
+    last_success = _parse_iso_timestamp(cache_entry.get("last_success_at"))
+    if last_success is None and cache_entry.get("status") == "ok":
+        last_success = _parse_iso_timestamp(cache_entry.get("fetched_at"))
+    if last_success is None:
+        return True
+    return last_success + timedelta(days=source.sla_days) < now
+
+
+def _describe_source_health(
+    source: SourceConfig,
+    cache_entry: dict[str, object] | None,
+    *,
+    now: datetime,
+    auto_disabled: bool,
+) -> dict[str, Any]:
+    """Формує короткий опис стану джерела для звіту.
+
+    Produce a condensed health summary for reporting purposes.
+    """
+
+    status = "never-fetched"
+    if cache_entry:
+        status = str(cache_entry.get("status", "unknown"))
+    health: dict[str, Any] = {
+        "name": source.name,
+        "url": source.url,
+        "status": status,
+        "trust": round(source.trust, 3),
+        "sla_days": source.sla_days,
+        "auto_disabled": auto_disabled,
+    }
+    fetched_at = cache_entry.get("fetched_at") if cache_entry else None
+    if isinstance(fetched_at, str):
+        health["fetched_at"] = fetched_at
+    last_success = cache_entry.get("last_success_at") if cache_entry else None
+    if isinstance(last_success, str):
+        health["last_success_at"] = last_success
+    health["sla_breached"] = _sla_missed(source, cache_entry, now=now)
+    return health
 
 
 def update(
@@ -292,16 +401,16 @@ def update(
     update interval has not yet expired.
     """
     if sources is None:
-        source_list = [src for src in _load_sources(config_path) if src.enabled]
+        configured_sources = [src for src in _load_sources(config_path) if src.enabled]
     else:
-        source_list = []
+        configured_sources = []
         for item in sources:
             if isinstance(item, SourceConfig):
-                source_list.append(item)
+                configured_sources.append(item)
             else:
                 url = str(item)
-                source_list.append(SourceConfig(name=url, url=url))
-    if not source_list:
+                configured_sources.append(SourceConfig(name=url, url=url))
+    if not configured_sources:
         return
 
     existing: set[str] = set()
@@ -340,12 +449,23 @@ def update(
     domain_sources: dict[str, list[SourceConfig]] = {}
     cache = _load_source_cache(cache_path)
     now = datetime.now(timezone.utc)
+    active_sources: list[SourceConfig] = []
+    skipped_due_sla: list[SourceConfig] = []
+    for source in configured_sources:
+        cache_entry = cache.get(source.url)
+        if source.auto_disable_on_sla and _sla_missed(source, cache_entry, now=now):
+            skipped_due_sla.append(source)
+            continue
+        active_sources.append(source)
+
+    source_list = active_sources
     pending_fetch: list[SourceConfig] = []
     cached_results: dict[SourceConfig, list[str]] = {}
+    had_fetch_errors = False
 
     for source in source_list:
         cached = cache.get(source.url)
-        if cached and _cache_is_fresh(source, cached.get("fetched_at"), now=now):
+        if cached and _cache_is_fresh(source, cached, now=now):
             domains = _unique_preserve_order(
                 d for d in cached.get("domains", []) if isinstance(d, str)
             )
@@ -356,19 +476,23 @@ def update(
     if pending_fetch:
         max_workers = max(1, min(MAX_PARALLEL_FETCHES, len(pending_fetch)))
         with ThreadPoolExecutor(max_workers=max_workers) as pool:
-            for source, domains in pool.map(_fetch, pending_fetch):
+            for source, domains, success in pool.map(_fetch, pending_fetch):
                 deduplicated = _unique_preserve_order(domains)
-                if deduplicated:
+                previous = cache.get(source.url, {})
+                entry: dict[str, object] = {
+                    "domains": deduplicated if success else list(previous.get("domains", [])),
+                    "fetched_at": now.isoformat(),
+                    "status": "ok" if success else "error",
+                }
+                if success:
+                    entry["last_success_at"] = now.isoformat()
                     cached_results[source] = deduplicated
-                    cache[source.url] = {
-                        "domains": deduplicated,
-                        "fetched_at": now.isoformat(),
-                    }
                 else:
-                    cache[source.url] = {
-                        "domains": [],
-                        "fetched_at": now.isoformat(),
-                    }
+                    had_fetch_errors = True
+                    last_success = previous.get("last_success_at")
+                    if isinstance(last_success, str):
+                        entry["last_success_at"] = last_success
+                cache[source.url] = entry
 
     for source, domains in cached_results.items():
         for domain in domains:
@@ -383,18 +507,22 @@ def update(
     scored = sorted(
         new_candidates,
         key=lambda item: (
-            -max((src.weight for src in domain_sources.get(item, [])), default=0.0),
+            -max(
+                (src.weight * src.trust for src in domain_sources.get(item, [])),
+                default=0.0,
+            ),
             item,
         ),
     )
     new_domains = scored[:chunk_size]
     if new_domains:
         needs_rewrite = True
-    if not new_domains and not needs_rewrite:
+    if not new_domains and not needs_rewrite and not skipped_due_sla and not had_fetch_errors:
         return
 
     merged = sorted(existing | set(new_domains))
-    dest.write_text("\n".join(merged) + "\n")
+    if new_domains or needs_rewrite:
+        dest.write_text("\n".join(merged) + "\n")
 
     normalized_info = {
         "total": normalized_total,
@@ -413,6 +541,27 @@ def update(
         "preview": sorted(invalid_preview),
     }
 
+    skipped_set = set(skipped_due_sla)
+    skipped_info = [
+        {
+            "name": src.name,
+            "url": src.url,
+            "reason": "sla_missed",
+            "sla_days": src.sla_days,
+            "trust": round(src.trust, 3),
+        }
+        for src in skipped_due_sla
+    ]
+    source_health = [
+        _describe_source_health(
+            src,
+            cache.get(src.url),
+            now=now,
+            auto_disabled=src in skipped_set,
+        )
+        for src in configured_sources
+    ]
+
     report_payload = _write_report(
         report_path,
         added=new_domains,
@@ -422,6 +571,9 @@ def update(
         normalized=normalized_info,
         duplicates=duplicates_info,
         invalid=invalid_info,
+        skipped_sources=skipped_info,
+        source_health=source_health,
+        fetch_errors=had_fetch_errors,
     )
     _write_markdown_report(markdown_path, report_payload)
     _update_status(
@@ -441,6 +593,9 @@ def _write_report(
     normalized: dict[str, object],
     duplicates: dict[str, object],
     invalid: dict[str, object],
+    skipped_sources: Sequence[dict[str, object]] | None = None,
+    source_health: Sequence[dict[str, object]] | None = None,
+    fetch_errors: bool = False,
 ) -> dict[str, object]:
     report_path.parent.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now(timezone.utc).isoformat()
@@ -455,6 +610,12 @@ def _write_report(
     }
     if stale_candidates:
         payload["stale_candidates"] = list(stale_candidates)
+    if skipped_sources:
+        payload["skipped_sources"] = list(skipped_sources)
+    if source_health:
+        payload["source_health"] = list(source_health)
+    if fetch_errors:
+        payload["fetch_errors"] = True
     report_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
     return payload
 
@@ -477,6 +638,13 @@ def _write_markdown_report(path: Path, data: dict[str, object]) -> None:
     if not isinstance(invalid_info, dict):
         invalid_info = {"total": 0, "preview": []}
     stale = list(data.get("stale_candidates", []))
+    skipped = list(data.get("skipped_sources", []))
+    health_entries = [
+        entry
+        for entry in data.get("source_health", [])
+        if isinstance(entry, dict)
+    ]
+    fetch_errors = bool(data.get("fetch_errors"))
 
     def _calc_rest(total: int, preview: Sequence[object]) -> int:
         return max(0, total - len(preview))
@@ -492,6 +660,9 @@ def _write_markdown_report(path: Path, data: dict[str, object]) -> None:
         f"- Унікальних дублікатів: {duplicates_info.get('unique', 0)}",
         f"- Пропущено некоректних рядків: {invalid_info.get('total', 0)}",
         f"- Потенційно застарілих кандидатів: {len(stale)}",
+        f"- Джерел у роботі: {len(data.get('sources', []))}",
+        f"- Пропущені джерела: {len(skipped)}",
+        f"- Помилки під час завантаження: {'так' if fetch_errors else 'ні'}",
     ]
 
     if added:
@@ -540,6 +711,41 @@ def _write_markdown_report(path: Path, data: dict[str, object]) -> None:
         rest = _calc_rest(len(stale), preview_items)
         if rest:
             lines.append(f"... ще {rest} доменів")
+
+    if skipped:
+        lines.extend(["", "## Пропущені джерела через SLA", ""])
+        preview_items = skipped[:PREVIEW_LIMIT]
+        for entry in preview_items:
+            if not isinstance(entry, dict):
+                continue
+            name = entry.get("name", "невідоме джерело")
+            url = entry.get("url", "?")
+            sla = entry.get("sla_days")
+            trust = entry.get("trust")
+            trust_value = f"{trust:.2f}" if isinstance(trust, (int, float)) else "—"
+            lines.append(
+                f"- {name} ({url}) — SLA: {sla if sla is not None else '—'} дн., trust {trust_value}"
+            )
+        rest = _calc_rest(len(skipped), preview_items)
+        if rest:
+            lines.append(f"... ще {rest} джерел")
+
+    if health_entries:
+        lines.extend(["", "## Стан джерел", "", "| Джерело | Статус | Trust | SLA (дні) | Останній успіх | Автовимкнено |", "| --- | --- | --- | --- | --- | --- |"])
+        for entry in health_entries[:PREVIEW_LIMIT]:
+            name = str(entry.get("name", "невідомо"))
+            status = str(entry.get("status", "unknown"))
+            trust = entry.get("trust")
+            sla = entry.get("sla_days")
+            last_success = entry.get("last_success_at") or entry.get("fetched_at") or "—"
+            auto_disabled = "так" if entry.get("auto_disabled") else "ні"
+            url = entry.get("url")
+            display_name = f"[{name}]({url})" if url else name
+            trust_value = f"{trust:.2f}" if isinstance(trust, (int, float)) else "—"
+            sla_value = sla if sla is not None else "—"
+            lines.append(
+                f"| {display_name} | {status} | {trust_value} | {sla_value} | {last_success} | {auto_disabled} |"
+            )
 
     content = "\n".join(lines).rstrip() + "\n"
     path.write_text(content)
