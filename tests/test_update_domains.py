@@ -17,7 +17,7 @@ def test_fetch_handles_error(monkeypatch):
 
     monkeypatch.setattr(update_domains, "urlopen", fake_urlopen)
     source = _source("http://example.com")
-    assert update_domains._fetch(source) == (source, [])
+    assert update_domains._fetch(source) == (source, [], False)
 
 
 def test_fetch_parses_domains(monkeypatch):
@@ -40,6 +40,7 @@ def test_fetch_parses_domains(monkeypatch):
     assert update_domains._fetch(source) == (
         source,
         ["example.com", "example.org"],
+        True,
     )
 
 
@@ -77,6 +78,7 @@ def test_fetch_normalizes_hosts(monkeypatch):
             "mandrillapp.com",
             "wildcard.com",
         ],
+        True,
     )
 
 
@@ -107,14 +109,14 @@ def test_fetch_retries_rate_limit(monkeypatch):
 
     source = _source("http://example.com")
 
-    assert update_domains._fetch(source) == (source, ["example.com"])
+    assert update_domains._fetch(source) == (source, ["example.com"], True)
     assert attempts["count"] == 2
     assert sleeps == [2.0]
 
 
 def test_update_chunk_size(tmp_path, monkeypatch):
     def fake_fetch(source):
-        return source, [f"{source.name}.com"]
+        return source, [f"{source.name}.com"], True
 
     monkeypatch.setattr(update_domains, "_fetch", fake_fetch)
     dest = tmp_path / "domains.txt"
@@ -135,6 +137,12 @@ def test_update_chunk_size(tmp_path, monkeypatch):
     assert dest.read_text().splitlines() == ["a.com"]
     data = json.loads(report.read_text())
     assert data["added"] == ["a.com"]
+    assert data.get("skipped_sources", []) == []
+    health = data.get("source_health")
+    assert isinstance(health, list)
+    assert {entry["name"] for entry in health} == {"a", "b"}
+    assert all(entry.get("status") == "ok" for entry in health)
+    assert "fetch_errors" not in data
     summary = markdown.read_text()
     assert "Нові домени" in summary
     assert "a.com" in summary
@@ -149,7 +157,7 @@ def test_update_parallel_fetch(tmp_path, monkeypatch):
     def fake_fetch(source):
         calls.append(source.name)
         barrier.wait(timeout=1)
-        return source, []
+        return source, [], True
 
     monkeypatch.setattr(update_domains, "_fetch", fake_fetch)
     dest = tmp_path / "domains.txt"
@@ -176,7 +184,7 @@ def test_update_reports_diagnostics(tmp_path, monkeypatch):
     markdown = tmp_path / "summary.md"
 
     def fake_fetch(source):
-        return source, ["new.com"]
+        return source, ["new.com"], True
 
     monkeypatch.setattr(update_domains, "_fetch", fake_fetch)
 
@@ -195,6 +203,8 @@ def test_update_reports_diagnostics(tmp_path, monkeypatch):
     assert data["duplicates_removed"]["total"] == 1
     assert data["duplicates_removed"]["unique"] == 1
     assert data["invalid_lines"]["total"] == 1
+    assert data.get("skipped_sources", []) == []
+    assert any(entry.get("name") == "src" for entry in data.get("source_health", []))
     preview = data["normalized"]["preview"][0]
     assert preview["normalized"] == "old.com"
     assert preview["original"] == "0.0.0.0 old.com"
@@ -230,7 +240,7 @@ def test_update_uses_cached_sources(tmp_path, monkeypatch):
 
     def fake_fetch(source):
         called["value"] = True
-        return source, ["new.com"]
+        return source, ["new.com"], True
 
     monkeypatch.setattr(update_domains, "_fetch", fake_fetch)
 
@@ -266,7 +276,7 @@ def test_update_refreshes_stale_cache(tmp_path, monkeypatch):
     )
 
     def fake_fetch(source):
-        return source, ["fresh.com", "fresh.com"]
+        return source, ["fresh.com", "fresh.com"], True
 
     monkeypatch.setattr(update_domains, "_fetch", fake_fetch)
 
@@ -282,6 +292,85 @@ def test_update_refreshes_stale_cache(tmp_path, monkeypatch):
     assert dest.read_text().splitlines() == ["fresh.com"]
     data = json.loads(cache.read_text())
     assert data["http://stale"]["domains"] == ["fresh.com"]
+
+
+def test_update_skips_sources_on_sla(tmp_path, monkeypatch):
+    dest = tmp_path / "domains.txt"
+    report = tmp_path / "report.json"
+    status = tmp_path / "status.json"
+    markdown = tmp_path / "summary.md"
+    cache = tmp_path / "cache.json"
+    cache.write_text(
+        json.dumps(
+            {
+                "http://sla": {
+                    "domains": ["old.com"],
+                    "fetched_at": "2000-01-01T00:00:00+00:00",
+                    "last_success_at": "2000-01-01T00:00:00+00:00",
+                    "status": "ok",
+                }
+            }
+        )
+    )
+
+    called = {"value": False}
+
+    def fake_fetch(source):
+        called["value"] = True
+        return source, ["should-not"], True
+
+    monkeypatch.setattr(update_domains, "_fetch", fake_fetch)
+
+    update_domains.update(
+        dest=dest,
+        sources=[_source("http://sla", sla_days=1, auto_disable_on_sla=True)],
+        report_path=report,
+        markdown_path=markdown,
+        status_path=status,
+        cache_path=cache,
+    )
+
+    assert called["value"] is False
+    data = json.loads(report.read_text())
+    assert data["skipped_sources"][0]["name"] == "http://sla"
+    assert data["skipped_sources"][0]["reason"] == "sla_missed"
+    health = {entry["name"]: entry for entry in data["source_health"]}
+    assert health["http://sla"]["auto_disabled"] is True
+    assert health["http://sla"]["sla_breached"] is True
+
+
+def test_update_prioritizes_trust(tmp_path, monkeypatch):
+    dest = tmp_path / "domains.txt"
+    report = tmp_path / "report.json"
+    status = tmp_path / "status.json"
+    markdown = tmp_path / "summary.md"
+    cache = tmp_path / "cache.json"
+
+    def fake_fetch(source):
+        if source.name == "trusted":
+            return source, ["trusted.com"], True
+        return source, ["less.com"], True
+
+    monkeypatch.setattr(update_domains, "_fetch", fake_fetch)
+
+    update_domains.update(
+        dest=dest,
+        chunk_size=2,
+        sources=[
+            _source("trusted", weight=1.0, trust=1.0),
+            _source("less", weight=1.5, trust=0.1),
+        ],
+        report_path=report,
+        markdown_path=markdown,
+        status_path=status,
+        cache_path=cache,
+    )
+
+    data = json.loads(report.read_text())
+    assert data["added"] == ["trusted.com", "less.com"]
+    health = {entry["name"]: entry for entry in data["source_health"]}
+    assert health["trusted"]["trust"] == 1.0
+    assert health["less"]["trust"] == 0.1
 
 
 def test_main_passes_args(tmp_path, monkeypatch):
