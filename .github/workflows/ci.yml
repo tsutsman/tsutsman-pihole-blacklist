@@ -33,3 +33,13 @@ jobs:
         run: coverage report --fail-under=85
       - name: Перевірка генерації списків
         run: python scripts/generate_lists.py --dist-dir dist --formats adguard ublock hosts
+      - name: Формування контрольних сум
+        run: |
+          cd dist
+          find . -type f -print0 | sort -z | xargs -0 sha256sum > checksums.txt
+          test -s checksums.txt
+      - name: Завантаження артефактів списків
+        uses: actions/upload-artifact@v3
+        with:
+          name: generated-lists
+          path: dist
