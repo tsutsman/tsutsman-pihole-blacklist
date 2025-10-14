@@ -146,6 +146,7 @@
 - `a.tiktokmod.pro`
 - `ams-new.bonuses.email`
 - `an.yandex.ru`
+- `anna-news.info`
 - `api.mainnet.minepi.com`
 - `checkip.deepstateplatypus.com`
 - `dev.period-calendar.com`
@@ -174,6 +175,7 @@
 - `ria.ru`
 - `riafan.ru`
 - `rt.com`
+- `rusvesna.su`
 - `rutube.ru`
 - `sberbank.ru`
 - `shiro.senkuro.org`

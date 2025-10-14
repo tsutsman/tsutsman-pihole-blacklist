@@ -3,6 +3,7 @@
 [English version](../en/key-domains/propaganda-media.md)
 
 - `1tv.ru`
+- `anna-news.info`
 - `eadaily.com`
 - `life.ru`
 - `lenta.ru`
@@ -12,6 +13,7 @@
 - `readovka.news`
 - `rossiya1.ru`
 - `rt.com`
+- `rusvesna.su`
 - `patriot.media`
 - `smotrim.ru`
 - `solovyov.live`

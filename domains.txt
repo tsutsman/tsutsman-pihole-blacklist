@@ -17068,6 +17068,7 @@ anmon.name
 anna-akhmatova.com
 anna-blog.info
 anna-karenina.ru
+anna-news.info
 annaasti-concert.ru
 annaasti-tickets.ru
 annabellekalai.com
@@ -20696,6 +20697,7 @@ minstroyrf.gov.ru
 nalog.gov.ru
 pravo.gov.ru
 russian.rt.com
+rusvesna.su
 sber.ru
 sibur.ru
 sovcombank.ru
