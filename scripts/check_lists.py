@@ -42,7 +42,7 @@ FALSE_POSITIVES_FILE = Path("data/false_positives.json")
 DOMAIN_RE = re.compile(
     r"^(?!-)[A-Za-z0-9-]{1,63}(?<!-)"
     r"(?:\.(?!-)[A-Za-z0-9-]{1,63}(?<!-))*"
-    r"\.[A-Za-z]{2,}$"
+    r"\.(?:[A-Za-z]{2,}|xn--[A-Za-z0-9-]{2,})$"
 )
 
 
