@@ -44,6 +44,10 @@ def test_validate_domains():
     assert _validate_domains(["example.com", "bad_domain"]) == ["bad_domain"]
 
 
+def test_validate_domains_allows_punycode_tld():
+    assert _validate_domains(["xn--90abhbolvbbfgb9aje4m.xn--p1ai"]) == []
+
+
 def test_validate_regexes():
     assert _validate_regexes([r"^good$", r"["]) == ["["]
 

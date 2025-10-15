@@ -1,4 +1,4 @@
--sso.anbtr.com
+sso.anbtr.com
 0--foodwarez.da.ru
 0-0-0-0-0-0proxy.tserv.se
 0-0-0.6te.net
@@ -4639,7 +4639,7 @@
 10000jimmurphy.goodluckseeker.com
 10000mbrendle.goodluckseeker.com
 10000mhajost.goodluckseeker.com
-10000susan_gilbert.goodluckseeker.com
+10000susangilbert.goodluckseeker.com
 10000tbowers.goodluckseeker.com
 10001-interac.com
 10001-interac.info
@@ -5077,13 +5077,10 @@
 102vansh.github.io
 103-181-182-245.nevacloud.io
 103-219-154-102.cprapid.com
-103-219-58-100_s-23-215-0-13_ts-1718634508-clienttons-s.akamaihd.net
+103-219-58-100.s-23-215-0-13.ts-1718634508-clienttons-s.akamaihd.net
 103-241-67-67.cprapid.com
 103-31-39-128.plesk.page
 103-peoplesaucymoment-cnfrmpages.ga
-103.103.20.102.84
-103.103.69.97.12
-103.114.136
 103.140.250.142.in-addr.arpa
 103.360-insurance.com
 103.45.116.13192819287.504.ardestankimiacable.com
@@ -5939,7 +5936,6 @@
 12-12biru.riskyryan.us.kg
 12-212.000webhostapp.com
 12-3id67384523473572.biz.id
-120.229.26.0138
 1200corona.com
 120corona.com
 120kgwc4jfly.live
@@ -6074,7 +6070,6 @@
 159-203-167-57.ipv4.staticdns2.io
 159-223-204-229.ipv4.staticdns2.io
 159-223-92-16.digitaloceandns.com
-159.223.152.60.22
 15991t.com
 1599la.buzz
 1599li.buzz
@@ -6955,7 +6950,6 @@
 21102m.dccr.ru
 2126892.bazeinfo.com
 212a947ce8a77f478fc25a920d4cf6e0.com
-213.111.153.0x28
 213covid19.com
 213podellkk.website
 2152761d.langcdn.top
@@ -7362,7 +7356,6 @@
 3233.pizza
 3237.site
 323klls2sa.zya.me
-3242.43534.56
 3242329-gwdg.weebly.com
 325g1cipn4m.life
 326462-coinbase.com
@@ -7526,7 +7519,7 @@
 3c2xflq8mztc.live
 3c4d5.asset.tradingvein.xyz
 3c4vbp09o4vi.live
-3c5.com/t44v4
+3c5.com
 3c5ae7fc.network
 3c6vus267hplojma4d3qckohjgxnhattb2vkkwcm6anilylzqkzdakad.onion
 3caroof.cn
@@ -8877,7 +8870,6 @@
 80ce6519.xyz
 80ebb66567fb4e3fa370b6c5cde961b9.com
 80t9ha9xybtevi6v.info
-81.183.41.00191
 81004.signing.unitynotarypublic.com
 81041b70fdc3a8d2.xyz
 810755cm.n9shteam2.top
@@ -8927,7 +8919,6 @@
 83qakucey428y.life
 83z0nl2piwr8.live
 84.38.130.118.com
-84.54.0.51.78
 84.71.67.172.in-addr.arpa
 841932-comcast.com
 841932-sasktels.com
@@ -9427,7 +9418,6 @@
 9xpvt58p.r.us-east-1.awstrack.me
 9xuj8nh1.life
 9yi98fh7usy1.live
-_mta-sts.sspl.com.au
 a-0002.a2-msedge.net
 a-1bcdn.com
 a-azon.com
