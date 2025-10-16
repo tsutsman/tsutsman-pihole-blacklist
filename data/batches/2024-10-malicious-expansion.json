@@ -1,0 +1,8595 @@
+{
+  "generated_at": "2025-10-15T20:07:33.416214+00:00",
+  "total_new_domains": 1174,
+  "category_counts": {
+    "анонімайзери": 65,
+    "держсервіси": 49,
+    "екосистема": 48,
+    "пропаганда": 36,
+    "фінанси": 37,
+    "шпигунство": 32,
+    "інфраструктура": 41,
+    "фішинг": 220,
+    "шахрайство": 140,
+    "шкідливе ПЗ": 140,
+    "крипто-шахрайство": 90,
+    "криптомайнінг": 80,
+    "ботнет": 116,
+    "контент 18+": 80
+  },
+  "sources": {
+    "osint-manual": "Ручна добірка з відкритих російських ресурсів та сервісів",
+    "phishing-army": "https://phishing.army/",
+    "spam404": "https://github.com/Spam404/lists",
+    "firebog-prigent-malware": "https://v.firebog.net/hosts/Prigent-Malware.txt",
+    "firebog-prigent-crypto": "https://v.firebog.net/hosts/Prigent-Crypto.txt",
+    "adblock-nocoin": "https://github.com/hoshsadiq/adblock-nocoin-list",
+    "maltrail-cutwail": "https://github.com/stamparm/maltrail/blob/master/trails/static/malware/cutwail.txt",
+    "maltrail-dcrat": "https://github.com/stamparm/maltrail/blob/master/trails/static/malware/dcrat.txt",
+    "maltrail-darkgate": "https://github.com/stamparm/maltrail/blob/master/trails/static/malware/darkgate.txt",
+    "maltrail-darkrat": "https://github.com/stamparm/maltrail/blob/master/trails/static/malware/darkrat.txt",
+    "blocklistproject-porn": "https://github.com/blocklistproject/Lists",
+    "durablenapkin-scam": "https://github.com/durablenapkin/scamblocklist"
+  },
+  "domains": [
+    {
+      "domain": "0----q.tumblr.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0--liamariejohnson--0.nedrobin.net",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-0-adult-superstore.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-0wearingglassesnakedmen.tumblr.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-200.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-800-go-fuck-yourself.tumblr.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-adultfriendfinder.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-baise-amateur.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-decadent-0.tumblr.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-dix.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-livechatlady.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-porno.dk",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-porno.net",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-s.de",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-salope-rousse.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-sex.dk",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-sex.nl",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-shop.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-syxela.tumblr.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-transsexuel-bresilien.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0-z.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0.0.0.0adminer.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0adminka-pro.ru",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0admission.fri3nds.in",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0adobe.flashplayer.bx6tok.xyz",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0adobeflashplayer.ma8cfl.xyz",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0adobeflashplayerb.xyz",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0adobeflashplayerc.xyz",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0adobeflashplayerq.xyz",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0adobeupdater.mcdir.ru",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0adobflashplayerx.xyz",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0adolfcoin.camp",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0adplusplus.fr",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0adrenali.gq",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0advanced-investors.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0advanced-options.ml",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0advancedbit.net",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0advancerevshare.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0advisorinvest.biz",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0advtech.group",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0adzjzewsma.cf",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeon-pool.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeon-pool.net",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeon-pool.sytes.net",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeon.pools.e-scavo.net.ar",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeonhash.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeonminingpool.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeonpool.net",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeonpool.xyz",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeonweb.ru",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aerobit.io",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeropool.xyz",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeros01.tk",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeros02.tk",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeros03.tk",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeros04.tk",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeros05.tk",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeros06.tk",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeros07.tk",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeros08.tk",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeros09.tk",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeros10.tk",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeros11.tk",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aeros12.tk",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aevocoin.net",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0afdjljiyagf.ru",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0afflow.18-plus.net",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0affshopcj.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0afminer.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0africancomet.duckdns.org",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0after50days.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0afteroneday.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aga.dromland.se",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0agacoin.dk",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0agamamining.xyz",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0agilital.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0agora-inv.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0agostinfinance.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0agrarian-benefit.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0agryt.ru",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0ahahyip.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0ahamay.net",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0ahash.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0ahash.io",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0ahash.ru",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0ahashpool.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0ahoyhyperbay.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0ahoypirate.in",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0ahoypiratebaai.eu",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aidswin.org",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aikapool.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aimbtc.biz",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aimbtc.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aimenterprise.blog21.fc2.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aiomine.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aionmine.org",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aionpool.tech",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aionsurf.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0airbitclub-official.ru",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0airbitclub.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0airbitglobal.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0aircraftik.ru",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0airfio.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0airfreedom.net",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0airproxybay.ar",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0airproxyboat.in",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0airproxyproxy.pw",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0airproxytpb.re",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0airproxyunblocked.org",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0airspace-inv.com",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.0.0ait7ee.win",
+      "category": "крипто-шахрайство",
+      "sources": [
+        "firebog-prigent-crypto"
+      ]
+    },
+    {
+      "domain": "0.0.04.free.fr",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0.011.free.fr",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0.idolzhaowei.00to.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "00-44.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "00-gay.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000------------sexo--amadoras.kit.net",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000--------sexogratis.kit.net",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000-475-843.tumblr.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000-coralinne-xxx-sara-calixto.tumblr.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000-sex.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000-xxx.tumblr.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000.top-100.pl",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000.toplista.pl",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000001.skynetblogs.be",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "00000nwebcamnow.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0000114.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000111casino.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0001casino.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000222casino.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0005.us",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "00069maninstockings.over-blog.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000babes.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000boy.free.fr",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000dom.revenuedirect.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000dvd.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000girl.tumblr.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000iblogchix.blogspot.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000modelle.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000panties.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000porn.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000pussy69pornxxxporno.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000relationships.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000sex.net",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "000sexe.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "001-adult-toys-n-sex-dolls.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "001-homevideo.startspot.nl",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "001.startspot.nl",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "00101001.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0011cartoons.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0013langford.tumblr.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0018.startbewijs.nl",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "001adult.homestead.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "001am.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "001jennifer.tumblr.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "001londonescorts.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "001sexoverzicht.startplezier.nl",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "001webcamsextv.startplezier.nl",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "001xx.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "001xxx.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "00213744.tumblr.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "003.top-100.pl",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "003689.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "004sexamateurs.startplezier.nl",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "0069sexshop.com.ar",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "007-is-here.tumblr.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "007-vibrators.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "007adulthosting.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "007adulthosting.net",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "007adultsextoys.com",
+      "category": "контент 18+",
+      "sources": [
+        "blocklistproject-porn"
+      ]
+    },
+    {
+      "domain": "007research.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "00e56.subskrypcje.homes",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "025c4.zaplata.hair",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0273737.sbs",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0300ssm0300.xyz",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "030architects.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "030ddd.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "03123cc.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "031tv.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "03284903.shop",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "033177.vfs.web.id",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "034tv.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "03661752.25ad84cfb02cba5753a435b6.workers.dev",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "036cdb9a824f91747c8d8c62474afbd8.informacji-nf.sbs",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "0382872.cfd",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "03889b81-378c-423f-be6e-929ef3dbf928-00-3rvmo1swfnrxz.worf.replit.dev",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "038d159d-b3bc-44dd-a0c4-bec68c0c4123.random.tsrv1.ws",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "039571.shop",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "03infohojesolucoesconsulta.fr",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "03s30.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "03sao.top",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "04.7965d.dns.army",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "040422.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0416b72d-0fd0-4899-8eec-55780ed29654-00-1nfxpls5b7y80.kirk.replit.dev",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "04756340.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "04consultanovidadebr.fr",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "04nethubfast.online",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0504-1.pages.dev",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0512sxsb.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0529241880.weebly.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "054-235-2465.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "055878d6e0.nxcli.io",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0594cc.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "059f3yb.top",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "05edaqw9bmxvk2t.elektryks.pl",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "05hg0088.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "05infosconsultehoje.fr",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "05q0h4x0-5500.euw.devtunnels.ms",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0615-7qo.pages.dev",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "062560.vfs.web.id",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "06464fea-a94a-4e1f-b0fa-9c091e041315.gxqu.top",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "06485.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "06584198.netruvia.com",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "06653176.3cdfee8c7de5b45e217124db.workers.dev",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "068tv.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0697-binance.com",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0699abstract6.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "06hojenovidadeinfos.fr",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "07017debe.plat-nf.quest",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "071c772f-74f6-4a1f-b41f-444f5cac722e-00-2yvi7y2n9mn3h.worf.replit.dev",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "07739354761.ddns.net",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "077877.vfs.web.id",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "077bet365.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "077pet.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0797hyxt.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "07f4acdef99b.ofalias.net",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "07finfossolucoes.fr",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "07juizleo94j3b5.space",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "07k.firstfitscale.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "07kde7ue.lat",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "08000.info",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0800bank.com",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "082382.shop",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "086d92b0.blacktravelpassport.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "087868.vfs.web.id",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "089753.vfs.web.id",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "08iokj.lat",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "08sex.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "09025e.netlify.app",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0911783.xyz-1o1.top",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "092384.idsecurityportal.com.es",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "099777.weebly.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "099kbhq.icu",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "09dmus2g6g6u2vb4uuw37t4o.dns-dns.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "09s8r72n.87s1a6g01.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "09yznlht.k600zlqigq.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0a0074066c49886a39b5a3072582f5d6.net",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0adj.qmv8n16pz24pp25wgfk7.e8x76y62kki64hz3s2.com",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0aede39dc5.nxcli.io",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0bncm0ejy6qs9nahgyfgcyzgiknagtved6z.ip-ddns.com",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0bzyk3g.date",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0c1ea8w4mdrgjs5.ugru.com.pl",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0c1f9137-5629-4aa0-aec7-a2b5665681f4-00-2xhb4ji3r7z48.riker.replit.dev",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "0canweihenshuai.shop",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0cf5ff34.ngrok.io",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0d10.netlify.app",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0da1brcsjniw9ze.rowepljka.pl",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "0dc13c99-28c3-4e78-b6fa-024c84209a51-00-2546in1dooe8d.picard.replit.dev",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "0df4.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0dveg1.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0dz.me",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0e.si",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0eed1ejih.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0fd9f5c3-5cfc-4402-9df4-7af64b5ef749-00-313pj7e5k789d.worf.replit.dev",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0fflce.xyz",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0fir0eb.top",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0g3lux.sbs",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0gb.8bd.mytemp.website",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0go44be29.icu",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0h1.onmicrosoft.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0hc0dika0.pro",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0hnzsxzy.ghzjosmr04.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0hx.31892819.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0i.pm",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0i.wf",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0i0i0i0.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0iaoj.lat",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0iix.50352353.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0iix.84365457.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0io0u.lat",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0iwue.lat",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0ix-pl-05-06.shop",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0ix.46456636.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0ix.86847631.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0ix.955643566.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0j.wf",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0jh.46d.mytemp.website",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0jskh5d.lat",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0jx.41892819.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lhx-1.ru5kld.lat",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lhx-x.84921375.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0ljnq8k37mz1hvx.turi2a.pl",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0llx.21892819.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lx.10352353.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lx.24534352.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lx.26478360.xyz",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0lx.2723423.xyz",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0lx.27867581.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lx.624613423.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lx.653673782.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lx.67948754.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lx.97576875.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lxx-s1.62941875.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lxx.2738242.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lxx.28009342.xyz",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0lxx.36354637.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lxx.46400409.xyz",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0lxx.556747882.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lz.44675493.xyz",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0lz.64756340.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0lz.66354637.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0mft.xyz",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0mwy672.lat",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0nau82s1.rest",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0nbsaas.lat",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0nedrevefile.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0nedrvfilepreviewfolder02721098633358.norterbet.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0nlinehrcu.weebly.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0nlinesservsaction-0nlinesservsaction-0nlinesservsactioncalco.calcoelectric.online",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0nlyfans.fr",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0nv-bahisgiris.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0nv-resmicasino.vip",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0nvin-casinobahis.vip",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0o0pl.weebly.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0o8u7t65e43wq2we4r66ty7u8ui9i0o0i8y6r4ew.glitch.me",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0odkj.lat",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0ofrancetvinfo.fr",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0olx.224513424.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0ooo.xyz",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0orange.fr",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0peno1.store",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0phobia.fr",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0pji27aq.forms.app",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0pnsaeoffers-recved.webhop.me",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0poiuy.cc",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0psam.lat",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0pti.top",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0ptsbhasjanet.weebly.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0q5e0.nemen9.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0qe.pdofan.ru",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0qixri.thule.su",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0qjnd.1j4k3s88h9op.e8x76y62kki64hz3s2.com",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0qjnd.ghkad7328f9vm.yku42v98b6y74mjm449.com",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0qsyf3ov16g29bn.fyrha.pl",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0qsyf3ov16g29bn.plora.pl",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0qsyf3ov16g29bn.quorpl.pl",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0qsyf3ov16g29bn.ypwla.pl",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0ranges.fr",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0ranqpe.fr",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0rben24523oix.top",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0rben34954v1nt2d.xyz",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0rdp.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0reh05idlwaswiq.onmicrosoft.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0reoubhaqyl9pkf.odnowic-konto.sbs",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0rlentalme.com",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0s7yqw.cfd",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0snetpromt.cfd",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0storageatools0.xyz",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0t.yt",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0toogoorepu.us",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0u51pi8y2nvf37x.subskrypcja.cfd",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "0underground.pw",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0uso87.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0utlook.fr",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0v.wf",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0v4nwl8kmdft675.nurita.pl",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0vb8cy.cfd",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "0vdzqa1oy9jsg5b.rowepljka.pl",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "0w.pm",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0witter.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0wnt1c.cfd",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0wry.jijinclub.net",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0x-auth.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0x01n2ptpuz3.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0x0digital.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0x9.biz",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0xbitconnect.co",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0xeconomist.com",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0xfa455720b3765eee735413cd0d940a395ec4c4ef.privatkunden.me",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0xlo.g7roxs.icu",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0xlo.sn9ast.top",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "0xmain.pages.dev",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0xqnbpromosyon.cloud",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0xwrap-3774039237344-f0.pages.dev",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0z8pg1vhlwny48z.onmicrosoft.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0ziealh3.sfhxv2fyln.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0zq.ryzuka.ru",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0zq.w5j7z0.ru",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0zq.wagoda.ru",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "0zs.vaiyiofrou.ru",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "1-bdmbet.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1-m-post.39787154.xyz",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1.newshubme.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "10-fold.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "10004.cloud",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "1000atap.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "1000fapvids.online",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "1000impressions.com",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "1000lifelessons.shop",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "1000numbers.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "1000pneus.fr",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "1000xz.com",
+      "category": "фішинг",
+      "sources": [
+        "firebog-prigent-malware",
+        "phishing-army"
+      ],
+      "notes": [
+        "Категорія 'шкідливе ПЗ' отримана зі джерела firebog-prigent-malware, залишено первісну"
+      ]
+    },
+    {
+      "domain": "1001paixnidia.fr",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "1001postales.com",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "10022020newfolder1002-0144251002202035.site",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "10022020newfolder1002002131-service1002.space",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "10022020newfolder33417-01242510022020.space",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "10022020test136831-service1002012510022020.space",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "10022020test41-service100201pro2510022020.ru",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "10022020test461-service1002012510022020.host",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "10022020test481-service1002012510022020.ru",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "10022020test51-service1002012510022020.xyz",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "10022020test571-service1002012510022020.pro",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "10022020test61-service1002012510022020.website",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "10022020tostest371-service1002012510022020.ru",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "10022020uest71-service100201dom2510022020.ru",
+      "category": "шкідливе ПЗ",
+      "sources": [
+        "firebog-prigent-malware"
+      ]
+    },
+    {
+      "domain": "100affirmations.online",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "10601pointeview.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1068.www-zaloguj.hair",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "107.181.161.200:443",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "107.181.161.200:9999",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "1080cordova.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "10callsadaywhf.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "10forum.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "10kappa-app.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "10saxv.sbs",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "10xcapitalapp.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "10xuniswap.xyz",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "11062025.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "110stepstoexcellence.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "112policijapl.online",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "112policjapl112.online",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "11947353-com.cfd",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "11ffxx.online",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "11gtvgd.lat",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "11teamsports-en.club",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "11teamsportsaa.top",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "11teamsportshop.club",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "11teamsportskn.top",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "11teamsportslsk.top",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "11teamsportsonline.club",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "11teamsportstore.club",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "11teamsportsxh.top",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "11teamzo.club",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "11thhouse.net",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "11thhouse.org",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1234029.shop",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1234060.shop",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1234073.shop",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "123beautyproducts.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "123diagnostics.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "123ecos.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "123gems.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "123giftstore.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "123halal.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "123luggage.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "123medicalequipment.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "123packaging.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "123pens.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "123spices.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "123stationery.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "123sugarfree.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "123xtz.lat",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "125iekmqxu0f3hj.wsparcie.sbs",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "128kbts.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "12plan.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "12vpn.net",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "133b6cbc-cc28-4865-a225-e076bf69c0ad-00-39hxyn5t4i8b9.picard.replit.dev",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "133uwejiv5.chasinlinwsk.digital",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1347superbetin.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "138259.techland-analysis.cyou",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "13dost2.lat",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "13ff7f36-a97c-4470-aaeb-c5140fff3798-00-1ek7b6j4x9g8t.picard.replit.dev",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "13rttl.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "140385.techland-aka.cyou",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "143k.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "149.248.0.82:2351",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "151d9fc576f8.net-nf.digital",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "15dljl.sbs",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1612bejoguy7.pro",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1612fogifui8.pro",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1612pilacai3.pro",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1612vyrinio9.pro",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1612zuvajui3.pro",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "165-154-241-145.cpanel.site",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "167093.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1688sagamecom.info",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "17.mvd.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "1712bezubie0.pro",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1712ditysue4.pro",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1712gemubui9.pro",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "17352762-coinbase.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "173946.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "178.21.11.90:25998",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "178.33.94.35:5864",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "178.33.94.35:7262",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "178.33.94.35:9999",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "178.63.53.44:2388",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "179.60.149.3:2351",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "179.60.149.3:9999",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "17usys7.lat",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1800ortho.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "180out.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "185.12.14.32:1515",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "185.173.36.98:2351",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "185.214.10.220:443",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "185.214.10.220:53",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "1866ilovejunk.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "18727.newtonschools.top",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1878.info",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "18996.newtonschools.top",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "18zheo.hair",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1900893.cc",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1accessories.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1afss.lat",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1aj3l3avivzg-ft4xh3ph.online",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1asphaltcalculator.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1batteries.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1bdjh.cfd",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1beautyproducts.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1bek97gj.jhycbhe.es",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1bkn2.sbs",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1bmo-reactivemyaccount0.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "1bodyfitness.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1c.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "1c0a6.biuro-nf.lat",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1c425.subskrypcja.space",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1c47f2a2-63a1-437b-af81-cab16bb6e7d8-00-34kk7n88fjgbq.worf.replit.dev",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1c4870c9-27ed-4833-b10e-50995590f6d2-00-1kn536j0v5d2u.janeway.replit.dev",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1c9m5j.cc",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1cfreevpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "1clickebooks.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1clickpe.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1clickvideo.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1clickvpn.net",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "1clickwebsite.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1clinical.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1cs21cs.lat",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1cvbnm.cc",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1d79.net-zaplac.shop",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1dapp1e.com.es",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1dayacuvuecontacts.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1degreee.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1dentalsupplies.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1dowhh.cfd",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1elon.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1equipment.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1euro-voyance.online",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1f9hrpoetmvsj8u.tttfatc.pl",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1generator.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1generators.com",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1gsg.cfd",
+      "category": "фішинг",
+      "sources": [
+        "phishing-army"
+      ]
+    },
+    {
+      "domain": "1q2w3.fun",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "1stfinancefirm.wixsite.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "1stireland.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "1sttheworld.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "24tv.ua",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "24uniswap.xyz",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "270278609-2020004278-462904544-440202503325--570202500372x-usps.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "365uniswap.xyz",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "3ab48a20-acaa-49ab-95cc-3eb16f1cda78-00-1a0l3yf6hw9aq.sisko.replit.dev",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "3ae52b08mbt3oxw4zh32q5-z5m.hop.clickbank.net",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "42gixk.98kk89.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "45.67.231.23:53623",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "4556.de",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "4everproxy.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "5.188.87.58:2351",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "5.188.87.58:9999",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "555sq.com.cn",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "5wzgtq8dpk.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "65spy7rgcu.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "777uniswap.xyz",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "7ng6v3lu3c.execute-api.us-east-1.amazonaws.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "80.66.88.145:2351",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "80.66.88.145:2352",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "80.66.88.145:2840",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "80.66.88.145:2842",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "80.66.88.145:2843",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "80.66.88.145:2844",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "80.66.88.145:7891",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "80.66.88.145:9999",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "80.87.202.63:25998",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "81.177.135.217:53620",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "93mobiles.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "9vyzdk8.lvditoys.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "9vzn29.98kk89.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "a0315266.xsph.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "a0365369.xsph.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "a0387063.xsph.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "a0388296.xsph.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "a0457406.xsph.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "a0461492.xsph.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "a40-77-229-13.deploy.static.akamaitechnologies.pw",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "abc.pema.cl",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "absolutbank.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "acbp0020171456.page.tl",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "account.ws-reward.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "acevpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "ad-miner.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "adidasko.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "adminicesm.life",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "admportal.rosmintrud.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "adsmy.top.mail.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "advcash.network",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "advstar.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "adzfree-watch.net",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "affordableforyouusa5.godaddysites.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "agentura.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "aic.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "air-up-turkiye.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "airvpn.org",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "ajci.tk",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "akamai.la",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "akbars.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "alfa-investor.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "alfadirect.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "alfila.net",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "allopass-generator.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "allwarezfree.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "alorbroker.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "android-game-hacks.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "anonymize.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "anonymizing.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "antimaidan.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "api.browsermine.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "api.inwemo.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "api.miner.beeppool.org",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "apkandroidhack.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "appmetrica.yandex.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "arbeitdeutschland.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "arbitr.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "arteexotica.net",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "as.cfcdist.loan",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "ashgrrwt.click",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "atb.su",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "audit.mil.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "aura.sber.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "auth.gosuslugi.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "autorambler.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "avangard.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "avia.pro",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "avira-vpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "awsamazon.cc",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "azimuth.aero",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "b2b.center",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "bafybeidravcab5p3acvthxtwosm4rfpl4yypwwm52s7sazgxaezfzn5xn4.ipfs.infura-ipfs.io",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bank-hlynov.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "bank-uralsib.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "bankiro.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "battlenet.la",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "becanium.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "beepn.pw",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "belapb.by",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "belo-vpn.ru",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "berateveng.ru",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "beru.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "besocial.online",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bestcoinsignals.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "besthackgames.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "besti.ga",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bestjobcousa.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "bestjobscousa.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "bestsrv.de",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "betternet.co",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "bewaslac.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bezopasnost.edu.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "biberukalap.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "binarybusiness.de",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bitcoin-cashcard.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bitcoin-cashcard.de",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bitcoin-cashcard.eu",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bitcoin-pay.eu",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bitcoin-pocket.de",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bitcoin-pocket.eu",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bitdefenderlicense.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "biz.mail.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "bizon365.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "blackvpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "bloknot.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "bmcm.ml",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bmcm.pw",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bmnr.pw",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bmst.pw",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "boostaero.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "bores.xyz",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "brominer.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "browsec.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "browsermine.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "bspb.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "bt.sberbank.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "bulletvpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "business.dvhab.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "buy.finevpn.org",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "callofduty-beta.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "candid.zone",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "capitalbank.by",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "careerabroadinfo.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "cashbeet.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "cdn.adless.io",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "cdn.cloudcoins.co",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "cdn.dcrat.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "cdn.minescripts.info",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "cdn1.pebx.pl",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "cdnjs.cloudflane.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "census.mil.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "cf-vpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "cfcdist.gdn",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "changer-esp.ml",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "cheat-topeleven.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "cheatmp.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "cheats4fps.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "cheatsandkeygen.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "cheatsbar.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "cheatsbasis.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "cheatspike.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "cis.mos.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "citadelvpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "city-pub-crawl.su",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "citydrive.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "clgserv.pro",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "cloud-miner.de",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "cloud-miner.eu",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "cloud.fsb.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "cloud.mil.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "cloud.mts.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "cloud.sber.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "cloudcdn.gdn",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "cnhv.co",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "cnt.statistic.date",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "coin-have.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "coinblind.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "coinerra.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "coinhiveproxy.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "coinminingonline.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "coinnebula.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "coinpirate.cf",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "coinpot.co",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "coinrail.io",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "connect.yandex.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "contribute.to-support.me",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "corp.beeline.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "corp.mail.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "crossfirearmafree.esy.es",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "cryptaloot.pro",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "crypto-loot.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "crypto-webminer.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "crypto.csgocpu.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "cryptoloot.pro",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "cv36917.tmweb.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "d.cpufan.club",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "dacortaorlando.net",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "dark-utilities.me",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "dark-utilities.pw",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "dark-utilities.xyz",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "darkratboris.no-ip.biz",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "darkratbyonidrori.esy.es",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "darkratwithfire.esy.es",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "data-line.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "data.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "dataleak.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "datapro.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "dcrat.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "ddos-guard.net",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "de-mi-nis-ner.info",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "de-ner-mi-nis4.info",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "de-nis-ner-mi-5.info",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "delivery-club.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "depttake.ga",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "dev.cryptobara.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "dfir-ru.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "digger.cryptobara.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "digital.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "digitalfreedownloads.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "digitaltarget.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "dl.browsermine.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "dns-shop.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "domalo.online",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "donttbeevils.de",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "dostavista.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "dragon-city-hack.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "dream-file.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "dronml.ml",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "drweb.com",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "dsm.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "dtln.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "e-queo.com",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "easyhash.de",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "ec2-14-122-45-127.compute-1.amazonaws.cdnprivate.tel",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "eda.yandex",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "edadeal.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "edu.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "edugame.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "egisso.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "emulatorxboxone.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "encounterkaspe.pl",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "energia.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "eqvanta.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "ertelecom.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "esia.gosuslugi.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "establishingwi.su",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "eth-pocket.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "eth-pocket.de",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "eth-pocket.eu",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "ethereum-cashcard.com",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "ethereum-cashcard.de",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "ethereum-cashcard.eu",
+      "category": "криптомайнінг",
+      "sources": [
+        "adblock-nocoin"
+      ]
+    },
+    {
+      "domain": "eurasia.expert",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "evrazia.org",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "eyesee-lazere.pl",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "f0313002.xsph.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "falconsat.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "fapmc.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "fastvpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "fb-gamer.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "fb-games-gifts.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "fbcheaterz.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "fcs.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "fearedembracin.su",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "ferret.rosgvard.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "fias.nalog.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "fifa-ea.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "finam.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "finder.vk.com",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "fivc.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "flashvpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "flavoured.pl",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "flextem.000webhostapp.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "fms.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "fobos-izmerenia.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "followupdebate.pl",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "forabank.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "fpkgr.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "free-hack-tool.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "free-hidemyass.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "freegamecode4u.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "freemicrosoftpoints4me.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "freeriotpoint.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "freerussia.info",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "freespotifyaccounts.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "freevpn.me",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "freevpn.org",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "freevpnadd.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "freexblcode.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "fregat.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "frootvpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "fsdfid.x10.mx",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "fstec.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "gamehacks4u.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "gameznappz.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "garbagethiever.su",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "gazfond.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "gcorelabs.com",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "gellax.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "generator4u.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "geo.gosuslugi.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "get-hack.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "gethacknow.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "ghostpath.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "glav.su",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "glavny.tv",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "goldenpick.net",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "gosexpert.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "gosnovosti.com",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "gossluzhba.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "gost.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "greecexpatjobs.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "gta5freebeta.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "gta5onlinedownload.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "gta5serials.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "gz-spb.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "hack-for-topeleven.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "hack-machine.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "hack-top-eleven.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "hack2k.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "hackmyfreecams.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "hacks-cheats-zone.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "hackstimes.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "hardwarenet.cc",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "hay-day-hack.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "haydaycydiahack.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "hemon.pl",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "hfjdhfgrhfnghvng.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "hide.me",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "hideipvpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "hidemy.name",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "hidemyass.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "hitech.rosgvard.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "homebank.kz",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "homecredit.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "hotlane.net",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "hotspotshield.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "htimemanagemen.su",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "iacpm.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "idealhacks.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "imonstervpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "infotecs.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "ingbank.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "intellexa.com",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "investfunds.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "ios-game-hacks.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "ipap.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "ipvanish.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "it-grad.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "itpark-kazan.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "jobbcanada.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "jobbinamsterdam.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "jrcompanyhack.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "justhost.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "k-eta.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "kafanews.com",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "kaspersky.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "kasperskyvpn.ru",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "katehon.com",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "kitro.pl",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "kkkwdfea.tk",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "kolokolrussia.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "korusconsulting.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "kproxy.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "kribrum.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "lanit.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "lantern.io",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "latestphonehacks.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "leagueofgiveaways.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "leak.su",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "legion-telecom.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "lesta.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "libertyshield.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "lifenews.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "livejasmin-hack.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "lk.budget.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "lockobank.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "logins.kl.com.ua",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "lombrisa.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "machinelikeleb.su",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "magazineofhacks.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "market.yandex.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "mashtab.rosatom.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "mchs.media",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "mcs.mail.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "megafon.tv",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "megapolis-hack.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "menorca24.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "metallinvestbank.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "mh.owak-kmyt.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "mickmalones.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "militaryreview.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "minbank.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "minec.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "minstroy.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "mintrud.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "mm.coinsbank.com",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "mn.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "monitoreddream.su",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "monitoring.mos.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "monline.mvd.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "mosoblbank.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "moteasingwold.net",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "mslivegirl.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "mstressx.pe.hu",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "mtscloud.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "my.games",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "mydownstore.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "myfastvpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "myfreecams-freetokens.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "mygamehack.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "myhostforlic.ucoz.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "mytarget.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "nao24.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "neo-conned.net",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "netfest.pl",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "never-project.hhos.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "newesthack.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "newinform.com",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "nextbookz.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "niihm.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "nistrype.fun",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "nordvpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "nortex-spy.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "novorosinform.org",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "nsi.rosmintrud.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "obit.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "oiv.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "okko.tv",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "openvpn.net",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "ophia.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "oracleutilities.net",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "orangetunnel.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "otkritie.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "oxijoinedsite.site",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "partnerkin.com",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "partners.vk.com",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "perimeter-center.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "pexaun.com.br",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "piranhacheats.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "piratercompte-facebook.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "planethackteam.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "planetside2-hacks.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "platforma.rosatom.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "platformaofd.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "plus.yandex.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "pnp.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "politikus.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "portugaleuropa.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "pravda.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "predatorhacks.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "premiumprovide.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "priemnaya.mid.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "privacyvpn.org",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "privadovpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "privatevpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "promo.vkplay.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "promsvyazbank.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "protonvpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "psiphon.ca",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "psnboy.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "psncodesnow.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "purchasingdril.su",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "purevpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "qiwi-api.site",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "qplatform.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "ra4wvpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rarshare.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "red-soft.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "reestr-zalogov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rencredit.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rncb.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rosatomtech.com",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rosbank.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "roskazna.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rosminzdrav.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rosobrnadzor.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rospotrebnadzor.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rosreestr.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rosstelecom.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rostransnadzor.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rsb.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rtcloud.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rts-telecom.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "ru.likelydata.com",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "rusnext.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "sanibroadbandcommunicton.duckdns.org",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkgate"
+      ]
+    },
+    {
+      "domain": "sberasset.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "sbercloud.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "school.mosreg.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "scloud.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "sdfsdgafghaetg.tk",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "secrethotgames.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "seed4.me",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "selectel.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "sfo.minfin.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "shop.1c.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "sima-land.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "simsapprentice.pl",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "smartdnsproxy.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "smartway.sber.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "smi.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "smi2.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "softhard.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "softline.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "solenka.info",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "solutions.1c.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "sorm.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "sovzond.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "splinter-cell-blacklist-keygen.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "sputnik.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "spylog.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "staff.sber.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "starpolit.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "stat.gibdd.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "steam-free-games.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "steam-wallet.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "stoletie.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "store.10xuniswap.xyz",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "store.1bmo-reactivemyaccount0.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "store.1stfinancefirm.wixsite.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "store.24uniswap.xyz",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "store.365uniswap.xyz",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "store.3ab48a20-acaa-49ab-95cc-3eb16f1cda78-00-1a0l3yf6hw9aq.sisko.replit.dev",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "store.3ae52b08mbt3oxw4zh32q5-z5m.hop.clickbank.net",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "store.777uniswap.xyz",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "store.account.ws-reward.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "store.adminicesm.life",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "store.adzfree-watch.net",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "store.affordableforyouusa5.godaddysites.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "store.my.games",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "strongvpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "structura.gks.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "surfshark.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "suricat.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "svpressa.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "szv.minjust.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "t1.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "tele2.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "telechargerdes.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "telegobwypel.kz",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "tereshyd.beget.tech",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "tigervpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "tinkoffjournal.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "titanfallbeta.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "topcor.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "torgi.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "torguard.net",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "touchvpn.net",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "trickbook.esy.es",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "trust.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "ttk.ru",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "tuneuputilities2014keygen.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "tunnelbear.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "tuu.nu",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "tyrns.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-cutwail"
+      ]
+    },
+    {
+      "domain": "u403161sq2.ha002.t.justns.ru",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "udprf.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "ukash-hack.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "ukraina.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "ultraserieshd.com",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "unicreditbank.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "uralfd.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "urban-vpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "varlamov.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "vesma.today",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "vk.app",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "vkgroup.tk",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-dcrat"
+      ]
+    },
+    {
+      "domain": "vpk-news.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "vpnbook.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "vpnjantit.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "vpnmaster.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "vpnmentor.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "vpnsecure.me",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "vscale.io",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "vtbcapital.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "vyprvpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "warfiles.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "wcracked.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "webanalytics.yandex.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "webzilla.com",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "wincheats.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "windscribe.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "working-hacks.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "worldoftanksbonus.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "worldvpn.net",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "www.1000fapvids.online",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.10xuniswap.xyz",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.1bmo-reactivemyaccount0.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.1stfinancefirm.wixsite.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.1stireland.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.1sttheworld.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.24uniswap.xyz",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.270278609-2020004278-462904544-440202503325--570202500372x-usps.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.365uniswap.xyz",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.3ab48a20-acaa-49ab-95cc-3eb16f1cda78-00-1a0l3yf6hw9aq.sisko.replit.dev",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.3ae52b08mbt3oxw4zh32q5-z5m.hop.clickbank.net",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.4556.de",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.555sq.com.cn",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.777uniswap.xyz",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.93mobiles.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.account.ws-reward.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.adidasko.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.adminicesm.life",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.adzfree-watch.net",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.affordableforyouusa5.godaddysites.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "www.air-up-turkiye.com",
+      "category": "шахрайство",
+      "sources": [
+        "durablenapkin-scam"
+      ]
+    },
+    {
+      "domain": "yandex.cloud",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "yappy.media",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "youla.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "yourfreehacks.com",
+      "category": "шахрайство",
+      "sources": [
+        "spam404"
+      ]
+    },
+    {
+      "domain": "yugopolis.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "zakupki.gov.ru",
+      "category": "держсервіси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "zavtra.ru",
+      "category": "пропаганда",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "zecurion.ru",
+      "category": "шпигунство",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "zelenaya.net",
+      "category": "інфраструктура",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "zen.yandex.ru",
+      "category": "екосистема",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "zenit.ru",
+      "category": "фінанси",
+      "sources": [
+        "osint-manual"
+      ]
+    },
+    {
+      "domain": "zikoro.esy.es",
+      "category": "ботнет",
+      "sources": [
+        "maltrail-darkrat"
+      ]
+    },
+    {
+      "domain": "zoogvpn.com",
+      "category": "анонімайзери",
+      "sources": [
+        "osint-manual"
+      ]
+    }
+  ],
+  "notes": "Партія сформована для покриття всіх шкідливих категорій, включаючи\nфішинг, шкідливе ПЗ, ботнети, шахрайство, пропагандистські ресурси,\nдержавні сервіси агресора, фінансові установи та допоміжну\nінфраструктуру. Частина записів отримана з відкритих фідів, інші\nзібрані вручну для розширення сегментів, що рідко оновлюються у\nавтоматичних джерелах."
+}
