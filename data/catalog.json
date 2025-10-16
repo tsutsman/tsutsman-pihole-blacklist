@@ -834,6 +834,214 @@
       "monitor": true,
       "tags": ["телеканал", "змі"],
       "notes": "Телеканал Міністерства оборони РФ, який поширює військову пропаганду."
+    },
+
+    {
+      "value": "10-10-0-22-v4.hideservers.net",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["vpn", "hideservers"],
+      "notes": "Вузол мережі HideServers, який використовується для тунелювання трафіку й маскування C2-з'єднань."
+    },
+
+    {
+      "value": "api.deepstateplatypus.com",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["vpn", "api"],
+      "notes": "API сервісу DeepStatePlatypus обслуговує мережеві тунелі, що дозволяють обходити корпоративну фільтрацію й маскувати шкідливий трафік."
+    },
+
+    {
+      "value": "api.ipapi.is",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["ip-geolocation", "proxy"],
+      "notes": "IPAPI надає проксі/геолокаційний доступ, яким користуються актори загроз для обходу блокувань та маскування походження трафіку."
+    },
+
+    {
+      "value": "broworker13s.com",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["vpn", "broworker"],
+      "notes": "Домен Broworker розповсюджує браузерні VPN-розширення, що обходять національні обмеження та приховують шкідливу активність."
+    },
+
+    {
+      "value": "cloudflare-dns.com",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["doh", "dns"],
+      "notes": "Шифрований DNS-сервіс Cloudflare дозволяє приховувати запити від провайдерів і використовується для обходу мережевої фільтрації."
+    },
+
+    {
+      "value": "fine.sunproxy.net",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["proxy", "sunproxy"],
+      "notes": "Вузол SunProxy, який забезпечує доступ до проксі-мережі для обходу блокувань у корпоративних середовищах."
+    },
+
+    {
+      "value": "google.com.fresh.fmb.la",
+      "category": "фішинг",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["google", "typosquat"],
+      "notes": "Фішинговий клон Google на піддомені fresh.fmb.la, який викрадає облікові дані користувачів."
+    },
+
+    {
+      "value": "i120.fastpic.org",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["cdn", "fastpic"],
+      "notes": "CDN Fastpic, що розповсюджує матеріали для дорослих і оминає вікові обмеження."
+    },
+
+    {
+      "value": "i122.fastpic.org",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["cdn", "fastpic"],
+      "notes": "Дзеркало Fastpic для розповсюдження порнографічних зображень без фільтрації."
+    },
+
+    {
+      "value": "i123.fastpic.org",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["cdn", "fastpic"],
+      "notes": "Ще один CDN-вузол Fastpic з несанкціонованим контентом для дорослих."
+    },
+
+    {
+      "value": "i125.fastpic.org",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["cdn", "fastpic"],
+      "notes": "Fastpic підтримує цей CDN-домен для поширення небажаних матеріалів 18+."
+    },
+
+    {
+      "value": "microsoft.com.fresh.fmb.la",
+      "category": "фішинг",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["microsoft", "typosquat"],
+      "notes": "Фішинговий піддомен, що імітує Microsoft і збирає облікові дані користувачів."
+    },
+
+    {
+      "value": "ndss.11.zyxel.ndmsystems.com",
+      "category": "інфраструктура",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["zyxel", "ndms"],
+      "notes": "Службовий домен NDMS від Zyxel, який використовують заражені маршрутизатори для звернення до контрольної панелі."
+    },
+
+    {
+      "value": "one.one.one.one",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["doh", "dns"],
+      "notes": "Публічний DNS 1.1.1.1 дозволяє обходити провайдерські обмеження через шифрований канал."
+    },
+
+    {
+      "value": "static5.smr.vc",
+      "category": "шахрайство",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["gambling", "cdn"],
+      "notes": "Статичний CDN азартного сервісу SMR, що розповсюджує нелегальні ігри та лотереї."
+    },
+
+    {
+      "value": "winplinkos.pics",
+      "category": "шахрайство",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-14",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["gambling", "plinko"],
+      "notes": "Фішинговий клон гри Plinko, який нав'язує псевдоінвестиційні азартні схеми."
     }
   ],
   "regexes": [
