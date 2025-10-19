@@ -189,8 +189,10 @@
 - `tse2.explicit.bing.net`
 - `vgtrk.ru`
 - `vk.com`
+- `voennoedelo.com`
 - `vtb.ru`
 - `vz.ru`
+- `warsonline.info`
 - `yandex.ru`
 - `zakpos.mine.nu`
 
