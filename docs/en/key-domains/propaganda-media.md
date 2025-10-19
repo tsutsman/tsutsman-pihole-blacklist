@@ -19,6 +19,8 @@
 - `sputniknews.com`
 - `tass.ru`
 - `tsargrad.tv`
+- `voennoedelo.com`
 - `tvzvezda.ru`
 - `vgtrk.ru`
 - `vz.ru`
+- `warsonline.info`

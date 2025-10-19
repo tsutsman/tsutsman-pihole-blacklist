@@ -21824,6 +21824,7 @@ vk.app
 vk.com
 vkgroup.tk
 vkplay.ru
+voennoedelo.com
 vpk-news.ru
 vpnbook.com
 vpnjantit.com
@@ -21836,6 +21837,7 @@ vtbcapital.ru
 vyprvpn.com
 vz.ru
 warfiles.ru
+warsonline.info
 wcracked.com
 webanalytics.yandex.ru
 webzilla.com
