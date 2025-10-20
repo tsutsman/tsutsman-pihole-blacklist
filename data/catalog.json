@@ -1081,6 +1081,58 @@
       "monitor": false,
       "tags": ["gambling", "plinko"],
       "notes": "Фішинговий клон гри Plinko, який нав'язує псевдоінвестиційні азартні схеми."
+    },
+
+    {
+      "value": "livecity.biz.ua",
+      "category": "контент 18+",
+      "regions": ["cis"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-20",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["adult", "ua"],
+      "notes": "Вебкам-платформа з українською аудиторією, виявлена у мережевих журналах KMR як джерело небажаного контенту 18+."
+    },
+
+    {
+      "value": "static.site-chat.me",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-20",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["adult", "chat"],
+      "notes": "Статичний CDN сервісу Site-Chat, який розповсюджує матеріали для дорослих та обходить фільтрацію."
+    },
+
+    {
+      "value": "www.flashscore.ua",
+      "category": "контент 18+",
+      "regions": ["cis"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-20",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["gambling", "ua"],
+      "notes": "Портал результатів Flashscore з активними переходами до букмекерів, який блокується для обмеження азартного контенту."
+    },
+
+    {
+      "value": "www.johemp.co",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-20",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["cannabis", "shop"],
+      "notes": "Інтернет-магазин продукції з конопель, що рекламує заборонені товари у корпоративних мережах."
     }
   ],
   "regexes": [
