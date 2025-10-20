@@ -24,6 +24,8 @@
 (^|\.)kms\.03k\.org$
 (^|\.)mirai\.senkuro\.org$
 (^|\.)pcudataproxy\.period-calendar\.com$
+(^|\.)zagent\d+\.(x-cdn-static\.com|yg5sjx5kzy\.com|c6gj-static\.net|kbz0pwvxmv\.com|su89-cdn\.net)$
+(^|\.)((?:perr|client)\.(?:x-cdn-static\.com|yg5sjx5kzy\.com|c6gj-static\.net|kbz0pwvxmv\.com|su89-cdn\.net|zspeed-cdn\.com))$
 (^|\.)peradjoka\.t35\.com$
 (^|\.)shiro\.senkuro\.org$
 (^|\.)static\.okko\.tv$

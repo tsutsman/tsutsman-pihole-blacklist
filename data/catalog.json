@@ -733,6 +733,19 @@
     },
 
     {
+      "value": "ukr.net.dob.sibl.support-intelligence.net",
+      "category": "шкідливе ПЗ",
+      "regions": ["ua"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-20",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["cdn", "malware"],
+      "notes": "Українське дзеркало SIBL для розповсюдження шкідливих компонентів, виявлене мережевими журналами KMR."
+    },
+
+    {
       "value": "shiro.senkuro.org",
       "category": "ботнет",
       "regions": ["global"],
@@ -879,7 +892,7 @@
       "value": "api.deepstateplatypus.com",
       "category": "анонімайзери",
       "regions": ["global"],
-      "sources": ["ручне внесення"],
+      "sources": ["ручне внесення", "журнал KMR"],
       "added": "2025-10-14",
       "severity": "висока",
       "status": "active",
@@ -1106,6 +1119,32 @@
       "monitor": false,
       "tags": ["tld"],
       "notes": "Національний домен Білорусі."
+    },
+
+    {
+      "value": "(^|\\.)zagent\\d+\\.(x-cdn-static\\.com|yg5sjx5kzy\\.com|c6gj-static\\.net|kbz0pwvxmv\\.com|su89-cdn\\.net)$",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-20",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["hola", "vpn"],
+      "notes": "Шаблон охоплює динамічні вузли Hola VPN (zagentXXXX), які використовують пристрої користувачів як проксі для обходу фільтрації."
+    },
+
+    {
+      "value": "(^|\\.)((?:perr|client)\\.(?:x-cdn-static\\.com|yg5sjx5kzy\\.com|c6gj-static\\.net|kbz0pwvxmv\\.com|su89-cdn\\.net|zspeed-cdn\\.com))$",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-20",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["hola", "vpn"],
+      "notes": "Блокує допоміжні вузли Hola (perr/client), через які сервіс розподіляє трафік та обходить корпоративні обмеження."
     }
   ]
 }
