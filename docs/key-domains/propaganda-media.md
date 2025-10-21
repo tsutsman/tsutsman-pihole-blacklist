@@ -13,12 +13,15 @@
 - `readovka.news`
 - `rossiya1.ru`
 - `rt.com`
+- `actualidad.rt.com`
+- `arabic.rt.com`
 - `rusvesna.su`
 - `patriot.media`
 - `smotrim.ru`
 - `solovyov.live`
 - `sputnikglobe.com`
 - `sputniknews.com`
+- `francais.rt.com`
 - `tass.ru`
 - `tsargrad.tv`
 - `voennoedelo.com`
