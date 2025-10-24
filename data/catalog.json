@@ -522,6 +522,32 @@
     },
 
     {
+      "value": "cdn-image.zvuk.com",
+      "category": "екосистема",
+      "regions": ["ru", "cis"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-24",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["cdn", "zvuk"],
+      "notes": "Зображення стрімінгової платформи ZVUK, яка просуває російський контент і входить до екосистеми Sber."
+    },
+
+    {
+      "value": "cdn-new.zvuk.com",
+      "category": "екосистема",
+      "regions": ["ru", "cis"],
+      "sources": ["ручне внесення"],
+      "added": "2025-10-24",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["cdn", "zvuk"],
+      "notes": "Оновлення клієнтів платформи ZVUK, яка підтримує російські медійні сервіси та монетизацію контенту агресора."
+    },
+
+    {
       "value": "a.tiktokmod.pro",
       "category": "шкідливе ПЗ",
       "regions": ["global"],
@@ -691,6 +717,19 @@
     },
 
     {
+      "value": "uazmi.media",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-24",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["proxy", "mirror"],
+      "notes": "Дзеркало агрегатора UAZMI, яке використовується для обходу регіональних блокувань новинних ресурсів."
+    },
+
+    {
       "value": "ipinfo.suinfra.com",
       "category": "шпигунство",
       "regions": ["global"],
@@ -756,6 +795,19 @@
     },
 
     {
+      "value": "aaa.stage.15790461.ns1.1u1gpup5i8kbtvctq9peakblhhzk.com",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-24",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["sibl", "stager"],
+      "notes": "Проміжний стадійний піддомен SIBL, з якого завантажуються шкідливі скрипти; зафіксований мережевими журналами KMR."
+    },
+
+    {
       "value": "avcdn.net.dob.sibl.support-intelligence.net",
       "category": "шкідливе ПЗ",
       "regions": ["global"],
@@ -782,6 +834,19 @@
     },
 
     {
+      "value": "windows.net.dob.sibl.support-intelligence.net",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-24",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["cdn", "sibl"],
+      "notes": "SIBL-дзеркало на піддомені windows.net, яке розповсюджує шкідливі бінарники; зафіксовано мережевими журналами KMR."
+    },
+
+    {
       "value": "shiro.senkuro.org",
       "category": "ботнет",
       "regions": ["global"],
@@ -805,6 +870,45 @@
       "monitor": false,
       "tags": ["cdn", "дорослий контент"],
       "notes": "CDN-ендпоінт Bing для розповсюдження явного контенту, який блокується для фільтрації небажаних матеріалів."
+    },
+
+    {
+      "value": "n1serch.biz",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-24",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["redirector", "malware"],
+      "notes": "Редіректор, який підмінює пошукові запити та підсовує завантажувачі троянів; зафіксований мережевими журналами KMR."
+    },
+
+    {
+      "value": "qsj7.cn",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-24",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["cn", "c2"],
+      "notes": "Китайський командний вузол, який постачає бекдори для відомих шкідливих кампаній; виявлений журналами KMR."
+    },
+
+    {
+      "value": "unlashchaule.qpon",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-24",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["loader", "qakbot"],
+      "notes": "Піддомен мережі .qpon, який розповсюджує банківські завантажувачі; зафіксований мережевими журналами KMR."
     },
 
     {
@@ -1107,6 +1211,19 @@
     },
 
     {
+      "value": "gogle-analytics-srv2456.com",
+      "category": "шахрайство",
+      "regions": ["global"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-24",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["gambling", "typosquatting"],
+      "notes": "Псевдопанель відстеження азартних афіліатів, що імітує Google Analytics та веде на нелегальні казино."
+    },
+
+    {
       "value": "winplinkos.pics",
       "category": "шахрайство",
       "regions": ["global"],
@@ -1130,6 +1247,19 @@
       "monitor": false,
       "tags": ["adult", "ua"],
       "notes": "Вебкам-платформа з українською аудиторією, виявлена у мережевих журналах KMR як джерело небажаного контенту 18+."
+    },
+
+    {
+      "value": "m.gumor.org",
+      "category": "контент 18+",
+      "regions": ["cis"],
+      "sources": ["журнал KMR"],
+      "added": "2025-10-24",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["adult", "humor"],
+      "notes": "Мобільне дзеркало порталу Gumor з еротичними добірками, яке обходить фільтри через гумористичний бренд."
     },
 
     {
