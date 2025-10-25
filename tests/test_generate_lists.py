@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from typing import Sequence
 
 import pytest
 
@@ -7,22 +8,32 @@ from scripts import generate_lists
 from scripts.utils import EntryMetadata
 
 
-def _prepare(monkeypatch, tmp_path, *, catalog=None):
+def _prepare(
+    monkeypatch,
+    tmp_path,
+    *,
+    catalog=None,
+    domains_data: Sequence[str] | None = None,
+    regex_data: Sequence[str] | None = None,
+):
     domains = tmp_path / "domains.txt"
     regex = tmp_path / "regex.list"
     catalog_file = tmp_path / "catalog.json"
-    domains.write_text("example.com\n")
-    regex.write_text("bad.*\n")
+    domain_values = list(domains_data or ["example.com"])
+    regex_values = list(regex_data or ["bad.*"])
+    domains.write_text("\n".join(domain_values) + "\n")
+    regex.write_text("\n".join(regex_values) + "\n")
     catalog_data = catalog or {"domains": [], "regexes": []}
     catalog_file.write_text(json.dumps(catalog_data, ensure_ascii=False))
     monkeypatch.setattr(generate_lists, "DOMAINS_FILE", domains)
     monkeypatch.setattr(generate_lists, "REGEX_FILE", regex)
     monkeypatch.setattr(generate_lists, "CATALOG_FILE", catalog_file)
+    return catalog_file
 
 
 def test_generate_default(tmp_path, monkeypatch):
-    _prepare(monkeypatch, tmp_path)
-    generate_lists.main(["--dist-dir", str(tmp_path)])
+    catalog_path = _prepare(monkeypatch, tmp_path)
+    generate_lists.main(["--dist-dir", str(tmp_path), "--catalog", str(catalog_path)])
     adguard = (tmp_path / "adguard.txt").read_text()
     ublock = (tmp_path / "ublock.txt").read_text()
     assert adguard == "||example.com^\n/bad.*/\n"
@@ -31,8 +42,15 @@ def test_generate_default(tmp_path, monkeypatch):
 
 
 def test_generate_hosts(tmp_path, monkeypatch):
-    _prepare(monkeypatch, tmp_path)
-    generate_lists.main(["--dist-dir", str(tmp_path), "--formats", "hosts"])
+    catalog_path = _prepare(monkeypatch, tmp_path)
+    generate_lists.main([
+        "--dist-dir",
+        str(tmp_path),
+        "--formats",
+        "hosts",
+        "--catalog",
+        str(catalog_path),
+    ])
     hosts = (tmp_path / "hosts.txt").read_text()
     assert hosts == "0.0.0.0 example.com\n"
     assert not (tmp_path / "adguard.txt").exists()
@@ -60,7 +78,7 @@ def test_generate_additional_formats_and_segments(tmp_path, monkeypatch):
             }
         ],
     }
-    _prepare(monkeypatch, tmp_path, catalog=catalog)
+    catalog_path = _prepare(monkeypatch, tmp_path, catalog=catalog)
     dist = tmp_path / "out"
     generate_lists.main(
         [
@@ -71,6 +89,8 @@ def test_generate_additional_formats_and_segments(tmp_path, monkeypatch):
             "dnsmasq",
             "--group-by",
             "category",
+            "--catalog",
+            str(catalog_path),
         ]
     )
     rpz = (dist / "rpz.txt").read_text().splitlines()
@@ -130,12 +150,13 @@ def test_generate_skips_empty_segment_groups(tmp_path, monkeypatch):
             }
         ],
     }
-    _prepare(monkeypatch, tmp_path, catalog=catalog)
+    catalog_path = _prepare(monkeypatch, tmp_path, catalog=catalog)
     dist = tmp_path / "dist"
     generate_lists.generate(
         dist_dir=dist,
         formats=["unbound", "hosts"],
         group_by="source",
+        catalog_path=catalog_path,
     )
     segment_dir = dist / "segments" / "source"
     unbound_segments = list(segment_dir.glob("unbound--*.conf"))
@@ -143,6 +164,49 @@ def test_generate_skips_empty_segment_groups(tmp_path, monkeypatch):
     assert "example.com" in unbound_segments[0].read_text()
     hosts_segments = list(segment_dir.glob("hosts--*.txt"))
     assert len(hosts_segments) == 1
+
+
+def test_generate_filters_by_severity_and_tags(tmp_path, monkeypatch):
+    catalog = {
+        "domains": [
+            {
+                "value": "critical.example",
+                "category": "шкідливе ПЗ",
+                "regions": ["global"],
+                "sources": ["аналітика"],
+                "status": "active",
+                "severity": "critical",
+                "tags": ["apt28"],
+            },
+            {
+                "value": "benign.example",
+                "category": "фішинг",
+                "regions": ["global"],
+                "sources": ["аналітика"],
+                "status": "active",
+                "severity": "low",
+            },
+        ],
+        "regexes": [],
+    }
+    catalog_path = _prepare(
+        monkeypatch,
+        tmp_path,
+        catalog=catalog,
+        domains_data=["critical.example", "benign.example"],
+        regex_data=[],
+    )
+    dist = tmp_path / "dist"
+    generate_lists.generate(
+        dist_dir=dist,
+        formats=["adguard"],
+        severities=["critical"],
+        tags=["apt28"],
+        catalog_path=catalog_path,
+    )
+    output = (dist / "adguard.txt").read_text().splitlines()
+    assert "||critical.example^" in output
+    assert all("benign.example" not in line for line in output)
 
 
 @pytest.mark.parametrize(
