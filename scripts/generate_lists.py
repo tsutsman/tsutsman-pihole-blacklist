@@ -113,6 +113,8 @@ def _prepare_entries(
     regions: Sequence[str] | None,
     sources: Sequence[str] | None,
     statuses: Sequence[str] | None,
+    severities: Sequence[str] | None,
+    tags: Sequence[str] | None,
 ) -> list[tuple[str, EntryMetadata | None]]:
     return list(
         catalog.iter_values_from(
@@ -122,6 +124,8 @@ def _prepare_entries(
             regions=regions,
             sources=sources,
             statuses=statuses,
+            severities=severities,
+            tags=tags,
             include_missing=True,
         )
     )
@@ -138,6 +142,8 @@ def generate(
     statuses: Sequence[str] | None = None,
     include_inactive: bool = False,
     group_by: str | None = None,
+    severities: Sequence[str] | None = None,
+    tags: Sequence[str] | None = None,
 ) -> None:
     """Створює файли зі списками у вибраних форматах із фільтрами.
 
@@ -159,6 +165,8 @@ def generate(
         regions=regions,
         sources=sources,
         statuses=statuses,
+        severities=severities,
+        tags=tags,
     )
     regex_entries = _prepare_entries(
         catalog,
@@ -168,6 +176,8 @@ def generate(
         regions=regions,
         sources=sources,
         statuses=statuses,
+        severities=severities,
+        tags=tags,
     )
 
     dist_dir.mkdir(exist_ok=True)
@@ -257,6 +267,8 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--regions", nargs="+")
     parser.add_argument("--sources", nargs="+")
     parser.add_argument("--statuses", nargs="+")
+    parser.add_argument("--severities", nargs="+")
+    parser.add_argument("--tags", nargs="+")
     parser.add_argument("--include-inactive", action="store_true")
     parser.add_argument("--group-by", choices=GROUP_CHOICES)
     args = parser.parse_args(argv)
@@ -271,6 +283,8 @@ def main(argv: list[str] | None = None) -> None:
         statuses=args.statuses,
         include_inactive=args.include_inactive,
         group_by=args.group_by,
+        severities=args.severities,
+        tags=args.tags,
     )
 
 
