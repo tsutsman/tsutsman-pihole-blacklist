@@ -17,6 +17,7 @@
 - `python scripts/validate_catalog.py [--catalog data/catalog.json] [--policy data/inclusion_policy.json]` — гарантує, що метадані відповідають критеріям включення (див. [docs/criteria.md](docs/criteria.md)).
 - `python scripts/audit_lists.py [--output reports/audit.json]` — формує JSON-звіт з аудитом списків, охопленням метаданими та виявленням записів каталогу без відповідників.
 - `python scripts/generate_lists.py [--dist-dir DIR] [--formats adguard ublock hosts rpz dnsmasq unbound] [--group-by category|region|source] [--categories ...] [--regions ...] [--severities ...] [--tags ...]` — формує списки у вибраних форматах, підтримує сегментацію за категорією, регіоном або джерелом, дозволяє фільтрувати записи за рівнем важливості та тегами й створює додаткові файли з розбивкою у `dist/segments/`.
+- `python scripts/generate_dashboard.py [--dashboard reports/dashboard.json] [--history reports/dashboard_history.json] [--history-limit N] [--skip-history]` — агрегує метрики для дашбордів (покриття метаданими, розподіл категорій/регіонів/тегів, статистику хибнопозитивів) і підтримує історію знімків.
 - `python scripts/update_domains.py [--chunk-size N] [--dest FILE] [--config data/sources.json] [--report reports/latest_update.json] [--status data/domain_status.json]` — паралельно завантажує домени, враховуючи вагу та коефіцієнт довіри джерел (`trust`), контролює дотримання `sla_days` і за потреби автоматично пропускає джерела з `auto_disable_on_sla`, генерує звіт про додані записи та оновлює історію спостережень.
 - `python scripts/diff_reports.py PREVIOUS CURRENT [--output FILE]` — порівнює два JSON-звіти оновлень (наприклад, `reports/latest_update.json`) і формує диф для changelog та історії релізів.
 
@@ -25,6 +26,8 @@
 - `data/sources.json` містить конфігурацію джерел із вагами, коефіцієнтом довіри (`trust`), очікуваним SLA (`sla_days`) і прапорцем `auto_disable_on_sla`, що дозволяє автоматично пропускати застарілі фіди. Файл дозволяє тимчасово вимикати або додавати джерела без зміни коду.
 - `data/domain_status.json` зберігає історію появи доменів у джерелах і відмічає записи як `active`, `stale` або `removed`.
 - `reports/latest_update.json` показує, які домени додано під час останнього запуску, короткий список потенційно застарілих записів, стан кожного джерела (`source_health`), пропущені через SLA фіди (`skipped_sources`) та ознаку наявності помилок завантаження.
+- `reports/dashboard.json` містить агреговані метрики (покриття метаданих, розподіл категорій, регіонів, тегів, статистику хибнопозитивів); див. [docs/monitoring/dashboard.md](docs/monitoring/dashboard.md) для побудови дашбордів.
+- `reports/dashboard_history.json` і `reports/diff_history.json` зберігають історію ключових показників та змін між релізами.
 - Згенеровані списки з розбивкою за категоріями й регіонами зберігаються у `dist/segments/` після виконання `generate_lists.py`.
 
 ## Категорії шкідливих доменів

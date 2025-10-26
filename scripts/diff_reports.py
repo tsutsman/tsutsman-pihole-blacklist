@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -78,6 +79,43 @@ def build_diff(previous: dict[str, Any], current: dict[str, Any]) -> dict[str, A
     return diff
 
 
+def _prepare_history_entry(diff: dict[str, Any]) -> dict[str, Any]:
+    """Формує запис для історії дифів."""
+
+    return {
+        "recorded_at": datetime.now(timezone.utc).isoformat(),
+        "previous_generated_at": diff.get("previous_generated_at"),
+        "current_generated_at": diff.get("current_generated_at"),
+        "delta_total": diff.get("delta_total"),
+        "added_since_previous": diff.get("added_since_previous", []),
+        "removed_from_added": diff.get("removed_from_added", []),
+        "new_stale_candidates": diff.get("new_stale_candidates", []),
+        "resolved_stale_candidates": diff.get("resolved_stale_candidates", []),
+        "new_sources": diff.get("new_sources", []),
+        "removed_sources": diff.get("removed_sources", []),
+    }
+
+
+def update_history(path: Path, diff: dict[str, Any], *, limit: int) -> list[dict[str, Any]]:
+    """Додає диф до історії релізів, зберігаючи обмежений розмір."""
+
+    if limit < 1:
+        raise ValueError("Ліміт історії має бути додатним")
+
+    if path.exists():
+        raw = json.loads(path.read_text(encoding="utf-8") or "[]")
+    else:
+        raw = []
+
+    if not isinstance(raw, list):
+        raise TypeError("Файл історії має містити список")
+
+    raw.append(_prepare_history_entry(diff))
+    trimmed = raw[-limit:]
+    path.write_text(json.dumps(trimmed, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return trimmed
+
+
 def dump_report(data: dict[str, Any]) -> str:
     """Повертає відформатоване подання звіту у вигляді JSON-рядка."""
 
@@ -94,6 +132,16 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "-o",
         "--output",
         help="Необов'язковий шлях для збереження диф-результату у файл",
+    )
+    parser.add_argument(
+        "--history",
+        help="Необов'язковий шлях до історичного журналу дифів",
+    )
+    parser.add_argument(
+        "--history-limit",
+        type=int,
+        default=120,
+        help="Максимальна кількість записів в історії",
     )
     return parser.parse_args(argv)
 
@@ -113,6 +161,10 @@ def main(argv: list[str] | None = None) -> int:
     if args.output:
         output_path = Path(args.output)
         output_path.write_text(output + "\n", encoding="utf-8")
+
+    if args.history:
+        history_path = Path(args.history)
+        update_history(history_path, diff, limit=args.history_limit)
 
     return 0
 
