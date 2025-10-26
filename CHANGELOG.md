@@ -21,3 +21,6 @@
     хибнопозитивів і оновлено документацію щодо процесу реагування.
   - Додано контроль довіри джерел (`trust`), автоматичне вимкнення за SLA в `update_domains.py` та нові розділи звітності зі
     станом джерел.
+- Додано `scripts/generate_dashboard.py` з підтримкою історії `reports/dashboard_history.json` та оновленням `reports/dashboard.json`.
+- Розширено `scripts/diff_reports.py` з параметрами `--history` та `--history-limit` для ведення `reports/diff_history.json`.
+- Оновлено документацію: додано [docs/monitoring/dashboard.md](docs/monitoring/dashboard.md) і розділи README про дашборди та нові артефакти.

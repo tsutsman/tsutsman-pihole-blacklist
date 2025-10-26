@@ -11,6 +11,7 @@ from typing import TYPE_CHECKING
 __all__ = [
     "audit_lists",
     "check_lists",
+    "generate_dashboard",
     "generate_lists",
     "diff_reports",
     "update_domains",
@@ -23,6 +24,7 @@ if TYPE_CHECKING:  # pragma: no cover
         audit_lists,
         check_lists,
         diff_reports,
+        generate_dashboard,
         generate_lists,
         update_domains,
         utils,
