@@ -21306,6 +21306,7 @@ cdn.cloudcoins.co
 cdn.dcrat.ru
 cdn.digitalcaramel.com
 cdn.minescripts.info
+cdn.retailrocket.ru
 cdn1.pebx.pl
 cdnjs.cloudflane.com
 census.mil.ru
@@ -21377,6 +21378,7 @@ delivery-club.ru
 depttake.ga
 dev.cryptobara.com
 dev.period-calendar.com
+devisepleased.com
 dfir-ru.ru
 digger.cryptobara.com
 digital.gov.ru
@@ -21417,6 +21419,7 @@ eth-pocket.eu
 ethereum-cashcard.com
 ethereum-cashcard.de
 ethereum-cashcard.eu
+eu2.willowglen.info
 eurasia.expert
 evrazia.org
 eyesee-lazere.pl
@@ -21516,6 +21519,7 @@ hideservers.net
 hitech.rosgvard.ru
 homebank.kz
 homecredit.ru
+hotbpifono.today
 hotlane.net
 hotspotshield.com
 hpyrdr.com
@@ -21527,6 +21531,7 @@ i125.fastpic.org
 iacpm.ru
 ic.pics.livejournal.com
 idealhacks.com
+img.dlsite.jp
 imonstervpn.com
 infotecs.ru
 ingbank.ru
@@ -21764,6 +21769,7 @@ sso.anbtr.com
 staff.sber.ru
 starpolit.ru
 stat.gibdd.ru
+static.insales-cdn.com
 static.okko.tv
 static.site-chat.me
 static5.smr.vc
