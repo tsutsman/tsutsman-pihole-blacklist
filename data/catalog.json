@@ -1299,6 +1299,305 @@
       "monitor": false,
       "tags": ["cannabis", "shop"],
       "notes": "Інтернет-магазин продукції з конопель, що рекламує заборонені товари у корпоративних мережах."
+    },
+
+    {
+      "value": "1234annuitysendmktgs.com",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["malspam", "annuity"],
+      "notes": "Домен кампанії зі шкідливими розсилками щодо ануїтетів, який використовується для доставки шкідливих вкладень."
+    },
+
+    {
+      "value": "146-112-61-106-v4.hideservers.net",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["vpn", "hideservers"],
+      "notes": "Вузол мережі HideServers, що маскує тунельований трафік і використовується зловмисниками для C2-з'єднань."
+    },
+
+    {
+      "value": "certifiedprojectmanager.net.dob.sibl.support-intelligence.net",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["sibl", "malspam"],
+      "notes": "Домен із бази SIBL, що використовується у шкідливих бізнес-розсилках і перенаправляє на інструменти для інфікування."
+    },
+
+    {
+      "value": "eu2.hazelmeadow.info",
+      "category": "інфраструктура",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["cdn", "hazelmeadow"],
+      "notes": "Європейський вузол Hazelmeadow, який виступає CDN/блоклистовою інфраструктурою для доставки підозрілих скриптів."
+    },
+
+    {
+      "value": "financialanalystmail.com",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["malspam", "finance"],
+      "notes": "Фішинговий домен, який імітує розсилки фінансових консультантів та розповсюджує шкідливі вкладення."
+    },
+
+    {
+      "value": "free-de-v4.hideservers.net",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["vpn", "hideservers"],
+      "notes": "Німецький вузол HideServers, який надає персональний VPN для обходу мережевих обмежень."
+    },
+
+    {
+      "value": "gobwy.lol",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["adult"],
+      "notes": "Портал із матеріалами для дорослих, що поширює порнографічний контент."
+    },
+
+    {
+      "value": "ic-ut-nss.xhcdn.com",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["adult", "cdn", "xhamster"],
+      "notes": "CDN-вузол XHCDN, який обслуговує відеоконтент для дорослих платформи xHamster."
+    },
+
+    {
+      "value": "ic-vrm-nss.xhcdn.com",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["adult", "cdn", "xhamster"],
+      "notes": "Відеомережа XHCDN, що доставляє контент xHamster та використовується для обходу фільтрів."
+    },
+
+    {
+      "value": "ic-vt-nss.xhcdn.com",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["adult", "cdn", "xhamster"],
+      "notes": "Ще один вузол відеомережі xHamster (XHCDN), що забезпечує доставку порнографічних матеріалів."
+    },
+
+    {
+      "value": "jasu2024.com",
+      "category": "шахрайство",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["gambling"],
+      "notes": "Азартний ресурс із несанкціонованими іграми, який просуває сумнівні лотереї та ставки."
+    },
+
+    {
+      "value": "nl-ds.hideservers.net",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["vpn", "hideservers"],
+      "notes": "Нідерландський вузол HideServers, що надає тунельований доступ для маскування трафіку."
+    },
+
+    {
+      "value": "ns1.1234annuitysendmktgs.com",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["nameserver", "malspam"],
+      "notes": "Первинний NS для домену 1234annuitysendmktgs.com, який обслуговує фішингову та шкідливу інфраструктуру."
+    },
+
+    {
+      "value": "ns1.financialanalystmail.com",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["nameserver", "malspam"],
+      "notes": "Первинний DNS-сервер фішингового домену financialanalystmail.com, що підтримує розсилку шкідливих вкладень."
+    },
+
+    {
+      "value": "ns2.1234annuitysendmktgs.com",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["nameserver", "malspam"],
+      "notes": "Резервний NS для 1234annuitysendmktgs.com, який розподіляє навантаження шкідливої інфраструктури."
+    },
+
+    {
+      "value": "ns2.financialanalystmail.com",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "висока",
+      "status": "active",
+      "monitor": true,
+      "tags": ["nameserver", "malspam"],
+      "notes": "Резервний DNS-сервер фінансового фішингового домену, який підтримує доставку шкідливих листів."
+    },
+
+    {
+      "value": "static-ah.xhcdn.com",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["adult", "cdn", "xhamster"],
+      "notes": "Статичний CDN-провайдер xHamster, який розповсюджує графіку та сценарії з порнографічним контентом."
+    },
+
+    {
+      "value": "translate-lastwar-trans-llkvwlcehu.us-east-1.fcapp.run",
+      "category": "анонімайзери",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": true,
+      "tags": ["vpn", "serverless"],
+      "notes": "Serverless-проксі на платформі fcapp.run, який використовується як персональний VPN для обходу блокувань."
+    },
+
+    {
+      "value": "tse1.explicit.bing.net",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["cdn", "дорослий контент"],
+      "notes": "CDN-ендпоінт Bing, який розповсюджує явні прев'ю та зображення категорії 18+."
+    },
+
+    {
+      "value": "ua.xhamster.com",
+      "category": "контент 18+",
+      "regions": ["ua", "global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["adult", "xhamster"],
+      "notes": "Локалізований розділ xHamster для української аудиторії з порнографічним контентом."
+    },
+
+    {
+      "value": "valentine.xhamster.com",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["adult", "xhamster"],
+      "notes": "Тематичний піддомен xHamster із матеріалами для дорослих."
+    },
+
+    {
+      "value": "video-nss-a.xhcdn.com",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["adult", "cdn", "xhamster"],
+      "notes": "CDN-вузол XHCDN, який передає відеостріминг xHamster."
+    },
+
+    {
+      "value": "video-nss.xhcdn.com",
+      "category": "контент 18+",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "середня",
+      "status": "active",
+      "monitor": false,
+      "tags": ["adult", "cdn", "xhamster"],
+      "notes": "Головний вузол XHCDN для потокового розповсюдження відео 18+ платформи xHamster."
     }
   ],
   "regexes": [
@@ -1337,6 +1636,45 @@
       "monitor": false,
       "tags": ["tld"],
       "notes": "Національний домен Білорусі."
+    },
+
+    {
+      "value": "(^|\\.)_adsp\\._domainkey\\.1234annuitysendmktgs\\.com$",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "висока",
+      "status": "active",
+      "monitor": false,
+      "tags": ["dkim", "malspam"],
+      "notes": "Регулярний вираз для блокування DKIM-запису _adsp фішингового домену 1234annuitysendmktgs.com."
+    },
+
+    {
+      "value": "(^|\\.)_dmarc\\.1234annuitysendmktgs\\.com$",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "висока",
+      "status": "active",
+      "monitor": false,
+      "tags": ["dmarc", "malspam"],
+      "notes": "Регулярний вираз, що блокує DMARC-запис шкідливої розсилки 1234annuitysendmktgs.com."
+    },
+
+    {
+      "value": "(^|\\.)dkim\\._domainkey\\.1234annuitysendmktgs\\.com$",
+      "category": "шкідливе ПЗ",
+      "regions": ["global"],
+      "sources": ["ручне внесення"],
+      "added": "2025-11-04",
+      "severity": "висока",
+      "status": "active",
+      "monitor": false,
+      "tags": ["dkim", "malspam"],
+      "notes": "Шаблон блокує основний DKIM-запис домену 1234annuitysendmktgs.com, що використовується у шкідливих листах."
     },
 
     {
