@@ -79,6 +79,12 @@ lists:
 3. Add or update tests for any logic changes, then run `pytest`.
 4. In pull requests describe the evidence or rationale for each new domain.
 
+### Local development helpers
+- Install tools: `pip install -r requirements.txt`
+- Quick tasks (Linux/macOS): `./tasks.sh [test|lint|format|audit|generate]`
+- Quick tasks (Windows PowerShell): `./tasks.ps1 [test|lint|format|audit|generate]`
+- Linting uses Ruff (with autofix) and Bandit for security checks; formatting uses Ruff Format and Black.
+
 ## Inclusion Policy and Metadata Requirements
 
 ### Mandatory Steps Before a PR

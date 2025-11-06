@@ -1,0 +1,46 @@
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = [
+  "E",  # pycodestyle
+  "F",  # pyflakes
+  "I",  # isort
+  "B",  # flake8-bugbear
+]
+ignore = [
+  "E203",  # whitespace before ':' (black compat)
+  "E501",  # line length handled by formatter/checks elsewhere
+]
+exclude = [
+  ".git",
+  ".venv",
+  "dist",
+  "reports",
+]
+
+[tool.ruff.format]
+quote-style = "preserve"
+indent-style = "space"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-q --strict-markers --disable-warnings"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["scripts"]
+omit = [
+  "scripts/__init__.py",
+]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+fail_under = 85
+
+[tool.bandit]
+skips = ["B101"]  # allow assert in tests
+targets = ["scripts"]
+
+

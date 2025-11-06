@@ -84,6 +84,12 @@
 3. Для змін у коді додавайте відповідні тести й запускайте `pytest`.
 4. У Pull Request опишіть джерело інформації про домен або причину додавання.
 
+### Локальна розробка
+- Встановити інструменти: `pip install -r requirements.txt`
+- Швидкі задачі (Linux/macOS): `./tasks.sh [test|lint|format|audit|generate]`
+- Швидкі задачі (Windows PowerShell): `./tasks.ps1 [test|lint|format|audit|generate]`
+- Лінтинг виконує Ruff (із автофіксом) та Bandit для безпеки; форматування — Ruff Format і Black.
+
 ## Політика прийому нових доменів і вимоги до метаданих
 
 ### Обов'язкові кроки перед створенням PR

@@ -1,3 +1,6 @@
 coverage
 pre-commit
 pytest
+ruff
+bandit
+pip-audit
