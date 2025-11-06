@@ -1,0 +1,6 @@
+0.0.0.0 cdn.carrotquest.io
+0.0.0.0 eu2.hazelmeadow.info
+0.0.0.0 eu2.reedvale.info
+0.0.0.0 kinoadmin.freemyip.com
+0.0.0.0 ndss.11.zyxel.ndmsystems.com
+0.0.0.0 yandex.ru

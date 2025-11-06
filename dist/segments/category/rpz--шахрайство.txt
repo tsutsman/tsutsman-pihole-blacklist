@@ -1,0 +1,9 @@
+$TTL 300
+@ IN SOA localhost. hostmaster.localhost. (1 3600 600 86400 300)
+@ IN NS localhost.
+ams-new.bonuses.email CNAME .
+gogle-analytics-srv2456.com CNAME .
+jasu2024.com CNAME .
+l.better-shoot.com CNAME .
+static5.smr.vc CNAME .
+winplinkos.pics CNAME .

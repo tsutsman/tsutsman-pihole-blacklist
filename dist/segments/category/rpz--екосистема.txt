@@ -1,0 +1,8 @@
+$TTL 300
+@ IN SOA localhost. hostmaster.localhost. (1 3600 600 86400 300)
+@ IN NS localhost.
+cdn-image.zvuk.com CNAME .
+cdn-new.zvuk.com CNAME .
+ok.ru CNAME .
+static.okko.tv CNAME .
+vkplay.ru CNAME .

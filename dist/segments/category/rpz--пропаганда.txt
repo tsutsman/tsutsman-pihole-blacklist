@@ -1,0 +1,39 @@
+$TTL 300
+@ IN SOA localhost. hostmaster.localhost. (1 3600 600 86400 300)
+@ IN NS localhost.
+1tv.ru CNAME .
+actualidad.rt.com CNAME .
+anna-news.info CNAME .
+arabic.rt.com CNAME .
+eadaily.com CNAME .
+francais.rt.com CNAME .
+gazeta.ru CNAME .
+iz.ru CNAME .
+kp.ru CNAME .
+lenta.ru CNAME .
+life.ru CNAME .
+mail.ru CNAME .
+patriot.media CNAME .
+rbc.ru CNAME .
+readovka.news CNAME .
+rg.ru CNAME .
+ria.ru CNAME .
+riafan.ru CNAME .
+rossiya1.ru CNAME .
+rt.com CNAME .
+rusvesna.su CNAME .
+rutube.ru CNAME .
+smotrim.ru CNAME .
+soloviev.ru CNAME .
+solovyov.live CNAME .
+sputnikglobe.com CNAME .
+sputniknews.com CNAME .
+tass.ru CNAME .
+tsargrad.tv CNAME .
+tvzvezda.ru CNAME .
+vesti.ru CNAME .
+vgtrk.ru CNAME .
+vk.com CNAME .
+voennoedelo.com CNAME .
+vz.ru CNAME .
+warsonline.info CNAME .

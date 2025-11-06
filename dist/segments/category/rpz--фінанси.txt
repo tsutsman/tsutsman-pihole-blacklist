@@ -1,0 +1,6 @@
+$TTL 300
+@ IN SOA localhost. hostmaster.localhost. (1 3600 600 86400 300)
+@ IN NS localhost.
+gazprombank.ru CNAME .
+sberbank.ru CNAME .
+vtb.ru CNAME .

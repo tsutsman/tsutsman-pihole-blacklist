@@ -1,0 +1,14 @@
+0.0.0.0 10-10-0-22-v4.hideservers.net
+0.0.0.0 146-112-61-106-v4.hideservers.net
+0.0.0.0 a703.l461.r761.fastcloudcdn.net
+0.0.0.0 api.deepstateplatypus.com
+0.0.0.0 api.ipapi.is
+0.0.0.0 broworker13s.com
+0.0.0.0 cloudflare-dns.com
+0.0.0.0 files.staticstream.org
+0.0.0.0 fine.sunproxy.net
+0.0.0.0 free-de-v4.hideservers.net
+0.0.0.0 nl-ds.hideservers.net
+0.0.0.0 one.one.one.one
+0.0.0.0 translate-lastwar-trans-llkvwlcehu.us-east-1.fcapp.run
+0.0.0.0 uazmi.media

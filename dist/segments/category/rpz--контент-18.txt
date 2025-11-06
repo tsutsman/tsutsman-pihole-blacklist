@@ -1,0 +1,29 @@
+$TTL 300
+@ IN SOA localhost. hostmaster.localhost. (1 3600 600 86400 300)
+@ IN NS localhost.
+c.hit.ua CNAME .
+ei.phncdn.com CNAME .
+gobwy.lol CNAME .
+i120.fastpic.org CNAME .
+i122.fastpic.org CNAME .
+i123.fastpic.org CNAME .
+i125.fastpic.org CNAME .
+i126.fastpic.org CNAME .
+ic-ut-nss.xhcdn.com CNAME .
+ic-vrm-nss.xhcdn.com CNAME .
+ic-vt-nss.xhcdn.com CNAME .
+intimka.ua CNAME .
+livecity.biz.ua CNAME .
+m.gumor.org CNAME .
+makelovenotporn.tv CNAME .
+media.makelovenotporn.tv CNAME .
+static-ah.xhcdn.com CNAME .
+static.site-chat.me CNAME .
+tse1.explicit.bing.net CNAME .
+tse2.explicit.bing.net CNAME .
+ua.xhamster.com CNAME .
+valentine.xhamster.com CNAME .
+video-nss-a.xhcdn.com CNAME .
+video-nss.xhcdn.com CNAME .
+www.flashscore.ua CNAME .
+www.johemp.co CNAME .

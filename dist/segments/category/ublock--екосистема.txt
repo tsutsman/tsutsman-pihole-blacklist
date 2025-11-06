@@ -1,0 +1,5 @@
+||cdn-image.zvuk.com^
+||cdn-new.zvuk.com^
+||ok.ru^
+||static.okko.tv^
+||vkplay.ru^

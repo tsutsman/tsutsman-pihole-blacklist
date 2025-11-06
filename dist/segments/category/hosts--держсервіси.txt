@@ -1,0 +1,5 @@
+0.0.0.0 gosuslugi.ru
+0.0.0.0 kremlin.ru
+0.0.0.0 mid.ru
+0.0.0.0 mil.ru
+0.0.0.0 mos.ru

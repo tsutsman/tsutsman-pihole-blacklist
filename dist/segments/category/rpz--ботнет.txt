@@ -1,0 +1,7 @@
+$TTL 300
+@ IN SOA localhost. hostmaster.localhost. (1 3600 600 86400 300)
+@ IN NS localhost.
+free-de-ds.hideservers.net CNAME .
+hideservers.net CNAME .
+mirai.senkuro.org CNAME .
+shiro.senkuro.org CNAME .

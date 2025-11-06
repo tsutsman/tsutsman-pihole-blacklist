@@ -1,0 +1,17 @@
+$TTL 300
+@ IN SOA localhost. hostmaster.localhost. (1 3600 600 86400 300)
+@ IN NS localhost.
+10-10-0-22-v4.hideservers.net CNAME .
+146-112-61-106-v4.hideservers.net CNAME .
+a703.l461.r761.fastcloudcdn.net CNAME .
+api.deepstateplatypus.com CNAME .
+api.ipapi.is CNAME .
+broworker13s.com CNAME .
+cloudflare-dns.com CNAME .
+files.staticstream.org CNAME .
+fine.sunproxy.net CNAME .
+free-de-v4.hideservers.net CNAME .
+nl-ds.hideservers.net CNAME .
+one.one.one.one CNAME .
+translate-lastwar-trans-llkvwlcehu.us-east-1.fcapp.run CNAME .
+uazmi.media CNAME .

@@ -1,0 +1,9 @@
+$TTL 300
+@ IN SOA localhost. hostmaster.localhost. (1 3600 600 86400 300)
+@ IN NS localhost.
+cdn.carrotquest.io CNAME .
+eu2.hazelmeadow.info CNAME .
+eu2.reedvale.info CNAME .
+kinoadmin.freemyip.com CNAME .
+ndss.11.zyxel.ndmsystems.com CNAME .
+yandex.ru CNAME .

@@ -1,0 +1,6 @@
+0.0.0.0 ams-new.bonuses.email
+0.0.0.0 gogle-analytics-srv2456.com
+0.0.0.0 jasu2024.com
+0.0.0.0 l.better-shoot.com
+0.0.0.0 static5.smr.vc
+0.0.0.0 winplinkos.pics

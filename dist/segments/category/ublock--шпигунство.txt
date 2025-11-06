@@ -1,0 +1,6 @@
+||an.yandex.ru^
+||checkip.deepstateplatypus.com^
+||dev.period-calendar.com^
+||fcm-pc.period-calendar.com^
+||ipinfo.suinfra.com^
+||pcudataproxy.period-calendar.com^

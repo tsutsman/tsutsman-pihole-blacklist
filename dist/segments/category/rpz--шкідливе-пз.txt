@@ -1,0 +1,23 @@
+$TTL 300
+@ IN SOA localhost. hostmaster.localhost. (1 3600 600 86400 300)
+@ IN NS localhost.
+1234annuitysendmktgs.com CNAME .
+a.tiktokmod.pro CNAME .
+aaa.stage.15790461.ns1.1u1gpup5i8kbtvctq9peakblhhzk.com CNAME .
+avcdn.net.dob.sibl.support-intelligence.net CNAME .
+certifiedprojectmanager.net.dob.sibl.support-intelligence.net CNAME .
+fetside.com CNAME .
+financialanalystmail.com CNAME .
+kms.03k.org CNAME .
+n1serch.biz CNAME .
+ns1.1234annuitysendmktgs.com CNAME .
+ns1.financialanalystmail.com CNAME .
+ns2.1234annuitysendmktgs.com CNAME .
+ns2.financialanalystmail.com CNAME .
+peradjoka.t35.com CNAME .
+philosophicaltomorrow.com CNAME .
+qsj7.cn CNAME .
+ukr.net.dob.sibl.support-intelligence.net CNAME .
+unlashchaule.qpon CNAME .
+windows.net.dob.sibl.support-intelligence.net CNAME .
+zakpos.mine.nu CNAME .

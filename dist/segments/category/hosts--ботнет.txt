@@ -1,0 +1,4 @@
+0.0.0.0 free-de-ds.hideservers.net
+0.0.0.0 hideservers.net
+0.0.0.0 mirai.senkuro.org
+0.0.0.0 shiro.senkuro.org

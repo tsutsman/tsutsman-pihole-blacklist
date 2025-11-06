@@ -1,0 +1,16 @@
+||10-10-0-22-v4.hideservers.net^
+||146-112-61-106-v4.hideservers.net^
+||a703.l461.r761.fastcloudcdn.net^
+||api.deepstateplatypus.com^
+||api.ipapi.is^
+||broworker13s.com^
+||cloudflare-dns.com^
+||files.staticstream.org^
+||fine.sunproxy.net^
+||free-de-v4.hideservers.net^
+||nl-ds.hideservers.net^
+||one.one.one.one^
+||translate-lastwar-trans-llkvwlcehu.us-east-1.fcapp.run^
+||uazmi.media^
+/(^|\.)zagent\d+\.(x-cdn-static\.com|yg5sjx5kzy\.com|c6gj-static\.net|kbz0pwvxmv\.com|su89-cdn\.net)$/
+/(^|\.)((?:perr|client)\.(?:x-cdn-static\.com|yg5sjx5kzy\.com|c6gj-static\.net|kbz0pwvxmv\.com|su89-cdn\.net|zspeed-cdn\.com))$/

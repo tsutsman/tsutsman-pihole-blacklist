@@ -1,0 +1,8 @@
+$TTL 300
+@ IN SOA localhost. hostmaster.localhost. (1 3600 600 86400 300)
+@ IN NS localhost.
+gosuslugi.ru CNAME .
+kremlin.ru CNAME .
+mid.ru CNAME .
+mil.ru CNAME .
+mos.ru CNAME .

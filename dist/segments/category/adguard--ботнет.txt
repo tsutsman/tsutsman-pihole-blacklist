@@ -1,0 +1,4 @@
+||free-de-ds.hideservers.net^
+||hideservers.net^
+||mirai.senkuro.org^
+||shiro.senkuro.org^

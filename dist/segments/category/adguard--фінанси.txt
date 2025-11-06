@@ -1,0 +1,3 @@
+||gazprombank.ru^
+||sberbank.ru^
+||vtb.ru^

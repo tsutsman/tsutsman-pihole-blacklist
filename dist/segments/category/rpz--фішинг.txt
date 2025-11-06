@@ -1,0 +1,6 @@
+$TTL 300
+@ IN SOA localhost. hostmaster.localhost. (1 3600 600 86400 300)
+@ IN NS localhost.
+gmail.com.fresh.fmb.la CNAME .
+google.com.fresh.fmb.la CNAME .
+microsoft.com.fresh.fmb.la CNAME .

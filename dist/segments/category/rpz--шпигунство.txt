@@ -1,0 +1,9 @@
+$TTL 300
+@ IN SOA localhost. hostmaster.localhost. (1 3600 600 86400 300)
+@ IN NS localhost.
+an.yandex.ru CNAME .
+checkip.deepstateplatypus.com CNAME .
+dev.period-calendar.com CNAME .
+fcm-pc.period-calendar.com CNAME .
+ipinfo.suinfra.com CNAME .
+pcudataproxy.period-calendar.com CNAME .
