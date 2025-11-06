@@ -163,11 +163,14 @@
 - `fcm-pc.period-calendar.com`
 - `fetside.com`
 - `free-de-ds.hideservers.net`
+- `gazeta.ru`
 - `gazprombank.ru`
 - `gosuslugi.ru`
 - `hideservers.net`
 - `ipinfo.suinfra.com`
+- `iz.ru`
 - `kms.03k.org`
+- `kp.ru`
 - `kremlin.ru`
 - `mid.ru`
 - `mil.ru`

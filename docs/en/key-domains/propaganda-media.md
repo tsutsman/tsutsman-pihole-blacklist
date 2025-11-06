@@ -3,6 +3,9 @@
 - `1tv.ru`
 - `anna-news.info`
 - `eadaily.com`
+- `gazeta.ru` — online outlet of Rambler&Co amplifying Kremlin talking points.
+- `iz.ru` — Izvestia website distributing state propaganda.
+- `kp.ru` — Komsomolskaya Pravda portal pushing pro-imperial narratives.
 - `life.ru`
 - `lenta.ru`
 - `rbc.ru`
