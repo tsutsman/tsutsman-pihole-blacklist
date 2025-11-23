@@ -154,15 +154,18 @@
 
 - `1tv.ru`
 - `a.tiktokmod.pro`
+- `a703.l461.r761.fastcloudcdn.net`
 - `ams-new.bonuses.email`
 - `an.yandex.ru`
 - `anna-news.info`
 - `api.mainnet.minepi.com`
+- `avcdn.net.dob.sibl.support-intelligence.net`
 - `checkip.deepstateplatypus.com`
 - `dev.period-calendar.com`
 - `eadaily.com`
 - `fcm-pc.period-calendar.com`
 - `fetside.com`
+- `files.staticstream.org`
 - `free-de-ds.hideservers.net`
 - `gazeta.ru` — онлайн-видання Rambler&Co, що ретранслює кремлівські наративи.
 - `gazprombank.ru`
@@ -190,6 +193,7 @@
 - `rt.com`
 - `rusvesna.su`
 - `rutube.ru`
+- `scheduler.himalayanapps.com`
 - `sberbank.ru`
 - `shiro.senkuro.org`
 - `smotrim.ru`
@@ -200,6 +204,7 @@
 - `tsargrad.tv`
 - `tvzvezda.ru`
 - `tse2.explicit.bing.net`
+- `ukr.net.dob.sibl.support-intelligence.net`
 - `vgtrk.ru`
 - `vk.com`
 - `voennoedelo.com`
