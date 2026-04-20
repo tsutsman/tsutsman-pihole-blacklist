@@ -24,12 +24,24 @@ from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
 try:  # pragma: no cover - шлях для запуску напряму
-    from .utils import Catalog, EntryMetadata, load_catalog, load_entries, load_false_positive_lists
+    from .utils import (
+        Catalog,
+        EntryMetadata,
+        _read_text_auto,
+        load_catalog,
+        load_entries,
+        load_false_positive_lists,
+    )
 except ImportError:  # pragma: no cover
-    import sys
-
     sys.path.append(str(Path(__file__).resolve().parent.parent))
-    from scripts.utils import Catalog, EntryMetadata, load_catalog, load_entries, load_false_positive_lists
+    from scripts.utils import (
+        Catalog,
+        EntryMetadata,
+        _read_text_auto,
+        load_catalog,
+        load_entries,
+        load_false_positive_lists,
+    )
 
 DOMAINS_FILE = Path("domains.txt")
 
@@ -244,7 +256,7 @@ def main(argv: list[str] | None = None) -> int:
 
     raw_catalog: dict[str, Any] = {}
     if args.catalog.exists():
-        raw_catalog = json.loads(args.catalog.read_text() or "{}")
+        raw_catalog = json.loads(_read_text_auto(args.catalog) or "{}")
 
 
     issues: list[str] = []

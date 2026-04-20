@@ -6,12 +6,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import time
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
-from ipaddress import ip_address
 from http.client import IncompleteRead
-import time
+from ipaddress import ip_address
 from pathlib import Path
 from typing import Any, Iterable, Sequence
 from urllib.error import HTTPError, URLError
@@ -748,7 +748,7 @@ def _write_markdown_report(path: Path, data: dict[str, object]) -> None:
             )
 
     content = "\n".join(lines).rstrip() + "\n"
-    path.write_text(content)
+    path.write_text(content, encoding="utf-8")
 
 
 def _update_status(

@@ -18,7 +18,7 @@
       "шпигунство",
       "інфраструктура"
     ],
-    "allowed_regions": ["global", "ru", "cis"],
+    "allowed_regions": ["global", "ru", "cis", "ua", "eu", "latam", "mena"],
     "allowed_statuses": ["active", "inactive"],
     "allowed_severities": ["середня", "висока"],
     "min_sources": 1,
@@ -28,8 +28,8 @@
   },
   "regexes": {
     "required_fields": ["value", "category", "regions", "sources", "severity", "status", "added"],
-    "allowed_categories": ["державні-зони"],
-    "allowed_regions": ["ru", "by"],
+    "allowed_categories": ["державні-зони", "шкідливе ПЗ", "анонімайзери"],
+    "allowed_regions": ["ru", "by", "global"],
     "allowed_statuses": ["active"],
     "allowed_severities": ["середня", "висока"],
     "min_sources": 1

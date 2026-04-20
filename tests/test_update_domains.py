@@ -1,8 +1,7 @@
 import json
 import threading
 from datetime import datetime, timedelta, timezone
-from urllib.error import HTTPError
-from urllib.error import URLError
+from urllib.error import HTTPError, URLError
 
 from scripts import update_domains
 
@@ -143,7 +142,7 @@ def test_update_chunk_size(tmp_path, monkeypatch):
     assert {entry["name"] for entry in health} == {"a", "b"}
     assert all(entry.get("status") == "ok" for entry in health)
     assert "fetch_errors" not in data
-    summary = markdown.read_text()
+    summary = markdown.read_text(encoding="utf-8")
     assert "Нові домени" in summary
     assert "a.com" in summary
     status_data = json.loads(status.read_text())
@@ -211,7 +210,7 @@ def test_update_reports_diagnostics(tmp_path, monkeypatch):
     assert data["duplicates_removed"]["preview"] == ["old.com"]
     assert data["invalid_lines"]["preview"] == ["192.168.0.1"]
 
-    summary = markdown.read_text()
+    summary = markdown.read_text(encoding="utf-8")
     assert "Нормалізовані записи" in summary
     assert "old.com ← `0.0.0.0 old.com`" in summary
     assert "Видалено дублікати: 1" in summary

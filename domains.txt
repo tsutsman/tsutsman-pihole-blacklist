@@ -5621,8 +5621,6 @@
 107-175-155-251.cprapid.com
 107-175-75-42.cprapid.com
 107-20-27-45.cprapid.com
-107.181.161.200:443
-107.181.161.200:9999
 107.41.mastermaths.com.sg
 107054545431021.my.id
 107106025673983.graficaaoquadrado.com.br
@@ -6514,7 +6512,6 @@
 146-112-61-106-v4.hideservers.net
 14733sss.icu
 1488.winstate.cc
-149.248.0.82:2351
 149sf.com
 14f03.asset.tradingvein.xyz
 14l0gvqa2wfs.live
@@ -7079,16 +7076,9 @@
 175643-coinbase.com
 1757597664525-noreplysupport-usaawire.surge.sh
 177.195.252.46.host.secureserver.net
-178.21.11.90:25998
-178.33.94.35:5864
-178.33.94.35:7262
-178.33.94.35:9999
 178.34.193.18.in-addr.arpa
-178.63.53.44:2388
 17849f655484784a1831d3d30e45ad58.com
 178609-coinbase.com
-179.60.149.3:2351
-179.60.149.3:9999
 1794060.hubspotpreview-na1.com
 179wg.com
 17ae3.signing.unitynotarypublic.com
@@ -7109,10 +7099,6 @@
 185-143-241-98.verelox.com
 185-16-75-70-rv-rd.hideservers.net
 185-177-25-101.ip.club-srv.com
-185.12.14.32:1515
-185.173.36.98:2351
-185.214.10.220:443
-185.214.10.220:53
 185679-gemini.com
 1866ilovejunk.com
 187.243.181.163.in-addr.arpa
@@ -8320,7 +8306,6 @@
 44ty44ry4y.pages.dev
 44uegsxdd.life
 44yd2dxmm5xuo7dsivwkf2fqyqmfsqkt5nkxdlgwpnbr57sca56j74yd.onion
-45.67.231.23:53623
 4511viacorona.com
 451b-999e-2569860fd348.md
 451fa.faf4851eagaage.lovestoblog.com
@@ -8552,8 +8537,6 @@
 5-182-86-43.cprapid.com
 5-bkywlqbncj6bgnx7.izumisv1.cc
 5-ing-covid-19.com
-5.188.87.58:2351
-5.188.87.58:9999
 5.61.56.227shoreline.mips
 5.share-ap1.hsforms.com
 500000wordswithpictures.com
@@ -9424,15 +9407,6 @@
 7zlp2024.shop
 7zmail.weebly.com
 8-0-9-vo-ice-exten.cfd
-80.66.88.145:2351
-80.66.88.145:2352
-80.66.88.145:2840
-80.66.88.145:2842
-80.66.88.145:2843
-80.66.88.145:2844
-80.66.88.145:7891
-80.66.88.145:9999
-80.87.202.63:25998
 8004.helloqu.com
 800453cm.n9shteam2.top
 8007.helloqu.com
@@ -9459,7 +9433,6 @@
 80ce6519.xyz
 80ebb66567fb4e3fa370b6c5cde961b9.com
 80t9ha9xybtevi6v.info
-81.177.135.217:53620
 81004.signing.unitynotarypublic.com
 81041b70fdc3a8d2.xyz
 810755cm.n9shteam2.top

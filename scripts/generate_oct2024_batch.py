@@ -18,7 +18,6 @@ from typing import Dict, Iterable, List, Optional
 from urllib.error import HTTPError, URLError
 from urllib.request import urlopen
 
-
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DOMAINS_PATH = REPO_ROOT / "domains.txt"
 OUTPUT_JSON = (

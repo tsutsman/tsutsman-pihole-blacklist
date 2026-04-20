@@ -4,10 +4,25 @@ Utility helpers for managing blocklists and their metadata.
 """
 from __future__ import annotations
 
-from dataclasses import dataclass
 import json
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable, Iterator, Mapping, Sequence
+
+
+def _read_text_auto(path: Path) -> str:
+    """Читає текстовий файл з fallback між UTF-8 та CP1251.
+
+    Read text content with UTF-8 first and CP1251 fallback for Windows tests.
+    """
+
+    raw = path.read_bytes()
+    for encoding in ("utf-8", "cp1251"):
+        try:
+            return raw.decode(encoding)
+        except UnicodeDecodeError:
+            continue
+    return raw.decode("utf-8", errors="replace")
 
 
 def load_entries(path: Path) -> list[str]:
@@ -16,7 +31,7 @@ def load_entries(path: Path) -> list[str]:
     Read a list file and return non-empty, comment-free entries.
     """
     entries: list[str] = []
-    for line in path.read_text().splitlines():
+    for line in _read_text_auto(path).splitlines():
         line = line.strip()
         if line and not line.startswith("#"):
             entries.append(line.lower())
@@ -169,7 +184,7 @@ def load_catalog(path: Path) -> Catalog:
 
     if not path.exists():
         return Catalog(domains={}, regexes={})
-    data = json.loads(path.read_text() or "{}")
+    data = json.loads(_read_text_auto(path) or "{}")
     domain_meta = _load_metadata_collection(data.get("domains", []), lower=True)
     regex_meta = _load_metadata_collection(data.get("regexes", []), lower=True)
     return Catalog(domains=domain_meta, regexes=regex_meta)
@@ -293,7 +308,7 @@ def load_false_positive_records(
 
     if not path.exists():
         return [], []
-    data = json.loads(path.read_text() or "{}")
+    data = json.loads(_read_text_auto(path) or "{}")
     domain_records = _load_false_positive_records(
         data.get("domains", []),
         lower_value=True,
