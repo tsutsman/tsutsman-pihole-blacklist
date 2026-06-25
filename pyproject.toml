@@ -1,6 +1,14 @@
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+exclude = [
+  ".git",
+  ".venv",
+  "dist",
+  "reports",
+]
+
+[tool.ruff.lint]
 select = [
   "E",  # pycodestyle
   "F",  # pyflakes
@@ -10,12 +18,6 @@ select = [
 ignore = [
   "E203",  # whitespace before ':' (black compat)
   "E501",  # line length handled by formatter/checks elsewhere
-]
-exclude = [
-  ".git",
-  ".venv",
-  "dist",
-  "reports",
 ]
 
 [tool.ruff.format]
@@ -42,5 +44,3 @@ fail_under = 85
 [tool.bandit]
 skips = ["B101"]  # allow assert in tests
 targets = ["scripts"]
-
-
