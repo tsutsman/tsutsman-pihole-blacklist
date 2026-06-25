@@ -7,30 +7,33 @@ on:
   schedule:
     - cron: '0 6 * * 1'
 
+permissions:
+  contents: read
+
 jobs:
   tests:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
       - name: Встановлення залежностей
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-      - name: Встановлення інструментів безпеки
-        run: pip install pip-audit bandit
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r requirements.txt
       - name: Аналіз залежностей (pip-audit)
-        run: pip-audit --strict
+        run: python -m pip_audit --strict
       - name: Статичний аналіз безпеки (bandit)
-        run: bandit -r scripts -ll
+        run: python -m bandit -r scripts -ll
       - name: Перевірка списків
         run: python scripts/check_lists.py
       - name: Запуск тестів із покриттям
-        run: coverage run -m pytest -q
+        run: python -m coverage run -m pytest -q
       - name: Перевірка порогу покриття
-        run: coverage report --fail-under=85
+        run: python -m coverage report --fail-under=85
       - name: Перевірка генерації списків
         run: python scripts/generate_lists.py --dist-dir dist --formats adguard ublock hosts
       - name: Формування контрольних сум
@@ -39,7 +42,7 @@ jobs:
           find . -type f -print0 | sort -z | xargs -0 sha256sum > checksums.txt
           test -s checksums.txt
       - name: Завантаження артефактів списків
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: generated-lists
           path: dist
