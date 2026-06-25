@@ -9,7 +9,7 @@ run_tests() {
 
 run_lint() {
   ruff check .
-  bandit -r scripts -ll || true
+  bandit -r scripts -ll
 }
 
 run_format() {
@@ -18,7 +18,7 @@ run_format() {
 }
 
 run_audit() {
-  pip-audit --strict || true
+  pip-audit --strict
 }
 
 run_generate() {
@@ -35,5 +35,3 @@ case "$cmd" in
     echo "Usage: $0 [test|lint|format|audit|generate]";
     ;;
 esac
-
-
