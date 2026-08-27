@@ -62,7 +62,7 @@
     },
     {
       "name": "Phishing.Database active",
-      "url": "https://phish.co.za/latest/phishing-domains-ACTIVE.txt",
+      "url": "https://raw.githubusercontent.com/Phishing-Database/Phishing.Database/master/phishing-domains-ACTIVE.txt",
       "category": "фішинг",
       "regions": [
         "global"
@@ -70,7 +70,7 @@
       "weight": 1.2,
       "update_interval_days": 1,
       "enabled": true,
-      "notes": "Офіційний активний доменний фід Phishing.Database; дані перенесено з GitHub на phish.co.za.",
+      "notes": "Актуальний доменний фід після перенесення проєкту до організації Phishing-Database.",
       "trust": 0.9,
       "sla_days": 2,
       "auto_disable_on_sla": false
