@@ -67,3 +67,5 @@ jobs:
           else
             gh pr create --base main --head "$branch" --title "chore: refresh domain blacklist" --body "Автоматичне оновлення доменів із перевірених джерел. Перед злиттям перегляньте reports/latest_update.md, stale_candidates та результати CI."
           fi
+
+# retry after merging timeout handling fix
