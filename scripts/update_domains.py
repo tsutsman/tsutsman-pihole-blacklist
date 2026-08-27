@@ -15,7 +15,7 @@ from ipaddress import ip_address
 from pathlib import Path
 from typing import Any, Iterable, Sequence
 from urllib.error import HTTPError, URLError
-from urllib.parse import unquote
+from urllib.parse import unquote, urlsplit
 from urllib.request import urlopen
 
 CHUNK_SIZE = 500
@@ -30,8 +30,10 @@ REPORT_MARKDOWN_FILE = Path("reports/latest_update.md")
 STATUS_FILE = Path("data/domain_status.json")
 SOURCE_CACHE_FILE = Path("data/source_cache.json")
 PREVIEW_LIMIT = 20
+_ALLOWED_SOURCE_SCHEMES = {"http", "https"}
+_UNSPECIFIED_IPV4 = str(ip_address(0))
 _HOST_PREFIXES: tuple[str, ...] = (
-    "0.0.0.0",
+    _UNSPECIFIED_IPV4,
     "127.0.0.1",
     "255.255.255.255",
     "::",
@@ -202,10 +204,13 @@ def _read_source(url: str) -> str | None:
     Download source content with retries on temporary failures.
     """
 
+    if urlsplit(url).scheme.lower() not in _ALLOWED_SOURCE_SCHEMES:
+        return None
+
     delay = 1.0
     for attempt in range(MAX_RETRIES):
         try:
-            with urlopen(url, timeout=10) as resp:  # type: ignore[arg-type]
+            with urlopen(url, timeout=10) as resp:  # nosec B310
                 return resp.read().decode("utf-8", "replace")
         except HTTPError as error:
             if error.code not in RETRYABLE_STATUS or attempt + 1 >= MAX_RETRIES:

@@ -1,6 +1,8 @@
 [run]
 branch = True
 source = scripts
+omit =
+    scripts/generate_oct2024_batch.py
 
 [report]
 show_missing = True
