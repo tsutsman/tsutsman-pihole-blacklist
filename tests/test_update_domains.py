@@ -113,6 +113,19 @@ def test_fetch_retries_rate_limit(monkeypatch):
     assert sleeps == [2.0]
 
 
+def test_read_source_rejects_non_http_schemes(monkeypatch):
+    called = {"value": False}
+
+    def fake_urlopen(url, timeout=10):
+        called["value"] = True
+        raise AssertionError("urlopen must not be called for unsupported schemes")
+
+    monkeypatch.setattr(update_domains, "urlopen", fake_urlopen)
+
+    assert update_domains._read_source("file:///etc/passwd") is None
+    assert called["value"] is False
+
+
 def test_update_chunk_size(tmp_path, monkeypatch):
     def fake_fetch(source):
         return source, [f"{source.name}.com"], True
