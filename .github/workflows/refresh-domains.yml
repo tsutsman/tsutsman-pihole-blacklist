@@ -1,0 +1,95 @@
+name: Refresh domain blacklist
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 5 * * *'
+  pull_request:
+    paths:
+      - 'data/sources.json'
+      - 'scripts/update_domains.py'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: refresh-domain-blacklist-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Restore source cache
+        uses: actions/cache@v4
+        with:
+          path: data/source_cache.json
+          key: source-cache-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            source-cache-${{ github.ref_name }}-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r requirements.txt
+
+      - name: Refresh domains
+        run: |
+          python scripts/update_domains.py --chunk-size 2000
+
+      - name: Validate refreshed lists
+        run: |
+          python scripts/check_lists.py
+          python scripts/generate_lists.py --dist-dir dist --formats adguard ublock hosts rpz dnsmasq unbound
+          python scripts/audit_lists.py --output reports/audit.json
+          python scripts/generate_dashboard.py --dashboard reports/dashboard.json --history reports/dashboard_history.json
+
+      - name: Prepare refresh branch
+        if: github.event_name != 'pull_request'
+        id: changes
+        shell: bash
+        run: |
+          if [ -z "$(git status --porcelain -- domains.txt data/domain_status.json reports dist)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          branch="automation/domain-refresh"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add domains.txt data/domain_status.json reports dist
+          git commit -m "chore: refresh domain blacklist"
+          git push --force-with-lease origin "$branch" || git push --force origin "$branch"
+
+      - name: Open or update pull request
+        if: github.event_name != 'pull_request' && steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          branch="automation/domain-refresh"
+          existing="$(gh pr list --base main --head "$branch" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            gh pr edit "$existing" \
+              --title "chore: refresh domain blacklist" \
+              --body "Автоматичне оновлення доменів із перевірених джерел. Перед злиттям перегляньте reports/latest_update.md, stale_candidates та результати CI."
+          else
+            gh pr create \
+              --base main \
+              --head "$branch" \
+              --title "chore: refresh domain blacklist" \
+              --body "Автоматичне оновлення доменів із перевірених джерел. Перед злиттям перегляньте reports/latest_update.md, stale_candidates та результати CI."
+          fi
