@@ -433,3 +433,61 @@ def test_main_passes_args(tmp_path, monkeypatch):
     assert called["report_path"] == report
     assert called["markdown_path"] == markdown
     assert called["status_path"] == status
+
+
+def test_load_sources_normalizes_invalid_values(tmp_path):
+    config = tmp_path / "sources.json"
+    config.write_text(
+        json.dumps(
+  {
+      "sources": [
+          {
+              "name": "primary",
+              "url": "https://example.com/list.txt",
+              "category": "malware",
+              "regions": ["global", "ua"],
+              "weight": "bad",
+              "trust": 2,
+              "update_interval_days": 0,
+              "sla_days": "bad",
+              "auto_disable_on_sla": True,
+              "enabled": True,
+              "notes": "test source",
+          },
+          {
+              "name": "fallback",
+              "url": "https://example.org/list.txt",
+              "weight": 1.5,
+              "trust": "bad",
+              "update_interval_days": "bad",
+              "sla_days": 0,
+          },
+          {"name": "missing-url", "url": ""},
+      ]
+  }
+        ),
+        encoding="utf-8",
+    )
+
+    sources = update_domains._load_sources(config)
+
+    assert len(sources) == 2
+    primary, fallback = sources
+    assert primary.name == "primary"
+    assert primary.category == "malware"
+    assert primary.regions == ("global", "ua")
+    assert primary.weight == 1.0
+    assert primary.trust == 1.0
+    assert primary.update_interval_days == 1
+    assert primary.sla_days is None
+    assert primary.auto_disable_on_sla is True
+    assert primary.enabled is True
+    assert primary.notes == "test source"
+    assert fallback.weight == 1.5
+    assert fallback.trust == 1.0
+    assert fallback.update_interval_days == 1
+    assert fallback.sla_days == 1
+
+
+def test_load_sources_missing_file_returns_empty(tmp_path):
+    assert update_domains._load_sources(tmp_path / "missing.json") == []
