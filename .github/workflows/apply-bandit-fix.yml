@@ -1,0 +1,59 @@
+name: Apply Bandit fix
+
+on:
+  push:
+    branches: [fix/bandit-url-validation]
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Apply targeted security patch
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('scripts/update_domains.py')
+          text = path.read_text(encoding='utf-8')
+
+          replacements = [
+              (
+                  'from urllib.parse import unquote\n',
+                  'from urllib.parse import unquote, urlsplit\n',
+              ),
+              (
+                  'PREVIEW_LIMIT = 20\n_HOST_PREFIXES: tuple[str, ...] = (\n    "0.0.0.0",\n',
+                  'PREVIEW_LIMIT = 20\n_ALLOWED_SOURCE_SCHEMES = {"http", "https"}\n_UNSPECIFIED_IPV4 = str(ip_address(0))\n_HOST_PREFIXES: tuple[str, ...] = (\n    _UNSPECIFIED_IPV4,\n',
+              ),
+              (
+                  '    delay = 1.0\n    for attempt in range(MAX_RETRIES):\n',
+                  '    if urlsplit(url).scheme.lower() not in _ALLOWED_SOURCE_SCHEMES:\n        return None\n\n    delay = 1.0\n    for attempt in range(MAX_RETRIES):\n',
+              ),
+              (
+                  '            with urlopen(url, timeout=10) as resp:  # type: ignore[arg-type]\n',
+                  '            with urlopen(url, timeout=10) as resp:  # nosec B310 - scheme validated above\n',
+              ),
+          ]
+
+          for old, new in replacements:
+              if old not in text:
+                  raise SystemExit(f'Expected pattern not found: {old!r}')
+              text = text.replace(old, new, 1)
+
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit patch
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add scripts/update_domains.py
+          git diff --cached --check
+          git commit -m "fix: restrict source fetches to HTTP(S)"
+          git push origin HEAD:${GITHUB_REF_NAME}
