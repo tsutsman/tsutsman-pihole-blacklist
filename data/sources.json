@@ -4,9 +4,7 @@
       "name": "URLhaus Hostfile",
       "url": "https://urlhaus.abuse.ch/downloads/hostfile/",
       "category": "шкідливе ПЗ",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 1.0,
       "update_interval_days": 1,
       "enabled": true,
@@ -19,9 +17,7 @@
       "name": "Phishing Army",
       "url": "https://phishing.army/download/phishing_army_blocklist.txt",
       "category": "фішинг",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 1.0,
       "update_interval_days": 1,
       "enabled": true,
@@ -34,9 +30,7 @@
       "name": "StevenBlack base hosts",
       "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
       "category": "загальна",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 0.5,
       "update_interval_days": 3,
       "enabled": true,
@@ -49,9 +43,7 @@
       "name": "AnudeepND adservers",
       "url": "https://raw.githubusercontent.com/anudeepND/blacklist/master/adservers.txt",
       "category": "реклама",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 0.3,
       "update_interval_days": 7,
       "enabled": true,
@@ -64,9 +56,7 @@
       "name": "Phishing.Database active",
       "url": "https://raw.githubusercontent.com/Phishing-Database/Phishing.Database/master/phishing-domains-ACTIVE.txt",
       "category": "фішинг",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 1.2,
       "update_interval_days": 1,
       "enabled": true,
@@ -79,9 +69,7 @@
       "name": "StevenBlack gambling",
       "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-only/hosts",
       "category": "азартні ігри",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 0.2,
       "update_interval_days": 7,
       "enabled": true,
@@ -94,9 +82,7 @@
       "name": "Firebog Prigent Malware",
       "url": "https://v.firebog.net/hosts/Prigent-Malware.txt",
       "category": "шкідливе ПЗ",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 1.0,
       "update_interval_days": 1,
       "enabled": true,
@@ -109,9 +95,7 @@
       "name": "Firebog Prigent Crypto",
       "url": "https://v.firebog.net/hosts/Prigent-Crypto.txt",
       "category": "крипто-шахрайство",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 0.8,
       "update_interval_days": 1,
       "enabled": true,
@@ -124,9 +108,7 @@
       "name": "PolishFiltersTeam KADhosts",
       "url": "https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt",
       "category": "фішинг",
-      "regions": [
-        "eu"
-      ],
+      "regions": ["eu"],
       "weight": 0.6,
       "update_interval_days": 3,
       "enabled": true,
@@ -136,12 +118,23 @@
       "auto_disable_on_sla": false
     },
     {
+      "name": "CERT Polska Warning List v2",
+      "url": "https://hole.cert.pl/domains/v2/domains.txt",
+      "category": "фішинг",
+      "regions": ["eu"],
+      "weight": 1.2,
+      "update_interval_days": 1,
+      "enabled": true,
+      "notes": "Офіційний CERT Polska Dangerous websites Warning List v2: лише активні небезпечні домени, один домен на рядок.",
+      "trust": 0.98,
+      "sla_days": 2,
+      "auto_disable_on_sla": false
+    },
+    {
       "name": "Spam404 main",
       "url": "https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt",
       "category": "фішинг",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 0.7,
       "update_interval_days": 2,
       "enabled": false,
@@ -154,9 +147,7 @@
       "name": "Malware Filter hosts",
       "url": "https://malware-filter.gitlab.io/malware-filter/malware-filter-hosts.txt",
       "category": "шкідливе ПЗ",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 1.0,
       "update_interval_days": 1,
       "enabled": true,
@@ -169,9 +160,7 @@
       "name": "Malware Filter phishing",
       "url": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-hosts.txt",
       "category": "фішинг",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 1.1,
       "update_interval_days": 1,
       "enabled": true,
@@ -184,9 +173,7 @@
       "name": "HaGeZi TIF Mini wildcard",
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.mini.txt",
       "category": "шкідливе ПЗ",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 1.2,
       "update_interval_days": 1,
       "enabled": true,
@@ -199,9 +186,7 @@
       "name": "Blocklist Project malware",
       "url": "https://raw.githubusercontent.com/blocklistproject/Lists/master/malware.txt",
       "category": "шкідливе ПЗ",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 0.9,
       "update_interval_days": 1,
       "enabled": true,
@@ -214,9 +199,7 @@
       "name": "Blocklist Project phishing",
       "url": "https://raw.githubusercontent.com/blocklistproject/Lists/master/phishing.txt",
       "category": "фішинг",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 0.9,
       "update_interval_days": 1,
       "enabled": true,
@@ -229,9 +212,7 @@
       "name": "DigitalSide Threat-Intel",
       "url": "https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt",
       "category": "шкідливе ПЗ",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 1.0,
       "update_interval_days": 1,
       "enabled": true,
@@ -244,9 +225,7 @@
       "name": "ThreatView high confidence",
       "url": "https://threatview.io/Downloads/DOMAIN-High-Confidence-Feed.txt",
       "category": "шкідливе ПЗ",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 1.1,
       "update_interval_days": 1,
       "enabled": true,
@@ -259,9 +238,7 @@
       "name": "ThreatFox hostfile",
       "url": "https://threatfox.abuse.ch/downloads/hostfile/",
       "category": "шкідливе ПЗ",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 1.2,
       "update_interval_days": 1,
       "enabled": true,
@@ -274,9 +251,7 @@
       "name": "Zeus bad domains",
       "url": "https://raw.githubusercontent.com/CriticalPathSecurity/ZeusBadDomains/master/baddomains.txt",
       "category": "банківське шкідливе ПЗ",
-      "regions": [
-        "global"
-      ],
+      "regions": ["global"],
       "weight": 0.8,
       "update_interval_days": 2,
       "enabled": false,
