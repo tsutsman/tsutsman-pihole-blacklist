@@ -210,7 +210,7 @@ def _read_source(url: str) -> str | None:
     delay = 1.0
     for attempt in range(MAX_RETRIES):
         try:
-            with urlopen(url, timeout=10) as resp:  # nosec B310 - scheme validated above
+            with urlopen(url, timeout=10) as resp:  # nosec B310
                 return resp.read().decode("utf-8", "replace")
         except HTTPError as error:
             if error.code not in RETRYABLE_STATUS or attempt + 1 >= MAX_RETRIES:
