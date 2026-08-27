@@ -218,7 +218,7 @@ def _read_source(url: str) -> str | None:
             delay = _retry_delay(delay, error)
             time.sleep(delay)
             delay *= 2
-        except (URLError, IncompleteRead):
+        except (URLError, IncompleteRead, TimeoutError):
             if attempt + 1 >= MAX_RETRIES:
                 return None
             time.sleep(delay)
