@@ -150,8 +150,8 @@
       "regions": ["global"],
       "weight": 1.0,
       "update_interval_days": 1,
-      "enabled": true,
-      "notes": "Агрегований перелік шкідливих доменів.",
+      "enabled": false,
+      "notes": "Вимкнено 2026-08-27: endpoint не завантажується у контрольному GitHub Actions run; URLhaus використовується напряму, тому покриття не втрачається критично.",
       "trust": 0.9,
       "sla_days": 2,
       "auto_disable_on_sla": false
@@ -215,8 +215,8 @@
       "regions": ["global"],
       "weight": 1.0,
       "update_interval_days": 1,
-      "enabled": true,
-      "notes": "Оперативний список доменів з активними кампаніями шкідливого ПЗ від DigitalSide.",
+      "enabled": false,
+      "notes": "Вимкнено 2026-08-27: endpoint не завантажився у контрольному GitHub Actions run і позначається offline у актуальному каталозі OSINT threat-intel feeds.",
       "trust": 0.9,
       "sla_days": 2,
       "auto_disable_on_sla": false
