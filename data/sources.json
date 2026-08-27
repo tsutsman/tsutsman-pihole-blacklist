@@ -13,7 +13,7 @@
       "notes": "Офіційний список URLhaus.",
       "trust": 1.0,
       "sla_days": 2,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
       "name": "Phishing Army",
@@ -28,7 +28,7 @@
       "notes": "Добре підтримуваний список фішингу.",
       "trust": 0.95,
       "sla_days": 2,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
       "name": "StevenBlack base hosts",
@@ -62,7 +62,7 @@
     },
     {
       "name": "Phishing.Database active",
-      "url": "https://raw.githubusercontent.com/mitchellkrogza/Phishing.Database/master/phishing-domains-ACTIVE.txt",
+      "url": "https://phish.co.za/latest/phishing-domains-ACTIVE.txt",
       "category": "фішинг",
       "regions": [
         "global"
@@ -70,10 +70,10 @@
       "weight": 1.2,
       "update_interval_days": 1,
       "enabled": true,
-      "notes": "Активні фішингові домени.",
+      "notes": "Офіційний активний доменний фід Phishing.Database; дані перенесено з GitHub на phish.co.za.",
       "trust": 0.9,
       "sla_days": 2,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
       "name": "StevenBlack gambling",
@@ -103,7 +103,7 @@
       "notes": "Оновлюваний список зловмисних хостів.",
       "trust": 0.9,
       "sla_days": 2,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
       "name": "Firebog Prigent Crypto",
@@ -118,7 +118,7 @@
       "notes": "Криптовалютні шахрайські майданчики.",
       "trust": 0.85,
       "sla_days": 2,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
       "name": "PolishFiltersTeam KADhosts",
@@ -133,7 +133,7 @@
       "notes": "Польський список шахрайських доменів.",
       "trust": 0.75,
       "sla_days": 5,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
       "name": "Spam404 main",
@@ -144,11 +144,11 @@
       ],
       "weight": 0.7,
       "update_interval_days": 2,
-      "enabled": true,
-      "notes": "Домени, що активно використовуються у фішингових кампаніях.",
+      "enabled": false,
+      "notes": "Вимкнено 2026-08-27: upstream не оновлював main-blacklist.txt з 2025-09-17; залишено в конфігурації для аудиту історії.",
       "trust": 0.8,
       "sla_days": 4,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
       "name": "Malware Filter hosts",
@@ -163,7 +163,7 @@
       "notes": "Агрегований перелік шкідливих доменів.",
       "trust": 0.9,
       "sla_days": 2,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
       "name": "Malware Filter phishing",
@@ -178,22 +178,22 @@
       "notes": "Активні фішингові домени.",
       "trust": 0.9,
       "sla_days": 2,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
-      "name": "Hagezi malicious",
-      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/malicious.txt",
+      "name": "HaGeZi TIF Mini wildcard",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.mini.txt",
       "category": "шкідливе ПЗ",
       "regions": [
         "global"
       ],
-      "weight": 1.1,
+      "weight": 1.2,
       "update_interval_days": 1,
       "enabled": true,
-      "notes": "Добре модерований список зловмисних хостів.",
-      "trust": 0.95,
+      "notes": "Актуальний security-focused HaGeZi Threat Intelligence Feed Mini у wildcard-форматі; замінює видалений hosts/malicious.txt.",
+      "trust": 0.97,
       "sla_days": 2,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
       "name": "Blocklist Project malware",
@@ -208,7 +208,7 @@
       "notes": "Проєкт спільноти з відстеження шкідливих доменів.",
       "trust": 0.85,
       "sla_days": 3,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
       "name": "Blocklist Project phishing",
@@ -223,7 +223,7 @@
       "notes": "Актуальні фішингові кампанії.",
       "trust": 0.85,
       "sla_days": 3,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
       "name": "DigitalSide Threat-Intel",
@@ -238,7 +238,7 @@
       "notes": "Оперативний список доменів з активними кампаніями шкідливого ПЗ від DigitalSide.",
       "trust": 0.9,
       "sla_days": 2,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
       "name": "ThreatView high confidence",
@@ -253,7 +253,7 @@
       "notes": "Високодостовірний перелік зловмисних доменів від ThreatView.",
       "trust": 0.92,
       "sla_days": 2,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
       "name": "ThreatFox hostfile",
@@ -268,7 +268,7 @@
       "notes": "Hostfile зі шкідливими доменами від проєкту ThreatFox abuse.ch.",
       "trust": 0.95,
       "sla_days": 2,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     },
     {
       "name": "Zeus bad domains",
@@ -279,11 +279,11 @@
       ],
       "weight": 0.8,
       "update_interval_days": 2,
-      "enabled": true,
-      "notes": "Домени, пов'язані з банківським трояном Zeus.",
+      "enabled": false,
+      "notes": "Вимкнено 2026-08-27: upstream CriticalPathSecurity/ZeusBadDomains більше не існує (404).",
       "trust": 0.8,
       "sla_days": 5,
-      "auto_disable_on_sla": true
+      "auto_disable_on_sla": false
     }
   ]
 }
