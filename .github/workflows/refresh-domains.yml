@@ -55,7 +55,7 @@ jobs:
         id: changes
         shell: bash
         run: |
-          if git diff --quiet -- domains.txt data/domain_status.json reports dist; then
+          if [ -z "$(git status --porcelain -- domains.txt data/domain_status.json reports dist)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
