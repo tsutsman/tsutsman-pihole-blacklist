@@ -1,63 +1,65 @@
 {
-  "generated_at": "2025-10-26T19:17:28.627948+00:00",
+  "generated_at": "2026-09-05T09:10:26.852275+00:00",
   "totals": {
-    "domains": 21904,
-    "regexes": 42
+    "domains": 23864,
+    "regexes": 45
   },
   "metadata": {
     "domains": {
-      "with_metadata": 101,
-      "without_metadata": 21803,
-      "coverage_pct": 0.46
+      "with_metadata": 137,
+      "without_metadata": 23727,
+      "coverage_pct": 0.57
     },
     "regexes": {
-      "with_metadata": 5,
+      "with_metadata": 8,
       "without_metadata": 37,
-      "coverage_pct": 11.9
+      "coverage_pct": 17.78
     }
   },
   "monitored": {
-    "domains": 78
+    "domains": 95
   },
   "domains": {
     "categories": {
-      "анонімайзери": 10,
+      "анонімайзери": 14,
+      "шкідливе ПЗ": 20,
       "пропаганда": 36,
-      "шкідливе ПЗ": 12,
-      "шахрайство": 4,
+      "шахрайство": 6,
       "шпигунство": 6,
       "крипто-шахрайство": 1,
+      "контент 18+": 26,
       "екосистема": 5,
+      "інфраструктура": 6,
       "ботнет": 4,
       "фінанси": 3,
-      "фішинг": 2,
+      "фішинг": 4,
       "держсервіси": 5,
-      "контент 18+": 10,
-      "інфраструктура": 2,
       "криптомайнінг": 1
     },
     "regions": {
-      "global": 77,
+      "global": 111,
       "ru": 45,
       "latam": 1,
-      "cis": 23,
+      "cis": 25,
       "mena": 1,
       "eu": 1,
-      "ua": 1
+      "ua": 3
     },
     "severities": {
-      "середня": 39,
-      "висока": 62
+      "середня": 65,
+      "висока": 72
     },
     "tags": {
-      "vpn": 7,
-      "hideservers": 1,
+      "vpn": 11,
+      "hideservers": 4,
+      "malspam": 7,
+      "annuity": 1,
       "телеканал": 4,
       "змі": 33,
       "apk": 1,
       "модифікації": 1,
       "browsec": 2,
-      "sibl": 2,
+      "sibl": 3,
       "stager": 1,
       "rt": 3,
       "іспаномовна версія": 1,
@@ -70,10 +72,15 @@
       "proxy": 3,
       "криптовалюта": 1,
       "арабомовна версія": 1,
-      "cdn": 11,
-      "malware": 3,
+      "cdn": 24,
+      "malware": 4,
       "broworker": 1,
+      "adult": 17,
+      "forums": 1,
+      "counter": 1,
       "zvuk": 2,
+      "analytics": 1,
+      "carrotquest": 1,
       "c2": 5,
       "spyware": 1,
       "doh": 2,
@@ -81,30 +88,38 @@
       "здоровʼя": 1,
       "телеметрія": 3,
       "енергетика": 1,
+      "pornhub": 1,
+      "hazelmeadow": 1,
+      "reedvale": 1,
       "fcm": 1,
       "експлойти": 1,
+      "finance": 1,
       "sunproxy": 1,
       "франкомовна версія": 1,
       "проксі": 3,
       "новини": 4,
       "банк": 3,
-      "gambling": 4,
+      "gmail": 1,
+      "typosquat": 3,
+      "gambling": 6,
       "typosquatting": 1,
       "google": 1,
-      "typosquat": 2,
       "портал": 2,
       "держпослуги": 1,
-      "fastpic": 4,
+      "fastpic": 5,
+      "xhamster": 8,
+      "ua": 3,
       "ip-tracking": 1,
+      "dynamic-dns": 1,
+      "freemyip": 1,
       "активація": 1,
       "піратство": 1,
       "таблоїд": 1,
       "уряд": 1,
       "офіційний сайт": 1,
-      "adult": 3,
-      "ua": 2,
       "humor": 1,
       "пошта": 1,
+      "makelovenotporn": 1,
       "microsoft": 1,
       "МЗС": 1,
       "дипломатія": 1,
@@ -115,9 +130,11 @@
       "redirector": 1,
       "zyxel": 1,
       "ndms": 1,
+      "nameserver": 4,
       "соцмережа": 2,
       "медіахолдинг": 2,
       "троян": 1,
+      "фішинг": 1,
       "cn": 1,
       "економіка": 1,
       "соцмережі": 1,
@@ -132,7 +149,8 @@
       "sputnik": 2,
       "медіа": 1,
       "chat": 1,
-      "дорослий контент": 1,
+      "serverless": 1,
+      "дорослий контент": 2,
       "mirror": 1,
       "loader": 1,
       "qakbot": 1,
@@ -149,37 +167,42 @@
       "pos": 1
     },
     "sources": {
-      "ручне внесення": 84,
-      "журнал KMR": 18
+      "ручне внесення": 119,
+      "журнал KMR": 18,
+      "phishing army": 1
     }
   },
   "regexes": {
     "categories": {
       "державні-зони": 3,
+      "шкідливе ПЗ": 3,
       "анонімайзери": 2
     },
     "regions": {
       "ru": 2,
       "by": 1,
-      "global": 2
+      "global": 5
     },
     "severities": {
-      "висока": 2,
+      "висока": 5,
       "середня": 3
     },
     "tags": {
       "tld": 3,
+      "dkim": 2,
+      "malspam": 3,
+      "dmarc": 1,
       "hola": 2,
       "vpn": 2
     },
     "sources": {
-      "ручне внесення": 3,
+      "ручне внесення": 6,
       "журнал KMR": 2
     }
   },
   "severity_distribution": {
-    "середня": 39,
-    "висока": 62
+    "середня": 65,
+    "висока": 72
   },
   "false_positives": {
     "domains": {
@@ -202,10 +225,187 @@
     }
   },
   "latest_update": {
-    "generated_at": "2025-09-27T18:24:43.199327+00:00",
-    "total_after_update": 20636,
-    "added_count": 502,
+    "generated_at": "2026-09-05T09:10:25.891321+00:00",
+    "total_after_update": 23864,
+    "added_count": 2000,
     "stale_candidates_count": 50,
-    "source_health": null
+    "source_health": [
+      {
+        "name": "URLhaus Hostfile",
+        "url": "https://urlhaus.abuse.ch/downloads/hostfile/",
+        "status": "ok",
+        "trust": 1.0,
+        "sla_days": 2,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "Phishing Army",
+        "url": "https://phishing.army/download/phishing_army_blocklist.txt",
+        "status": "ok",
+        "trust": 0.95,
+        "sla_days": 2,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "StevenBlack base hosts",
+        "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
+        "status": "ok",
+        "trust": 0.6,
+        "sla_days": 7,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "AnudeepND adservers",
+        "url": "https://raw.githubusercontent.com/anudeepND/blacklist/master/adservers.txt",
+        "status": "ok",
+        "trust": 0.4,
+        "sla_days": 14,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "Phishing.Database active",
+        "url": "https://raw.githubusercontent.com/Phishing-Database/Phishing.Database/master/phishing-domains-ACTIVE.txt",
+        "status": "ok",
+        "trust": 0.9,
+        "sla_days": 2,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "StevenBlack gambling",
+        "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-only/hosts",
+        "status": "ok",
+        "trust": 0.3,
+        "sla_days": 14,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "Firebog Prigent Malware",
+        "url": "https://v.firebog.net/hosts/Prigent-Malware.txt",
+        "status": "ok",
+        "trust": 0.9,
+        "sla_days": 2,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "Firebog Prigent Crypto",
+        "url": "https://v.firebog.net/hosts/Prigent-Crypto.txt",
+        "status": "ok",
+        "trust": 0.85,
+        "sla_days": 2,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "PolishFiltersTeam KADhosts",
+        "url": "https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt",
+        "status": "ok",
+        "trust": 0.75,
+        "sla_days": 5,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "CERT Polska Warning List v2",
+        "url": "https://hole.cert.pl/domains/v2/domains.txt",
+        "status": "ok",
+        "trust": 0.98,
+        "sla_days": 2,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "Malware Filter phishing",
+        "url": "https://malware-filter.gitlab.io/malware-filter/phishing-filter-hosts.txt",
+        "status": "ok",
+        "trust": 0.9,
+        "sla_days": 2,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "HaGeZi TIF Mini wildcard",
+        "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.mini.txt",
+        "status": "ok",
+        "trust": 0.97,
+        "sla_days": 2,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "Blocklist Project malware",
+        "url": "https://raw.githubusercontent.com/blocklistproject/Lists/master/malware.txt",
+        "status": "ok",
+        "trust": 0.85,
+        "sla_days": 3,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "Blocklist Project phishing",
+        "url": "https://raw.githubusercontent.com/blocklistproject/Lists/master/phishing.txt",
+        "status": "ok",
+        "trust": 0.85,
+        "sla_days": 3,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "ThreatView high confidence",
+        "url": "https://threatview.io/Downloads/DOMAIN-High-Confidence-Feed.txt",
+        "status": "ok",
+        "trust": 0.92,
+        "sla_days": 2,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      },
+      {
+        "name": "ThreatFox hostfile",
+        "url": "https://threatfox.abuse.ch/downloads/hostfile/",
+        "status": "ok",
+        "trust": 0.95,
+        "sla_days": 2,
+        "auto_disabled": false,
+        "fetched_at": "2026-09-05T09:09:35.955957+00:00",
+        "last_success_at": "2026-09-05T09:09:35.955957+00:00",
+        "sla_breached": false
+      }
+    ]
   }
 }
